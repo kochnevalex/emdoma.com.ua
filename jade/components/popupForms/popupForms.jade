@@ -1,0 +1,53 @@
+.popup-wrap
+    .popup
+        .popup-block
+            img(src='img/form-logo.png' alt='')
+            span Доставка еды из лучших заведений города
+            .form-wrap
+                .close
+                .form-container
+                    .form-ttl Выберите город
+                    form#citySelect.city-select(action='#', method='POST', data-form='subscribe')
+                        .form-group
+                            select
+                                option Мариуполь
+                                option Киев
+                                option Одесса
+                        button.form-btn(type='submit', name='subscribe') ОК
+                .path-wrap
+                    .path-inner Указывайте адрес
+                    .path-inner Выбирайте и заказывайте
+                    .path-inner Еда в пути
+        .popup-block
+            img(src='img/form-logo.png' alt='')
+            span Доставка еды из лучших заведений города
+            .form-wrap
+                .close
+                .form-container.form-container--wide
+                    a(href='#' rel='nofollow') Вернуться к выбору города
+                    p Нас пока нет в вашем городе. Оставьте свои контактные данные, мы сообщим, когда откроемся
+                    .city-select.city-select--wide
+                        a(href='#').form-btn.form-btn--toll Оповестить об открытии
+                        a(href='#').form-btn Хочу открыть сам
+
+        .popup-block
+            img(src='img/form-logo.png' alt='')
+            span Доставка еды из лучших заведений города
+            .form-wrap
+                .close
+                .form-container
+                    a(href='#' rel='nofollow') Вернуться к выбору города
+                    p Нас пока нет в вашем городе. Оставьте свои контактные данные, мы сообщим, когда откроемся
+                    form#citySelectForm.city-select.city-select--wide(action='#', method='POST', data-form='subscribe')
+                        .form-group
+                            input.form-control(type='text', name='form', placeholder='Имя')
+                        .form-group
+                            input.form-control(type='text', name='form', placeholder='Телефон')
+                        .form-group
+                            input.form-control(type='text', name='form', placeholder='Ваш город')
+                        .form-group
+                            input.form-control(type='text', name='form', placeholder='e-mail')
+                        button.form-btn.form-btn--toll(type='submit', name='subscribe') Оповестить об открытии
+                        button.form-btn(type='submit', name='subscribe') Хочу открыть сам
+
+

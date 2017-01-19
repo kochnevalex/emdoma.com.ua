@@ -1,0 +1,103 @@
+script(src="./js/jquery-3.1.1.min.js")
+//script(src="./js/jquery/plugins/animations/animations.js")
+//script(src="./js/jquery/plugins/validation/jquery.validate.min.js")
+//script(src="./js/jquery/plugins/form/jquery.form.js")
+//script(src="./js/jquery/plugins/select2/select2.full.js")
+//script(src="./js/jquery/plugins/slick/slick.min.js")
+//script(src="./js/jquery/plugins/rater/rater.min.js")
+//script(src="./js/plugins/aos/aos.js")
+//script(src="./js/jquery/plugins/textarea-autoresize/autosize.js")
+
+
+
+script.
+    $(function () {
+        $(".button-cart").click(function () {
+            $(".cart-popup").slideToggle(500);
+            cartHeight();
+            $('.prodScroll').jScrollPane();
+        });
+        $('.top-line a.button-cart').height($('.top-line').height());
+    });
+
+script(type='text/javascript').
+    $(function () {
+        $(window).scroll(function () {
+            if ($(this).scrollTop() != 0) {
+                $('#stl_left').fadeIn();
+            } else {
+                $('#stl_left').fadeOut();
+            }
+        });
+        $('#stl_left').click(function () {
+            $('body,html').animate({scrollTop: 0}, 800);
+        });
+    });
+
+script(type='text/javascript').
+    $(function () {
+        //        console.log('');
+        //        $('#service').slideToggle('slow');
+        //        console.log('');
+        $('#service-btn').click(function () {
+            if ($('#service_name').val() != "") {
+                $('#service_name').css('border', "1px solid #e4e4e4");
+            } else {
+                $('#service_name').css('border', "1px solid red");
+                return false;
+            }
+            if ($('#service_contacts').val() != "") {
+                $('#service_contacts').css('border', "1px solid #e4e4e4");
+            } else {
+                $('#service_contacts').css('border', "1px solid red");
+                return false;
+            }
+            $.getJSON("/cart/booking-call",
+                    {"name": $('#service_name').val(), "service": $('#service_contacts').val(), "region": '121'},
+                    function (response) {
+                        $('#service_contacts').val('');
+                        $('#service_name').val('');
+                        //                    $('.popupWrap').fadeOut(2500);
+                        //                    $('.contactThanks').fadeIn();
+                        //                    $('#contact-fio').val('');
+                        //                    $('#contact-email').val('');
+                        //                    $('#contact-text').val('');
+                        //                    $('#contact-phone').val('');
+                        //                    $('.contactThanks').fadeOut(2000);
+                        $("#selector2").hide();
+                        $("#service-btn").hide();
+                        $('#service .popup-info').text("Cпасибо, мы свяжемся с Вами");
+                        $.session.set('showservice', '1');
+                        setTimeout(function () {
+                            $('#service').slideToggle('slow');
+                        }, 1000);
+                        return false;
+                    });
+            return false;
+        });
+    });
+
+
+script.
+    $(window).ready(function () {
+        $('.tabs-nav a:first-child').addClass('act');
+        $('[id^=con_tab]:first-child').addClass('act');
+        $('[id^=con_tab]').fadeOut();
+        $('#con_' + $('[id^=tab].act').attr('id')).fadeIn();
+        $('[id^=tab]').click(function () {
+            var tab_id = $(this).attr('id');
+            tabClick(tab_id);
+        });
+    });
+    function tabClick(tab_id) {
+        if (tab_id != $('[id^=tab].act').attr('id')) {
+            $('[id^=tab], [id^=con_tab]').removeClass('act');
+            $('[id^=con_tab]').fadeOut();
+            $('#' + tab_id).addClass('act');
+            $('#con_' + tab_id).addClass('act');
+            $('#con_' + tab_id).fadeIn();
+        }
+    }
+
+
+

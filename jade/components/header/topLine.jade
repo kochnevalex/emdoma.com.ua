@@ -1,0 +1,35 @@
+.top-line
+    .wrapper
+        .text
+        //    span.xfm_4020734440
+        //        span.xfmc1 Мы занимаемся доставкой из пиццерий, ресторанов, фастфудов и суши-баров. Выбирайте заведение и делайте заказ онлайн или по телефону: 097-47-37-586, 068-381-22-45, (0629) 49-37-64
+
+        .cart-wrapper
+            a.button-cart(href='javascript:void(0)', style='height: 56px;')
+                span.cart-count Заказов нет
+            .cart-popup(style='')
+                .prodScroll(style='overflow: hidden; padding: 0px; height: 325px; width: 300px;')
+                    .jspContainer(style='width: 300px; height: 325px;')
+                        .jspPane(style='padding: 0px; top: 0px; width: 300px;')
+                            .vid-header-cart Салаты
+                            .cart-popup-prod.del_7294_prices7977.box_1
+                                a.top-close(href='javascript:void(0);', onclick="$('.del_7294_prices7977').remove(); $.McCart.removeProduct({'key':'7294_prices_7977', 'id':'7294'}, true);")
+                                span.title(style='color: black') Рандеву - 250 г
+                                p.price 114 грн.
+                                .formbtns
+                                    input.noOfProd_7294_prices7977.inp.product-count.product-countid_7294_prices7977(type='text', value='5')
+                                    a.up.pop(href='javascript:void(0);', onclick="$.McCart.plusProduct({'key':'7294_prices_7977', 'id':'7294'});")
+                                    a.down.pop(href='javascript:void(0);', onclick="$.McCart.minusProduct({'key':'7294_prices_7977', 'id':'7294'});")
+                                // /.formbtns
+                .allSum(style='font-size: 15px;')
+                    span Доставка
+                    span
+                        span.delivery(style='padding-left: 0; text-align: right;') 45 грн.
+                .allSum
+                    span Итого
+                    span
+                        span.cart-summ(style='padding-left: 0; text-align: right;') 615 грн
+                a.button-buy(href='http://mariupol.emdoma.com.ua/cart') Оформить заказ
+        .addToCartPopup
+            img(src='http://mariupol.emdoma.com.ua/img/popupArr-yellow.png', alt='')
+            .inner Добавлено в корзину

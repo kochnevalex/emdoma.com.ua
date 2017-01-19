@@ -1,0 +1,128 @@
+/*
+	Each slide
+	Important:
+	Set the width of your slides
+	If height not specified height will be set by the slide content
+	Set to display block
+*/
+
+#slides {
+  height: 405px;
+  overflow: hidden;
+  position: relative;
+  margin: 0px auto;
+}
+.slides_container {
+	display: none;
+	overflow: hidden;
+	position: relative;
+}
+.slides_container .wrapper_1 {
+	height: 406px;
+	display: block;
+}
+.slide {
+ /*max-width: 1400px;*/
+  margin: 0px auto;
+
+}
+.slide_yellow {
+  background: #f5d79b;
+}
+.slide_blue {
+  background: #4ea4e1;
+}
+.slide_black {
+  background: #000000;
+}
+.slide_white {
+  background: #ffffff;
+}
+/*.slides_container .bgs_img1 {
+  height: 406px;
+  margin: 0px auto;
+  background: url(../images/uploads/1.jpg) top center no-repeat;
+}
+.slides_container .bgs_img2 {
+  height: 406px;
+  background: url(../images/uploads/2.jpg) top center no-repeat;
+}
+.slides_container .bgs_img3 {
+  height: 406px;
+  background: url(../images/uploads/3.jpg) top center no-repeat;
+}*/
+.slides_container .slide {
+  /*width: 960px;*/
+  margin: 0px auto;
+  position: relative;
+}
+.slide img {
+  float: right;
+}
+.slide span {
+  width: 250px;
+  height: 200px;
+  margin: 100px 0px 0px 0px;
+  display: block;
+  float: left;
+}
+
+/*pagination*/
+.pagination {
+	width: 100px;
+  display: none;
+	margin: -50px 0px 0px 15%;
+  position: absolute;
+  top: 350px;
+  left: 85px;
+  z-index: 9999;
+}
+.pagination li {
+	margin: 0px 1px;
+	float: left;
+	list-style: none;
+}
+.pagination li a {
+	display: block;
+	width: 12px;
+	height: 0px;
+	padding-top: 12px;
+	background-image: url(../images/pagination.png);
+	background-position: 0 0;
+	float: left;
+	overflow: hidden;
+}
+.pagination li.current a {
+	background-position: 0 -12px;
+}
+.pagin {
+  width: 980px;
+  margin: 0px auto;
+  position: relative;
+  z-index: 90;
+}
+.prev {
+  width: 20px;
+  height: 48px;
+  display: block;
+  position: absolute;
+  top: 150px;
+  right: 0px;
+  background: url(../images/next.png) no-repeat;
+  z-index: 90;
+}
+.next {
+  width: 20px;
+  height: 48px;
+  display: block;
+  position: absolute;
+  top: 150px;
+  left: 0px;
+  background: url(../images/prev.png) no-repeat;
+  z-index: 100;
+}
+.prev:hover,
+.next:hover {
+  background-position: 0px -48px;
+}
+/*end pagination*/

@@ -1,0 +1,432 @@
+/**------------------------------------------------------------------
+ * [Table of contents | Main style]
+ *
+ * 1. Typography #typography
+ * 2. Variables #variables
+ * 3. Colors #colors
+ * 4. Mixins #mixins
+ */
+/**
+ * Colors #colors
+ */
+/**
+ * Form colors
+ */
+@-webkit-keyframes showOpacity
+{
+    0%
+    {
+        display: block;
+
+        opacity: 0;
+    }
+    100%
+    {
+        display: block;
+
+        opacity: 1;
+    }
+}
+@-o-keyframes showOpacity
+{
+    0%
+    {
+        display: block;
+
+        opacity: 0;
+    }
+    100%
+    {
+        display: block;
+
+        opacity: 1;
+    }
+}
+@keyframes showOpacity
+{
+    0%
+    {
+        display: block;
+
+        opacity: 0;
+    }
+    100%
+    {
+        display: block;
+
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes showOpacityTilt
+{
+    0%
+    {
+        display: block;
+
+        -webkit-transform: translate3d(0, 10%, 0);
+                transform: translate3d(0, 10%, 0); 
+
+        opacity: 0;
+    }
+    100%
+    {
+        display: block;
+
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0); 
+
+        opacity: 1;
+    }
+}
+
+@-o-keyframes showOpacityTilt
+{
+    0%
+    {
+        display: block;
+
+        transform: translate3d(0, 10%, 0); 
+
+        opacity: 0;
+    }
+    100%
+    {
+        display: block;
+
+        transform: translate3d(0, 0, 0); 
+
+        opacity: 1;
+    }
+}
+
+@keyframes showOpacityTilt
+{
+    0%
+    {
+        display: block;
+
+        -webkit-transform: translate3d(0, 10%, 0);
+                transform: translate3d(0, 10%, 0); 
+
+        opacity: 0;
+    }
+    100%
+    {
+        display: block;
+
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0); 
+
+        opacity: 1;
+    }
+}
+
+/**
+ * Typography #typography
+ */
+/**
+ * Mixins #mixins
+ */
+.form-wrap
+{
+    margin-bottom: 55px;
+    padding: 20px 35px 30px;
+
+    border: 10px solid #ededed;
+    border-radius: 40px;
+}
+
+.form-wrap .form-ttl
+{
+    font-size: 18px;
+    line-height: 24px;
+
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.form-wrap em
+{
+    font-size: 12px;
+}
+
+.form-wrap .form-group
+{
+    display: inline-block;
+
+    width: calc(100% - 90px);
+    margin-right: 15px; 
+    margin-bottom: 5px;
+}
+
+.form-wrap .form-group .form-control
+{
+    line-height: 38px;
+
+    width: calc(100% - 40px); 
+    height: 40px;
+
+    border: 1px solid #ededed;
+    border-radius: 0;
+    background: #fff;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+
+.form-btn
+{
+    font-size: 18px;
+    font-weight: bold;
+
+    height: 40px;
+    padding: 0 20px;
+
+    cursor: pointer;
+
+    color: #fff; 
+    border: none;
+    outline: none;
+    background: #ffb900;
+}
+
+body.active
+{
+    overflow-y: hidden;
+}
+
+.popup-wrap
+{
+    position: fixed;
+    z-index: 100501;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    overflow-y: auto;
+
+    background: rgba(0, 0, 0, .5);
+}
+
+.popup
+{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+
+    max-width: 1130px;
+    margin: 100px auto;
+
+    -js-display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+            align-content: center;
+}
+
+.popup .popup-block
+{
+    width: calc(50% - 50px);
+    margin-right: 50px;
+}
+
+.form-wrap .form-container .form-btn.form-btn--toll
+{
+    margin-top: 40px;
+}
+
+.form-wrap .form-container .form-btn
+{
+    line-height: 40px;
+
+    display: inline-block;
+
+    margin: 10px 0; 
+
+    text-decoration: none;
+}
+
+.form-wrap .city-select--wide .form-btn
+{
+    overflow: hidden; 
+
+    width: 260px;
+    padding: 0;
+}
+
+.popup .popup-block .form-wrap .form-container
+{
+    width: 100%;
+}
+
+.popup .popup-block .form-wrap
+{
+    position: relative;
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+
+    min-height: 280px;
+    padding: 50px 45px;
+
+    text-align: center; 
+
+    background: #fff;
+
+    -js-display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+            align-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.popup .popup-block .form-wrap .form-ttl
+{
+    font-family: robotoregular, Arial, Helvetica, sans-serif; 
+    font-size: 30px;
+
+    margin-bottom: 25px;
+}
+
+.popup .popup-block .form-wrap p
+{
+    padding-top: 30px;
+    padding-bottom: 0;
+}
+
+.popup .popup-block .form-wrap .close
+{
+    position: absolute;
+    top: 25px;
+    right: 25px;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+
+    cursor: pointer;
+
+    background: url('../images/close-form.png') center center;
+}
+
+.popup .popup-block:last-child,
+.popup .popup-block:nth-child(2)
+{
+    margin-right: 0;
+}
+
+.popup .popup-block > span
+{
+    font-size: 14px;
+
+    display: inline-block;
+
+    max-width: 40%;
+    margin-bottom: 15px;
+
+    vertical-align: middle; 
+
+    color: #fff;
+}
+
+.popup .popup-block > img
+{
+    margin: 0 10px 15px 30px;
+
+    vertical-align: middle;
+}
+
+.form-wrap .city-select
+{
+    padding: 0 40px;
+}
+
+.form-wrap .city-select--wide
+{
+    padding: 0;
+}
+
+.form-wrap .city-select--wide .form-group
+{
+    width: 45%;
+    margin: 5px;
+}
+
+.form-wrap .path-wrap
+{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+
+    padding: 30px 40px; 
+
+    -js-display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+
+.form-wrap .path-wrap .path-inner:first-child
+{
+    background: url('../img/map-ico.png') 10px 3px no-repeat;
+}
+
+.form-wrap .path-wrap .path-inner:nth-child(2)
+{
+    background: url('../img/basket-ico.png') left 5px no-repeat;
+}
+
+.form-wrap .path-wrap .path-inner:last-child
+{
+    background: url('../img/car-ico.png') left 5px no-repeat;
+}
+
+.form-wrap .path-wrap .path-inner
+{
+    display: inline-block;
+    overflow: hidden;
+
+    width: 33%;
+    height: 40px;
+    padding-left: 30px;
+
+    text-align: left;
+    vertical-align: top;
+}
+
+.form-wrap .form-group select
+{
+    width: 100%;
+    height: 38px;
+    padding: 0 20px;
+}
+
+/*# sourceMappingURL=globalNew.css.map */

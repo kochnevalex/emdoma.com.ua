@@ -1,0 +1,133 @@
+body.active
+  overflow-y: hidden
+
+.popup-wrap
+  position: fixed
+  bottom: 0
+  top: 0
+  right: 0
+  left: 0
+  z-index: 100501
+  overflow-y: auto
+  background: rgba(#000, .5)
+
+.popup
+  max-width: 1130px
+  margin: 100px auto
+  display: flex
+  flex-wrap: wrap
+  justify-content: flex-end
+  align-content: center
+
+.popup .popup-block
+  width: calc(50% - 50px)
+  margin-right: 50px
+
+.form-wrap .form-container .form-btn.form-btn--toll
+  margin-top: 40px
+.form-wrap .form-container .form-btn
+  display: inline-block
+  line-height: 40px
+  text-decoration: none
+  margin: 10px 0
+
+.form-wrap .city-select--wide .form-btn
+  width: 260px
+  padding: 0
+  overflow: hidden
+
+.popup .popup-block .form-wrap .form-container
+  width: 100%
+
+.popup .popup-block .form-wrap
+  position: relative
+  display: flex
+  flex-wrap: wrap
+  align-content: center
+  align-items: center
+  justify-content: center
+  padding: 50px 45px
+  min-height: 280px
+  background: #fff
+  text-align: center
+
+.popup .popup-block .form-wrap .form-ttl
+  margin-bottom: 25px
+  font-size: 30px
+  font-family: robotoregular, Arial, Helvetica, sans-serif
+
+.popup .popup-block .form-wrap p
+  padding-top: 30px
+  padding-bottom: 0
+
+.popup .popup-block .form-wrap .close
+  position: absolute
+  display: block
+  width: 20px
+  height: 20px
+  top: 25px
+  right: 25px
+  cursor: pointer
+  background: url('../images/close-form.png') center center
+
+.popup .popup-block:last-child,
+.popup .popup-block:nth-child(2)
+  margin-right: 0
+
+.popup .popup-block > span
+  display: inline-block
+  margin-bottom: 15px
+  font-size: 14px
+  color: #fff
+  max-width: 40%
+  vertical-align: middle
+
+.popup .popup-block > img
+  margin: 0 10px 15px 30px
+  vertical-align: middle
+
+.form-wrap .city-select
+  padding: 0 40px
+
+.form-wrap .city-select--wide
+  padding: 0
+
+.form-wrap .city-select--wide .form-group
+  width: 45%
+  margin: 5px
+
+.form-wrap .path-wrap
+  position: absolute
+  display: flex
+  justify-content: space-between
+  bottom: 0
+  left: 0
+  right: 0
+  padding: 30px 40px
+
+.form-wrap .path-wrap .path-inner:first-child
+  background: url('../img/map-ico.png') 10px 3px no-repeat
+
+.form-wrap .path-wrap .path-inner:nth-child(2)
+  background: url('../img/basket-ico.png') left 5px no-repeat
+
+.form-wrap .path-wrap .path-inner:last-child
+  background: url('../img/car-ico.png') left 5px no-repeat
+
+.form-wrap .path-wrap .path-inner
+  display: inline-block
+  width: 33%
+  height: 40px
+  overflow: hidden
+  padding-left: 30px
+  text-align: left
+  vertical-align: top
+
+.form-wrap .form-group select
+  height: 38px
+  width: 100%
+  padding: 0 20px
+
+
+
+

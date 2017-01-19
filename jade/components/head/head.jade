@@ -1,0 +1,470 @@
+head
+    meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+    title Корзина - EmDoma - служба доставки еды
+    meta(name='title', content='Корзина - EmDoma - служба доставки еды')
+    meta(name='keywords', content='доставка пиццы Мариуполь, доставка пиццы в Мариуполе, доставка суши Мариуполь, доставка суши в Мариуполе, доставка еды Мариуполь, доставка обедов, емдома, emdoma')
+    meta(name='description', content='ЕмДома: Доставка еды из ресторанов, пиццерий, фастфудов и суши-баров в Мариуполе, Каменец-Подольском, Кривом Роге, Черновцах ')
+    meta(name='google-site-verification', content='XLO8BbO1cwSqWvIgDZ2GGnZVCOtem1BoLZlEIH5Z6xg')
+    //if lt IE 9
+      script(type='text/javascript', src='http://html5shiv.googlecode.com/svn/trunk/html5.js')
+    //if lte IE 7
+      link(rel='stylesheet', href='http://mariupol.emdoma.com.ua/style/style_ie.css', type='text/css', media='screen, projection')
+    link(href='./css/bootstrap.min.css', media='screen, print', rel='stylesheet', type='text/css')
+    link(href='./css/global.css', media='screen, projection', rel='stylesheet', type='text/css')
+    link(href='./css/skin.css', media='screen, projection', rel='stylesheet', type='text/css')
+    link(href='./css/jquery.countdown.css', media='screen, print', rel='stylesheet', type='text/css')
+    link(href='./css/main.css?b', media='screen, projection', rel='stylesheet', type='text/css')
+    link(href='./css/jquery.jscrollpane.css', media='screen, projection', rel='stylesheet', type='text/css')
+    link(href='./css/globalNew.css', media='screen, projection', rel='stylesheet', type='text/css')
+    script(type='text/javascript', src='http://mariupol.emdoma.com.ua/js/jquery-1.9.1.min.js')
+    script(type='text/javascript', src='http://mariupol.emdoma.com.ua/js/jquery.mc.cart.js')
+    script(type='text/javascript', src='http://mariupol.emdoma.com.ua/js/slides.jquery.js')
+    script(type='text/javascript', src='http://mariupol.emdoma.com.ua/js/start_slides.jquery.js')
+    script(type='text/javascript', src='http://mariupol.emdoma.com.ua/js/jquery.jcarousel.js')
+    script(type='text/javascript', src='http://mariupol.emdoma.com.ua/js/start_jcarousel.js')
+    script(type='text/javascript', src='http://mariupol.emdoma.com.ua/js/start_nth.js')
+    script(type='text/javascript', src='http://mariupol.emdoma.com.ua/js/carouFredSel/jquery.carouFredSel-6.2.1.js')
+    script(type='text/javascript', src='http://mariupol.emdoma.com.ua/js/jquery.mousewheel.js')
+    script(type='text/javascript', src='http://mariupol.emdoma.com.ua/js/jquery.jscrollpane.js')
+    script(type='text/javascript', src='http://mariupol.emdoma.com.ua/js/jquery.session.js')
+    script(type='text/javascript', src='http://mariupol.emdoma.com.ua/js/countdown/jquery.countdown.js')
+    // Работа с корзиной begin ------------------------------------------------
+    script(type='text/javascript').
+        $(function () {
+            $.McCart.init({
+                addProductUrl: 'http://mariupol.emdoma.com.ua/cart/add',
+                removeProductUrl: 'http://mariupol.emdoma.com.ua/cart/remove'
+            });
+            $('.prodScroll').jScrollPane();
+        });
+    // Работа с корзиной end --------------------------------------------------
+    script(type='text/javascript').
+        function setCity(city_id) {
+            /* params = {'city_id': city_id};
+             //console.log(params);
+             $.getJSON('/default/currency-ajax/set-city', params,
+             function(response) {
+             window.location.reload();
+             });*/
+        }
+    script.
+        $(document).ready(function () {
+            $('.bg_white').on('click', '.add-link', function () {
+                $(this).next('div.dobav').slideToggle('slow');
+                return false;
+            });
+            $('.bg_white').on('click', '.adding-add', function (e) {
+                e.stopPropagation();
+            });
+        });
+    script(type='text/javascript').
+        function setRegion(region_id) {
+            //        console.log();
+            $('#set_region').html(region_id.region_title);
+            $('#set_region2').html('Район доставки: ' + region_id.region_title);
+            $('#region').fadeOut();
+            $('#region-cart, #region_footer').fadeOut();
+            //        $('.save_but').fadeIn();
+            params = {'region_id': region_id, 'region_title': 'region_title'};
+            //console.log(params);
+            $.getJSON('/default/currency-ajax/set-region', params,
+                    function (response) {
+                        $('#bottom .popup-info').text("Стоимость доставки рассчитана, спасибо");
+                        setTimeout(function () {
+                            window.location.reload()
+                        }, 1000);
+                    });
+        }
+    script(type='text/javascript').
+        $(document).ready(function () {
+            $('.search-input').focus(function () {
+                if (this.value == "Поиск по заведениям и блюдам")
+                    this.value = '';
+            })
+            /*
+             // ищем чему равен рейтинг
+             var currentstart = $('.row').find('.current').index() + 1;
+             // устанавливаем нужное количество звезд
+             for (i = currentstart; i <= 5; i++) {
+             $('.row img').eq(i).attr({src: "http://mariupol.emdoma.com.ua/images/star_0.png"});
+             }
+             $('.row img').mouseenter(function() {
+             $('.row img').attr({src: "http://mariupol.emdoma.com.ua/images/star_0.png"});
+             for (i = 0; i <= $(this).index(); i++) {
+             $('.row img').eq(i).attr({src: "http://mariupol.emdoma.com.ua/images/star_1.png"});
+             }
+             }).mouseleave(function() {
+             var currentIndex
+             if ($('.row').find('.current')) {
+             currentIndex = $('.row').find('.current').index() + 1;
+             }
+             else {
+             currentIndex = 0;
+             }
+             //            alert(currentIndex);
+             $('.row img').attr({src: "http://mariupol.emdoma.com.ua/images/star_0.png"});
+             for (i = 0; i < currentIndex; i++) {
+             $('.row img').eq(i).attr({src: "http://mariupol.emdoma.com.ua/images/star_1.png"});
+             }
+             });
+             $('.row img').click(function() {
+             for (i = 0; i <= $(this).index(); i++) {
+             $('.row img').eq(i).attr({src: "http://mariupol.emdoma.com.ua/images/star_1.png"});
+             }
+             $('.row img').removeClass('current');
+             $(this).addClass('current');
+             });
+             //Второй рейтинг
+             var currentstart = $('.row3').find('.current').index() + 1;
+             // устанавливаем нужное количество звезд
+             for (i = currentstart; i <= 5; i++) {
+             $('.row3 img').eq(i).attr({src: "http://mariupol.emdoma.com.ua/images/star_0.png"});
+             }
+             $('.row3 img').mouseenter(function() {
+             $('.row3 img').attr({src: "http://mariupol.emdoma.com.ua/images/star_0.png"});
+             for (i = 0; i <= $(this).index(); i++) {
+             $('.row3 img').eq(i).attr({src: "http://mariupol.emdoma.com.ua/images/star_1.png"});
+             }
+             }).mouseleave(function() {
+             var currentIndex
+             if ($('.row3').find('.current')) {
+             currentIndex = $('.row3').find('.current').index() + 1;
+             }
+             else {
+             currentIndex = 0;
+             }
+             //            alert(currentIndex);
+             $('.row3 img').attr({src: "http://mariupol.emdoma.com.ua/images/star_0.png"});
+             for (i = 0; i < currentIndex; i++) {
+             $('.row3 img').eq(i).attr({src: "http://mariupol.emdoma.com.ua/images/star_1.png"});
+             }
+             });
+             $('.row3 img').click(function() {
+             for (i = 0; i <= $(this).index(); i++) {
+             $('.row3 img').eq(i).attr({src: "http://mariupol.emdoma.com.ua/images/star_1.png"});
+             }
+             $('.row3 img').removeClass('current');
+             $(this).addClass('current');
+             });
+             //Второй рейтинг
+             jQuery(".row img").click(function() {
+             obj = this;
+             str_id = jQuery(this).attr('class');
+             arr = str_id.split('_');
+             id = arr[1];
+             vote = arr[2];
+             //type = arr[3];
+             values = {id: id, vote: vote};
+             console.log(values);
+             $.getJSON('/default/votes-ajax/set-vote', values,
+             function(response) {
+             if (response.mark == 0)
+             return;
+             }
+             );
+             });
+             jQuery(".row3 img").click(function() {
+             obj = this;
+             str_id = jQuery(this).attr('class');
+             arr = str_id.split('_');
+             id = arr[1];
+             vote2 = arr[2];
+             //type = arr[3];
+             values = {id: id, vote2: vote2};
+             console.log(values);
+             $.getJSON('/default/votes-ajax/set-vote', values,
+             function(response) {
+             if (response.mark == 0)
+             return;
+             }
+             );
+             });
+             //Звёзды голосования
+             //        jQuery(".row img").click(function() {
+             //
+             //            obj = this;
+             //            str_id = jQuery(this).attr('class');
+             //            arr= str_id.split('_');
+             //            id = arr[1];
+             //            mark = arr[2];
+             //            type = arr[3];
+             //            values = {id:id,mark:mark,type:type};
+             //            console.log(values);
+             //
+             ////                    $(".vote.hidden.idprod" + id).fadeOut(200, function(){
+             ////                            $(".show_text_vote" + id).fadeIn(1000).delay(2000).fadeOut(2000, function() {
+             ////                                $(".vote.hidden.idprod" + id).fadeIn(500);
+             ////                                $(".show_text_vote" + id).css('visibility','hidden');
+             ////                            });
+             ////                        });
+             //
+             //            $.getJSON('/default/votes-ajax/set-vote', values,
+             //            function(response){
+             //
+             //                if(response.mark==0)return;
+             //                global_var = response.mark;
+             //                obj =jQuery(".vote_"+ id + "_" +response.mark+ "_" +response.type+ "_");
+             //                jQuery(obj).hide();
+             //
+             //                var ee = "";
+             //                for (var i = 0; i < response.mark; i++)
+             //                    {
+             //                        ee += "<img src='http://mariupol.emdoma.com.ua/images/star_1.png'/>";
+             //                    }
+             //                for (var i = i; i < 5; i++)
+             //                    {
+             //                        ee += "<img src='http://mariupol.emdoma.com.ua/images/star_0.png'/>";
+             //                    }
+             //
+             //                ee += "<div class='clear'></div><div style=' margin-top: 0px; color: red;'>Ваш голос учтен</div>";
+             //
+             //                jQuery(obj).parent('.row').html(ee);
+             //
+             //                //
+             ////                jQuery(obj).parent().html("<div style='color: red; padding-top: 6px;'>Ваш голос учтен</div>");
+             //
+             //            }
+             //        );
+             //            //jQuery(".vote.hidden").
+             //        });
+             //
+             //
+             //        //Воторой джейсон
+             //        //Звёзды голосования
+             //
+             //        jQuery(".row3 img").click(function() {
+             //
+             //            obj = this;
+             //            str_id = jQuery(this).attr('class');
+             //            arr= str_id.split('_');
+             //            id = arr[1];
+             //            mark = arr[2];
+             //            type = arr[3];
+             //            values = {id:id,mark:mark,type:type};
+             //            console.log(values);
+             //
+             ////                    $(".vote.hidden.idprod" + id).fadeOut(200, function(){
+             ////                            $(".show_text_vote" + id).fadeIn(1000).delay(2000).fadeOut(2000, function() {
+             ////                                $(".vote.hidden.idprod" + id).fadeIn(500);
+             ////                                $(".show_text_vote" + id).css('visibility','hidden');
+             ////                            });
+             ////                        });
+             //
+             //            $.getJSON('/default/votes-ajax/set-vote', values,
+             //            function(response){
+             //
+             //                if(response.mark==0)return;
+             //                global_var = response.mark;
+             //                obj =jQuery(".vote_"+ id + "_" +response.mark+"_"+response.type+"_");
+             //
+             //                jQuery(obj).hide();
+             //
+             //                var ee = "";
+             //                for (var i = 0; i < response.mark; i++)
+             //                    {
+             //                        ee += "<img src='http://mariupol.emdoma.com.ua/images/star_1.png'/>";
+             //                    }
+             //                for (var i = i; i < 5; i++)
+             //                    {
+             //                        ee += "<img src='http://mariupol.emdoma.com.ua/images/star_0.png'/>";
+             //                    }
+             //
+             //                ee += "<div class='clear'></div><div style=' margin-top: 0px; color: red;'>Ваш голос учтен</div>";
+             //
+             //                jQuery(obj).parent('.row3').html(ee);
+             //
+             //                //
+             ////                jQuery(obj).parent().html("<div style='color: red; padding-top: 6px;'>Ваш голос учтен</div>");
+             //
+             //            }
+             //        );
+             //            //jQuery(".vote.hidden").
+             //        });
+             //        //Воторой джейсон
+             */
+        });
+    script(type='text/javascript').
+        function setDirectionOnPage(val) {
+            params = {'count': val};
+            console.log(params);
+            $.getJSON('/default/currency-ajax/set-direction-on-page', params,
+                    function (response) {
+                        window.location.reload();
+                    });
+        }
+        //
+        function centuredHeight(elem, wrapper) {
+            marginTop = (wrapper.outerHeight() - elem.outerHeight()) / 2;
+            marginLeft = (wrapper.outerWidth() - elem.outerWidth()) / 2;
+            margin = {
+                'marginTop': marginTop,
+                'marginLeft': marginLeft
+            }
+            return margin;
+        }
+    script(type='text/javascript').
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-38319833-1']);
+        _gaq.push(['_trackPageview']);
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    script.
+        $(function () {
+            /***********************/
+            $('.dsq-widget-user').wrap('<span class="comment-user"></span>');
+            $('.dsq-widget-item').each(function () {
+                var saveLink = $(this).find('.dsq-widget-meta a:first-child');
+                $(this).find('.dsq-widget-meta').empty();
+                $(this).children('.dsq-widget-meta').append('<span>Написал новый отзыв о заведении: </span>').append(saveLink);
+                var comment_href = $(this).find('.dsq-widget-meta a').attr('href') + '#con_tab3';
+                $(this).find('.dsq-widget-meta a').attr('href', comment_href);
+                var comment = $(this).children('.comment-user');
+                $(this).children('.dsq-widget-meta').appendTo(comment);
+            });
+        })
+    script.
+        $(function () {
+            $('html').click(function () {
+                $('[class~="cart-popup"]').slideUp(500);
+                $('.list').slideUp(500);
+                $('.select, .select-blocks .title a').removeClass('act');
+                $('[class~="dobav"]').slideUp(500);
+            })
+            $('cart-popup, .dobav, .adding-add, .add_btn, .cart-wrapper, .select, .list, .select-blocks, .btn, #submit').click(function (e) {
+                e.stopPropagation();
+            })
+        })
+    script(type='text/javascript').
+        $(function () {
+            cartHeight();
+            $('.prodScroll').jScrollPane();
+        })
+        function cartHeight() {
+            //        var countProd = $('.prodScroll .cart-popup-prod').length;
+            //        if (countProd < 5) {
+            //            var heights = 0;
+            //            var counters = 0;
+            //            for (var i = 0; i < 100; i++) {
+            //                if (jQuery('.box_' + (i + 1)).height() != null) {
+            //                    counters++;
+            //                    heights += jQuery('.box_' + (i + 1)).height() + 10; //определяем высоты всех элементов + 20 px паддинг который не считается
+            //                    if (counters > 3) {
+            //                        break
+            //                    }
+            //                }
+            //            }
+            //            $('.prodScroll').css('height', heights);
+            //        } else {
+            //            var heights = 0;
+            //            var counters = 0;
+            //            for (var i = 0; i < 100; i++) {
+            //                if (jQuery('.box_' + (i + 1)).height() != null) {
+            //                    counters++;
+            //                    heights += jQuery('.box_' + (i + 1)).height() + 10; //определяем высоты всех элементов + 20 px паддинг который не считается
+            //                }
+            //                if (counters > 3) {
+            //                    break
+            //                }
+            //            }
+            $('.prodScroll').css('height', '325');
+            //        }
+        }
+    script.
+        $(function () {
+            var timePopupExist;
+            $('.st3-button-plus, .adding-add').on('click', function () {
+                clearInterval(timePopupExist);
+                $('.addToCartPopup').fadeIn();
+                timePopupExist = setTimeout(function () {
+                    $('.addToCartPopup').fadeOut();
+                }, 1000)
+            })
+        })
+        //<div class='addToCartPopup'>
+        //    <img src='' alt=''/>
+        //    <div class='inner'>
+        //        Добавлено в корзину
+        //    </div>
+        //</div>
+    script.
+        $(function () {
+            // по клику на кнопку товар "перемещается"(буквально) в корзину
+            //        $("[class*='addToCart']").on("click",function(){
+            //            var _this = $(this),
+            //                $img = _this.parents('tr').find('.PhotoTitle'),
+            //                imgId = $img.attr('id'),
+            //                //Клон изображения, его будем перемещать
+            //                $imgClone = $img.clone(true),
+            //                imgPos,
+            //                cartPos;
+            //
+            //
+            //
+            //var pos = imgId.getClientRects();
+            //            console.log(imgId);
+            /*
+             imgPos = $img.getBoundingClientRect();
+             console.log(imgPos.top, imgPos.left);
+             $imgClone.css({
+             'position'  :'absolute',
+             'top'       : imgPos.top,
+             'left'      : imgPos.left,
+             'opacity'   : 0.5
+             })
+             $imgClone.insertAfter($img);
+             cartPos = $('.cart-wrapper').getBoundingClientRect();
+             console.log(cartPos.top, cartPos.left);
+             $imgClone.animate(function(){
+             $imgClone.position(cartPos.top, cartPos.left);
+             })
+             */
+            //        })
+        })
+        function showRect(elem) {
+            var r = elem.getBoundingClientRect()
+            alert("Top/Left: " + r.top + " / " + r.left)
+            alert("Right/Bottom: " + r.right + " / " + r.bottom)
+        }
+        $(function () {
+            //        $('.bg_white').on('click', '.toggle-product-prices', function (e) {
+            //                        e.stopPropagation();
+            //
+            //            var idProd = $(this).data('id');
+            //            $('.st3-menu-info').removeClass('moreBuy_top');
+            //            $('.menu_info_top_' + idProd).first().addClass('moreBuy_top');
+            //            $('.toggle-product-prices').show();
+            //            $('.moreBuy').hide();
+            //            $(this).hide();
+            //            $('.moreBuy_' + idProd).toggle();
+            //        });
+            $('.bg_white').on('click', '.moreBuy, .st3-menu-info, .toggle-product-prices', function (e) {
+                e.stopPropagation();
+                if ($(e.target).is('.toggle-product-prices')) {
+                    var idProd = $(this).data('id');
+                    $('.st3-menu-info').removeClass('moreBuy_top');
+                    $('.menu_info_top_' + idProd).first().addClass('moreBuy_top');
+                    $('.toggle-product-prices').show();
+                    $('.moreBuy').hide();
+                    $(this).hide();
+                    $('.moreBuy_' + idProd).toggle();
+                }
+            });
+            $('.show_cat').on('click', function (e) {
+                $('.moreBuy').hide();
+                $('.st3-menu-info').removeClass('moreBuy_top');
+                $('.toggle-product-prices').show();
+            });
+            $('.cart-payment-type').on('change', function () {
+                $('.cart-payment-type-notify').remove();
+                if ($(this).val() === 'card') {
+                    $(this).parent().after('<div class="cart-payment-type-notify""><span>Обслуживаем только карты Приватбанка. Взимается комиссия от всей суммы 5% (платежной системой). Мы приветствуем оплату наличными, по-возможности.</span></div>');
+                }
+            });
+        });
+
