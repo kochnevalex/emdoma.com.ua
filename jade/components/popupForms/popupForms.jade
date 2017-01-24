@@ -7,13 +7,13 @@
                 .close
                 .form-container
                     .form-ttl Выберите город
-                    form#citySelect.city-select(action='#', method='POST', data-form='subscribe')
+                    form#citySelect.city-select(action='#', method='POST', data-form='city-select')
                         .form-group
                             select
                                 option Мариуполь
                                 option Киев
                                 option Одесса
-                        button.form-btn(type='submit', name='subscribe') ОК
+                        button.form-btn(type='submit', name='commit') ОК
                 .path-wrap
                     .path-inner Указывайте адрес
                     .path-inner Выбирайте и заказывайте
@@ -38,7 +38,7 @@
                 .form-container
                     a(href='#' rel='nofollow') Вернуться к выбору города
                     p Нас пока нет в вашем городе. Оставьте свои контактные данные, мы сообщим, когда откроемся
-                    form#citySelectForm.city-select.city-select--wide(action='#', method='POST', data-form='subscribe')
+                    form#citySelectForm.city-select.city-select--wide(action='#', method='POST', data-form='city-select-form')
                         .form-group
                             input.form-control(type='text', name='form', placeholder='Имя')
                         .form-group
@@ -46,8 +46,8 @@
                         .form-group
                             input.form-control(type='text', name='form', placeholder='Ваш город')
                         .form-group
-                            input.form-control(type='text', name='form', placeholder='e-mail')
-                        button.form-btn.form-btn--toll(type='submit', name='subscribe') Оповестить об открытии
-                        button.form-btn(type='submit', name='subscribe') Хочу открыть сам
+                            input.form-control(type='email', name='form', placeholder='e-mail')
+                        button.form-btn.form-btn--toll(type='submit', name='commit') Оповестить об открытии
+                        button.form-btn(type='submit', name='commit') Хочу открыть сам
 
 

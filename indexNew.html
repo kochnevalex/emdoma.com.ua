@@ -485,6 +485,43 @@
   <body>
     <div class="page">
       <div class="cover">
+        <div id="authCabinet" class="cabinet__autorize-wrap">
+          <div class="wrapper"><a href="#" rel="noffolow" id="cabinetAutorizeClose" class="cabinet__autorize-close">Свернуть<span class="arr"></span></a>
+            <div class="cabinet__autorize-ttl">Настройки</div>
+            <div class="form-wrap">
+              <div id="selectorAuth" class="selector">
+                <div class="select-blocks">
+                  <div class="title"><a href="javascript: void(0)" onclick="$('#cityAuth').slideToggle('normal');                    $(this).toggleClass('act');                    return false;"><span>Мариуполь</span><span class="arr"></span></a></div>
+                  <div id="cityAuth" style="display: none;" class="list">
+                    <noindex>
+                      <form class="city-all"><img src="http://mariupol.emdoma.com.ua/img/popupArr-gray.png" alt="">
+                        <!-- Если город задан выводить Все--><a rel="nofollow" href="http://mariupol.emdoma.com.ua" id="cityAuth[]" name="city[]" value="88" onclick="setCity(88);">Мариуполь</a><a rel="nofollow" href="http://kp.emdoma.com.ua" id="cityAuth[]" name="city[]" value="98" onclick="setCity(98);">Каменец-Подольский</a><a rel="nofollow" href="http://krivoy-rog.emdoma.com.ua" id="cityAuth[]" name="city[]" value="101" onclick="setCity(101);">Кривой Рог</a><a rel="nofollow" href="http://chernivtsi.emdoma.com.ua" id="cityAuth[]" name="city[]" value="100" onclick="setCity(100);">Черновцы</a>
+                      </form>
+                    </noindex>
+                  </div>
+                </div>
+                <div class="select-blocks">
+                  <div class="title"><a id="region_new" href="javascript: void(0)" onclick="$('#regionAuth').slideToggle('normal');                    $(this).toggleClass('act');                    return false;"><span id="set_region">Центральный (ст. Жовтневый)</span><span class="arr"></span></a></div>
+                  <div id="regionAuth" style="display: none;" class="list">
+                    <form class="region-all"><img src="http://mariupol.emdoma.com.ua/img/popupArr-gray.png" alt=""><a href="javascript: void(0)" id="regionAuth[]" name="region[]" value="121" onclick="setRegion({'region_id':121, 'region_title': 'Центральный (ст. Жовтневый)'});">Центральный (ст. Жовтневый)</a><a href="javascript: void(0)" id="regionAuth[]" name="region[]" value="122" onclick="setRegion({'region_id':122, 'region_title': '17, 20, 23 мкр Центрального'});">17, 20, 23 мкр Центрального</a><a href="javascript: void(0)" id="regionAuth[]" name="region[]" value="123" onclick="setRegion({'region_id':123, 'region_title': 'Приморский'});">Приморский</a><a href="javascript: void(0)" id="regionAuth[]" name="region[]" value="126" onclick="setRegion({'region_id':126, 'region_title': 'Черемушки, поселок Моряков'});">Черемушки, поселок Моряков</a><a href="javascript: void(0)" id="regionAuth[]" name="region[]" value="127" onclick="setRegion({'region_id':127, 'region_title': 'Кальмиусский (ближний) (ст. Ильичевский)'});">Кальмиусский (ближний) (ст. Ильичевский)</a><a href="javascript: void(0)" id="regionAuth[]" name="region[]" value="163" onclick="setRegion({'region_id':163, 'region_title': 'Левобережный, дальний Кальмиусский'});">Левобережный, дальний Кальмиусский</a></form>
+                  </div>
+                </div>
+              </div>
+              <form id="regForm" action="#" method="POST" data-form="reg-form" class="reg-form">
+                <div class="form-group">
+                  <input type="text" name="name" placeholder="Имя" class="form-control">
+                </div>
+                <div class="form-group">
+                  <input type="email" name="email" placeholder="E-mail" class="form-control">
+                </div>
+                <div class="form-group form-group--wide">
+                  <input type="text" name="address" placeholder="Адрес" class="form-control">
+                </div>
+                <button type="submit" name="subscribe" class="form-btn">Сохранить</button>
+              </form>
+            </div>
+          </div>
+        </div>
         <div class="wrapper top-ill">
           <div class="top-line">
             <div class="wrapper">
@@ -515,7 +552,7 @@
                   <div class="allSum"><span>Итого</span><span><span style="padding-left: 0; text-align: right;" class="cart-summ">615 грн</span></span></div><a href="http://mariupol.emdoma.com.ua/cart" class="button-buy">Оформить заказ</a>
                 </div>
               </div>
-              <div class="top-line__cabinet"><a href="#" rel="nofollow">Вход</a><span> /</span><a href="#" rel="nofollow">Регистрация</a></div>
+              <div class="top-line__cabinet"><a id="authToggle" href="#" rel="nofollow">Вход</a><span> /</span><a href="#" rel="nofollow">Регистрация</a></div>
               <div class="addToCartPopup"><img src="http://mariupol.emdoma.com.ua/img/popupArr-yellow.png" alt="">
                 <div class="inner">Добавлено в корзину</div>
               </div>
@@ -585,11 +622,11 @@
           </ul>
           <div class="form-wrap">
             <div class="form-ttl">Поиск по заведениям и блюдам</div>
-            <form id="searchForm" action="#" method="POST" data-form="subscribe" class="searchForm">
+            <form id="searchForm" action="#" method="POST" data-form="search-form" class="searchForm">
               <div class="form-group">
-                <input type="text" name="form" class="form-control">
+                <input type="text" name="earch" class="form-control">
               </div>
-              <button type="submit" name="subscribe" class="form-btn">ОК</button>
+              <button type="submit" name="commit" class="form-btn">ОК</button>
             </form><em>Например, вареники</em>
           </div>
           <div id="">
@@ -861,6 +898,16 @@
               $('#con_' + tab_id).fadeIn();
           }
       }
+      
+      
+    </script>
+    <script>
+      $('#authToggle').on('click', function () {
+          $('#authCabinet').slideDown(500);
+      });
+      $('#cabinetAutorizeClose').on('click', function () {
+          $('#authCabinet').slideUp(500);
+      });
     </script>
   </body>
 </html>

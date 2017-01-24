@@ -37,9 +37,34 @@
                         span.cart-summ(style='padding-left: 0; text-align: right;') 615 грн
                 a.button-buy(href='http://mariupol.emdoma.com.ua/cart') Оформить заказ
         .top-line__cabinet
-            a#authToggle(href='#' rel='nofollow') Вход
-            span  /
-            a(href='#' rel='nofollow') Регистрация
+            span  Вы вошли как
+            a(href='#' rel='nofollow') Сергей Иванович
+            #selectorAuth.selector
+                .select-blocks
+                    .title
+                        a(href='javascript: void(0)', onclick="$('#cityAuth').slideToggle('normal');\
+                               $(this).toggleClass('act');\
+                               return false;")
+                            span
+                                | Мариуполь
+                            span.arr
+                    #cityAuth.list(style='display: none;')
+                        noindex
+                            form.city-all
+                                img(src='http://mariupol.emdoma.com.ua/img/popupArr-gray.png', alt='')
+                                // Если город задан выводить Все
+                                a(rel='nofollow', href='http://mariupol.emdoma.com.ua', id='cityAuth[]', name='city[]', value='88', onclick='setCity(88);') Мариуполь
+                                a(rel='nofollow', href='http://kp.emdoma.com.ua', id='cityAuth[]', name='city[]', value='98', onclick='setCity(98);') Каменец-Подольский
+                                a(rel='nofollow', href='http://krivoy-rog.emdoma.com.ua', id='cityAuth[]', name='city[]', value='101', onclick='setCity(101);') Кривой Рог
+                                a(rel='nofollow', href='http://chernivtsi.emdoma.com.ua', id='cityAuth[]', name='city[]', value='100', onclick='setCity(100);') Черновцы
+                .select-blocks
+                    .title
+                        a#region_new(href='javascript: void(0)', onclick="$('#regionAuth').slideToggle('normal');\
+                               $(this).toggleClass('act');\
+                               return false;")
+                            span#set_region
+                                | Центральный (ст. Жовтневый)
+                            span.arr
         .addToCartPopup
             img(src='http://mariupol.emdoma.com.ua/img/popupArr-yellow.png', alt='')
             .inner Добавлено в корзину

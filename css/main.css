@@ -253,6 +253,12 @@ p
 	position: absolute;
 	top: 95px;
 }
+.selector:after {
+	clear: both;
+	content: '';
+	display: table;
+}
+
 .header .selector .select-blocks
 {
 	display: block;

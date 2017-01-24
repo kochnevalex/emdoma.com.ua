@@ -1,0 +1,49 @@
+#authCabinet.cabinet__autorize-wrap
+    .wrapper
+        a(href='#' rel='noffolow')#cabinetAutorizeClose.cabinet__autorize-close Свернуть
+            span.arr
+        .cabinet__autorize-ttl Настройки
+        .form-wrap
+            #selectorAuth.selector
+                .select-blocks
+                    .title
+                        a(href='javascript: void(0)', onclick="$('#cityAuth').slideToggle('normal');\
+                    $(this).toggleClass('act');\
+                    return false;")
+                            span
+                                | Мариуполь
+                            span.arr
+                    #cityAuth.list(style='display: none;')
+                        noindex
+                            form.city-all
+                                img(src='http://mariupol.emdoma.com.ua/img/popupArr-gray.png', alt='')
+                                // Если город задан выводить Все
+                                a(rel='nofollow', href='http://mariupol.emdoma.com.ua', id='cityAuth[]', name='city[]', value='88', onclick='setCity(88);') Мариуполь
+                                a(rel='nofollow', href='http://kp.emdoma.com.ua', id='cityAuth[]', name='city[]', value='98', onclick='setCity(98);') Каменец-Подольский
+                                a(rel='nofollow', href='http://krivoy-rog.emdoma.com.ua', id='cityAuth[]', name='city[]', value='101', onclick='setCity(101);') Кривой Рог
+                                a(rel='nofollow', href='http://chernivtsi.emdoma.com.ua', id='cityAuth[]', name='city[]', value='100', onclick='setCity(100);') Черновцы
+                .select-blocks
+                    .title
+                        a#region_new(href='javascript: void(0)', onclick="$('#regionAuth').slideToggle('normal');\
+                    $(this).toggleClass('act');\
+                    return false;")
+                            span#set_region
+                                | Центральный (ст. Жовтневый)
+                            span.arr
+                    #regionAuth.list(style='display: none;')
+                        form.region-all
+                            img(src='http://mariupol.emdoma.com.ua/img/popupArr-gray.png', alt='')
+                            a(href='javascript: void(0)', id='regionAuth[]', name='region[]', value='121', onclick="setRegion({'region_id':121, 'region_title': 'Центральный (ст. Жовтневый)'});") Центральный (ст. Жовтневый)
+                            a(href='javascript: void(0)', id='regionAuth[]', name='region[]', value='122', onclick="setRegion({'region_id':122, 'region_title': '17, 20, 23 мкр Центрального'});") 17, 20, 23 мкр Центрального
+                            a(href='javascript: void(0)', id='regionAuth[]', name='region[]', value='123', onclick="setRegion({'region_id':123, 'region_title': 'Приморский'});") Приморский
+                            a(href='javascript: void(0)', id='regionAuth[]', name='region[]', value='126', onclick="setRegion({'region_id':126, 'region_title': 'Черемушки, поселок Моряков'});") Черемушки, поселок Моряков
+                            a(href='javascript: void(0)', id='regionAuth[]', name='region[]', value='127', onclick="setRegion({'region_id':127, 'region_title': 'Кальмиусский (ближний) (ст. Ильичевский)'});") Кальмиусский (ближний) (ст. Ильичевский)
+                            a(href='javascript: void(0)', id='regionAuth[]', name='region[]', value='163', onclick="setRegion({'region_id':163, 'region_title': 'Левобережный, дальний Кальмиусский'});") Левобережный, дальний Кальмиусский
+            form#regForm.reg-form(action='#', method='POST', data-form='reg-form')
+                .form-group
+                    input.form-control(type='text', name='name', placeholder='Имя')
+                .form-group
+                    input.form-control(type='email', name='email', placeholder='E-mail')
+                .form-group.form-group--wide
+                    input.form-control(type='text', name='address', placeholder='Адрес')
+                button.form-btn(type='submit', name='subscribe') Сохранить

@@ -5,6 +5,7 @@
   text-transform: uppercase
 
 .top-line__tel a
+  position: relative
   display: inline-block
   margin-left: 10px
   font-size: 18px
@@ -15,10 +16,17 @@
   vertical-align: middle
   color: #FFFFFF
 
+.top-line__tel a:hover
+  border-color: transparent
+
 .top-line__cabinet a
   color: #fff
 
 .top-line__tel a span
+  position: absolute
+  right: -20px
+  top: 50%
+  transform: translate(-50%)
   border-bottom: none
   border-left: 5px solid transparent !important
   border-right: 5px solid transparent !important
