@@ -962,4 +962,168 @@ body.active
     width: 50%;
 }
 
+.right-col .filter-holder
+{
+    position: relative;
+}
+
+.right-col .filter-holder input[type='text']
+{
+    width: calc(100% - 42px);
+    margin: 0;
+
+    border: 1px solid #e5e3e3;
+    border-radius: 0;
+    outline: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+
+.right-col .filter-holder .btn
+{
+    position: absolute;
+    top: 0;
+    right: 10px;
+
+    width: 30px;
+    padding: 0;
+
+    border: none; 
+    background: url('../images/loupe.png') no-repeat center center;
+}
+
+.big-title .big-title__filter
+{
+    font-size: 12px;
+    line-height: 24px;
+
+    display: inline-block;
+    float: right;
+
+    margin: 8px 2px 0 2px;
+    padding: 5px 20px;
+
+    text-decoration: none; 
+
+    opacity: .5;
+    color: #000;
+}
+
+.big-title
+{
+    padding-bottom: 0;
+}
+
+.big-title .big-title__filter.active
+{
+    opacity: 1; 
+    border-radius: 5px;
+    background: #f4f4f4;
+}
+
+.catalog-inner.catalog-light
+{
+    margin: -1px 0 0 0;
+    padding-left: 35px;
+
+    border: none;
+    border-top: 1px solid #d1d1d1;
+    border-bottom: 1px solid #d1d1d1;
+    border-radius: 0;
+}
+
+.catalog-inner.catalog-light .img
+{
+    float: left;
+}
+
+.catalog-inner.catalog-light .data
+{
+    float: right; 
+
+    width: 580px;
+    padding: 0;
+}
+
+.breadcrumbs
+{
+    margin: 0; 
+    padding: 0;
+}
+
+.breadcrumbs li
+{
+    font-size: 12px;
+    line-height: 24px; 
+
+    display: inline-block;
+}
+
+.catalog-inner.catalog-light .data table
+{
+    padding-top: 10px;
+}
+
+.catalog-inner.catalog-light .data table tr th
+{
+    font-weight: normal;
+
+    vertical-align: top;
+}
+
+.catalog-inner.catalog-light .data table td,
+.catalog-inner.catalog-light .data table th
+{
+    padding-bottom: 10px;
+}
+
+.catalog-inner.catalog-light .data table .liked
+{
+    padding-left: 0;
+}
+
+.catalog-inner.catalog-light .data table .liked .like
+{
+    font-size: 11px;
+    line-height: 24px;
+
+    display: inline-block;
+
+    height: 24px;
+    margin-left: 2px;
+    padding-left: 25px;
+
+    text-decoration: none;
+
+    color: #7db83f;
+    background: url('../images/like.png') no-repeat top left;
+}
+
+.catalog-inner.catalog-light .data table .liked .unlike
+{
+    font-size: 11px;
+    line-height: 24px;
+
+    display: inline-block;
+
+    height: 24px;
+    margin-right: 2px;
+    padding-right: 25px;
+
+    text-decoration: none;
+
+    color: #b93f3a;
+    background: url('../images/unlike.png') no-repeat bottom right;
+}
+
+.catalog-inner.catalog-light .data .recall
+{
+    float: right;
+}
+
+.catalog-inner.catalog-light .data .note
+{
+    padding: 20px 0 0 0;
+}
+
 /*# sourceMappingURL=globalNew.css.map */
