@@ -486,12 +486,12 @@
     <div class="page">
       <div class="cover">
         <div id="authCabinet" class="cabinet__autorize-wrap">
-          <div class="wrapper"><a href="#" rel="noffolow" id="cabinetAutorizeClose" class="cabinet__autorize-close">Свернуть<span class="arr"></span></a>
+          <div class="wrapper"><a href="#" rel="noffolow" class="cabinet__autorize-close">Свернуть<span class="arr"></span></a>
             <div class="cabinet__autorize-ttl">Настройки</div>
             <div class="form-wrap">
               <div id="selectorAuth" class="selector">
                 <div class="select-blocks">
-                  <div class="title"><a href="javascript: void(0)" onclick="$('#cityAuth').slideToggle('normal');                    $(this).toggleClass('act');                    return false;"><span>Мариуполь</span><span class="arr"></span></a></div>
+                  <div class="title"><a href="javascript: void(0)" onclick="$('#cityAuth').slideToggle('normal');                        $(this).toggleClass('act');                        return false;"><span>Мариуполь</span><span class="arr"></span></a></div>
                   <div id="cityAuth" style="display: none;" class="list">
                     <noindex>
                       <form class="city-all"><img src="http://mariupol.emdoma.com.ua/img/popupArr-gray.png" alt="">
@@ -501,7 +501,7 @@
                   </div>
                 </div>
                 <div class="select-blocks">
-                  <div class="title"><a id="region_new" href="javascript: void(0)" onclick="$('#regionAuth').slideToggle('normal');                    $(this).toggleClass('act');                    return false;"><span id="set_region">Центральный (ст. Жовтневый)</span><span class="arr"></span></a></div>
+                  <div class="title"><a id="region_new" href="javascript: void(0)" onclick="$('#regionAuth').slideToggle('normal');                        $(this).toggleClass('act');                        return false;"><span id="set_region">Центральный (ст. Жовтневый)</span><span class="arr"></span></a></div>
                   <div id="regionAuth" style="display: none;" class="list">
                     <form class="region-all"><img src="http://mariupol.emdoma.com.ua/img/popupArr-gray.png" alt=""><a href="javascript: void(0)" id="regionAuth[]" name="region[]" value="121" onclick="setRegion({'region_id':121, 'region_title': 'Центральный (ст. Жовтневый)'});">Центральный (ст. Жовтневый)</a><a href="javascript: void(0)" id="regionAuth[]" name="region[]" value="122" onclick="setRegion({'region_id':122, 'region_title': '17, 20, 23 мкр Центрального'});">17, 20, 23 мкр Центрального</a><a href="javascript: void(0)" id="regionAuth[]" name="region[]" value="123" onclick="setRegion({'region_id':123, 'region_title': 'Приморский'});">Приморский</a><a href="javascript: void(0)" id="regionAuth[]" name="region[]" value="126" onclick="setRegion({'region_id':126, 'region_title': 'Черемушки, поселок Моряков'});">Черемушки, поселок Моряков</a><a href="javascript: void(0)" id="regionAuth[]" name="region[]" value="127" onclick="setRegion({'region_id':127, 'region_title': 'Кальмиусский (ближний) (ст. Ильичевский)'});">Кальмиусский (ближний) (ст. Ильичевский)</a><a href="javascript: void(0)" id="regionAuth[]" name="region[]" value="163" onclick="setRegion({'region_id':163, 'region_title': 'Левобережный, дальний Кальмиусский'});">Левобережный, дальний Кальмиусский</a></form>
                   </div>
@@ -520,6 +520,89 @@
                 <button type="submit" name="subscribe" class="form-btn">Сохранить</button>
               </form>
             </div>
+          </div>
+        </div>
+        <div id="authHistory" class="cabinet__autorize-wrap">
+          <div class="wrapper"><a href="#" rel="noffolow" class="cabinet__autorize-close">Свернуть<span class="arr"></span></a>
+            <div class="cabinet__autorize-ttl">История заказов</div>
+            <table class="menu-tb">
+              <tr>
+                <td>Наименование</td>
+                <td>Количество</td>
+                <td>Цена за штуку</td>
+                <td>Общая цена</td>
+              </tr>
+              <tr>
+                <th>Итальянская пицца</th>
+              </tr>
+              <tr class="menu-tb__item">
+                <td>Мама Мия 45см</td>
+                <td>1 шт</td>
+                <td>170 грн</td>
+                <td>140 грн</td>
+              </tr>
+              <tr>
+                <th>Шаурма</th>
+              </tr>
+              <tr class="menu-tb__item">
+                <td>Роял с сыром</td>
+                <td>2 шт</td>
+                <td>45 грн</td>
+                <td>90 грн</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>Цена:</td>
+                <td>260 грн</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>Доставка:</td>
+                <td>35 грн</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>Итого:</td>
+                <td>295 грн</td>
+              </tr>
+            </table>
+            <table class="info-tb">
+              <tr>
+                <th>Дата заказа:</th>
+                <td>25,06,2016</td>
+              </tr>
+              <tr>
+                <th>Город:</th>
+                <td>Мариуполь</td>
+              </tr>
+              <tr>
+                <th>Район:</th>
+                <td>Левобережный</td>
+              </tr>
+              <tr>
+                <th>Заведение:</th>
+                <td>Мама Мия</td>
+              </tr>
+              <tr>
+                <th>Имя:</th>
+                <td>Сергей</td>
+              </tr>
+              <tr>
+                <th>Телефон:</th>
+                <td>097 258 65 21</td>
+              </tr>
+              <tr>
+                <th>Адрес:</th>
+                <td>пр-т. Нахимова, 35, 132</td>
+              </tr>
+              <tr>
+                <th>Способ оплаты:</th>
+                <td>Наличные</td>
+              </tr>
+            </table>
           </div>
         </div>
         <div class="wrapper top-ill">
@@ -905,8 +988,13 @@
       $('#authToggle').on('click', function () {
           $('#authCabinet').slideDown(500);
       });
-      $('#cabinetAutorizeClose').on('click', function () {
-          $('#authCabinet').slideUp(500);
+      $('.cabinet__autorize-close').on('click', function () {
+          $(this).closest('.cabinet__autorize-wrap').slideUp(500);
+      });
+      $('.payments-toggle').on('click', function (e) {
+          $(this).closest('.list').slideUp(500);
+          $('#authHistory').slideDown(500);
+          return false;
       });
     </script>
   </body>

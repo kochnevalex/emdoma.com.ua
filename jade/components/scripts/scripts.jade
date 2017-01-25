@@ -104,9 +104,16 @@ script.
     $('#authToggle').on('click', function () {
         $('#authCabinet').slideDown(500);
     });
-    $('#cabinetAutorizeClose').on('click', function () {
-        $('#authCabinet').slideUp(500);
+    $('.cabinet__autorize-close').on('click', function () {
+        $(this).closest('.cabinet__autorize-wrap').slideUp(500);
     });
+    $('.payments-toggle').on('click', function (e) {
+        $(this).closest('.list').slideUp(500);
+        $('#authHistory').slideDown(500);
+        return false;
+    });
+
+
 
 
 
