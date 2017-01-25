@@ -1208,7 +1208,7 @@ input[type="text"]:focus
 }
 .basket_mini_close
 {
-	background: url("../images/x-gray.png") no-repeat scroll 0 0 rgba(0,0,0,0);
+	background: url("../images/x-gray.png") no-repeat scroll center center rgba(0,0,0,0);
 	display: block;
 	height: 17px;
 	overflow: hidden;

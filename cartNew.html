@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Корзина - EmDoma - служба доставки еды</title>
+    <meta name="title" content="Корзина - EmDoma - служба доставки еды">
+    <meta name="keywords" content="доставка пиццы Мариуполь, доставка пиццы в Мариуполе, доставка суши Мариуполь, доставка суши в Мариуполе, доставка еды Мариуполь, доставка обедов, емдома, emdoma">
+    <meta name="description" content="ЕмДома: Доставка еды из ресторанов, пиццерий, фастфудов и суши-баров в Мариуполе, Каменец-Подольском, Кривом Роге, Черновцах ">
+    <meta name="google-site-verification" content="XLO8BbO1cwSqWvIgDZ2GGnZVCOtem1BoLZlEIH5Z6xg">
+    <!--if lt IE 9script(type='text/javascript', src='http://html5shiv.googlecode.com/svn/trunk/html5.js')
+    -->
+    <!--if lte IE 7link(rel='stylesheet', href='http://mariupol.emdoma.com.ua/style/style_ie.css', type='text/css', media='screen, projection')
+    -->
+    <link href="./css/bootstrap.min.css" media="screen, print" rel="stylesheet" type="text/css">
+    <link href="./css/global.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href="./css/skin.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href="./css/jquery.countdown.css" media="screen, print" rel="stylesheet" type="text/css">
+    <link href="./css/main.css?b" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href="./css/jquery.jscrollpane.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href="./css/globalNew.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="http://mariupol.emdoma.com.ua/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="http://mariupol.emdoma.com.ua/js/jquery.mc.cart.js"></script>
+    <script type="text/javascript" src="http://mariupol.emdoma.com.ua/js/slides.jquery.js"></script>
+    <script type="text/javascript" src="http://mariupol.emdoma.com.ua/js/start_slides.jquery.js"></script>
+    <script type="text/javascript" src="http://mariupol.emdoma.com.ua/js/jquery.jcarousel.js"></script>
+    <script type="text/javascript" src="http://mariupol.emdoma.com.ua/js/start_jcarousel.js"></script>
+    <script type="text/javascript" src="http://mariupol.emdoma.com.ua/js/start_nth.js"></script>
+    <script type="text/javascript" src="http://mariupol.emdoma.com.ua/js/carouFredSel/jquery.carouFredSel-6.2.1.js"></script>
+    <script type="text/javascript" src="http://mariupol.emdoma.com.ua/js/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="http://mariupol.emdoma.com.ua/js/jquery.jscrollpane.js"></script>
+    <script type="text/javascript" src="http://mariupol.emdoma.com.ua/js/jquery.session.js"></script>
+    <script type="text/javascript" src="http://mariupol.emdoma.com.ua/js/countdown/jquery.countdown.js"></script>
+    <!-- Работа с корзиной begin -------------------------------------------------->
+    <script type="text/javascript">
+      $(function () {
+          $.McCart.init({
+              addProductUrl: 'http://mariupol.emdoma.com.ua/cart/add',
+              removeProductUrl: 'http://mariupol.emdoma.com.ua/cart/remove'
+          });
+          $('.prodScroll').jScrollPane();
+      });
+    </script>
+    <!-- Работа с корзиной end ---------------------------------------------------->
+    <script type="text/javascript">
+      function setCity(city_id) {
+          /* params = {'city_id': city_id};
+           //console.log(params);
+           $.getJSON('/default/currency-ajax/set-city', params,
+           function(response) {
+           window.location.reload();
+           });*/
+      }
+    </script>
+    <script>
+      $(document).ready(function () {
+          $('.bg_white').on('click', '.add-link', function () {
+              $(this).next('div.dobav').slideToggle('slow');
+              return false;
+          });
+          $('.bg_white').on('click', '.adding-add', function (e) {
+              e.stopPropagation();
+          });
+      });
+    </script>
+    <script type="text/javascript">
+      function setRegion(region_id) {
+          //        console.log();
+          $('#set_region').html(region_id.region_title);
+          $('#set_region2').html('Район доставки: ' + region_id.region_title);
+          $('#region').fadeOut();
+          $('#region-cart, #region_footer').fadeOut();
+          //        $('.save_but').fadeIn();
+          params = {'region_id': region_id, 'region_title': 'region_title'};
+          //console.log(params);
+          $.getJSON('/default/currency-ajax/set-region', params,
+                  function (response) {
+                      $('#bottom .popup-info').text("Стоимость доставки рассчитана, спасибо");
+                      setTimeout(function () {
+                          window.location.reload()
+                      }, 1000);
+                  });
+      }
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+          $('.search-input').focus(function () {
+              if (this.value == "Поиск по заведениям и блюдам")
+                  this.value = '';
+          })
+          /*
+           // ищем чему равен рейтинг
+           var currentstart = $('.row').find('.current').index() + 1;
+           // устанавливаем нужное количество звезд
+           for (i = currentstart; i <= 5; i++) {
+           $('.row img').eq(i).attr({src: "http://mariupol.emdoma.com.ua/images/star_0.png"});
+           }
+           $('.row img').mouseenter(function() {
+           $('.row img').attr({src: "http://mariupol.emdoma.com.ua/images/star_0.png"});
+           for (i = 0; i <= $(this).index(); i++) {
+           $('.row img').eq(i).attr({src: "http://mariupol.emdoma.com.ua/images/star_1.png"});
+           }
+           }).mouseleave(function() {
+           var currentIndex
+           if ($('.row').find('.current')) {
+           currentIndex = $('.row').find('.current').index() + 1;
+           }
+           else {
+           currentIndex = 0;
+           }
+           //            alert(currentIndex);
+           $('.row img').attr({src: "http://mariupol.emdoma.com.ua/images/star_0.png"});
+           for (i = 0; i < currentIndex; i++) {
+           $('.row img').eq(i).attr({src: "http://mariupol.emdoma.com.ua/images/star_1.png"});
+           }
+           });
+           $('.row img').click(function() {
+           for (i = 0; i <= $(this).index(); i++) {
+           $('.row img').eq(i).attr({src: "http://mariupol.emdoma.com.ua/images/star_1.png"});
+           }
+           $('.row img').removeClass('current');
+           $(this).addClass('current');
+           });
+           //Второй рейтинг
+           var currentstart = $('.row3').find('.current').index() + 1;
+           // устанавливаем нужное количество звезд
+           for (i = currentstart; i <= 5; i++) {
+           $('.row3 img').eq(i).attr({src: "http://mariupol.emdoma.com.ua/images/star_0.png"});
+           }
+           $('.row3 img').mouseenter(function() {
+           $('.row3 img').attr({src: "http://mariupol.emdoma.com.ua/images/star_0.png"});
+           for (i = 0; i <= $(this).index(); i++) {
+           $('.row3 img').eq(i).attr({src: "http://mariupol.emdoma.com.ua/images/star_1.png"});
+           }
+           }).mouseleave(function() {
+           var currentIndex
+           if ($('.row3').find('.current')) {
+           currentIndex = $('.row3').find('.current').index() + 1;
+           }
+           else {
+           currentIndex = 0;
+           }
+           //            alert(currentIndex);
+           $('.row3 img').attr({src: "http://mariupol.emdoma.com.ua/images/star_0.png"});
+           for (i = 0; i < currentIndex; i++) {
+           $('.row3 img').eq(i).attr({src: "http://mariupol.emdoma.com.ua/images/star_1.png"});
+           }
+           });
+           $('.row3 img').click(function() {
+           for (i = 0; i <= $(this).index(); i++) {
+           $('.row3 img').eq(i).attr({src: "http://mariupol.emdoma.com.ua/images/star_1.png"});
+           }
+           $('.row3 img').removeClass('current');
+           $(this).addClass('current');
+           });
+           //Второй рейтинг
+           jQuery(".row img").click(function() {
+           obj = this;
+           str_id = jQuery(this).attr('class');
+           arr = str_id.split('_');
+           id = arr[1];
+           vote = arr[2];
+           //type = arr[3];
+           values = {id: id, vote: vote};
+           console.log(values);
+           $.getJSON('/default/votes-ajax/set-vote', values,
+           function(response) {
+           if (response.mark == 0)
+           return;
+           }
+           );
+           });
+           jQuery(".row3 img").click(function() {
+           obj = this;
+           str_id = jQuery(this).attr('class');
+           arr = str_id.split('_');
+           id = arr[1];
+           vote2 = arr[2];
+           //type = arr[3];
+           values = {id: id, vote2: vote2};
+           console.log(values);
+           $.getJSON('/default/votes-ajax/set-vote', values,
+           function(response) {
+           if (response.mark == 0)
+           return;
+           }
+           );
+           });
+           //Звёзды голосования
+           //        jQuery(".row img").click(function() {
+           //
+           //            obj = this;
+           //            str_id = jQuery(this).attr('class');
+           //            arr= str_id.split('_');
+           //            id = arr[1];
+           //            mark = arr[2];
+           //            type = arr[3];
+           //            values = {id:id,mark:mark,type:type};
+           //            console.log(values);
+           //
+           ////                    $(".vote.hidden.idprod" + id).fadeOut(200, function(){
+           ////                            $(".show_text_vote" + id).fadeIn(1000).delay(2000).fadeOut(2000, function() {
+           ////                                $(".vote.hidden.idprod" + id).fadeIn(500);
+           ////                                $(".show_text_vote" + id).css('visibility','hidden');
+           ////                            });
+           ////                        });
+           //
+           //            $.getJSON('/default/votes-ajax/set-vote', values,
+           //            function(response){
+           //
+           //                if(response.mark==0)return;
+           //                global_var = response.mark;
+           //                obj =jQuery(".vote_"+ id + "_" +response.mark+ "_" +response.type+ "_");
+           //                jQuery(obj).hide();
+           //
+           //                var ee = "";
+           //                for (var i = 0; i < response.mark; i++)
+           //                    {
+           //                        ee += "<img src='http://mariupol.emdoma.com.ua/images/star_1.png'/>";
+           //                    }
+           //                for (var i = i; i < 5; i++)
+           //                    {
+           //                        ee += "<img src='http://mariupol.emdoma.com.ua/images/star_0.png'/>";
+           //                    }
+           //
+           //                ee += "<div class='clear'></div><div style=' margin-top: 0px; color: red;'>Ваш голос учтен</div>";
+           //
+           //                jQuery(obj).parent('.row').html(ee);
+           //
+           //                //
+           ////                jQuery(obj).parent().html("<div style='color: red; padding-top: 6px;'>Ваш голос учтен</div>");
+           //
+           //            }
+           //        );
+           //            //jQuery(".vote.hidden").
+           //        });
+           //
+           //
+           //        //Воторой джейсон
+           //        //Звёзды голосования
+           //
+           //        jQuery(".row3 img").click(function() {
+           //
+           //            obj = this;
+           //            str_id = jQuery(this).attr('class');
+           //            arr= str_id.split('_');
+           //            id = arr[1];
+           //            mark = arr[2];
+           //            type = arr[3];
+           //            values = {id:id,mark:mark,type:type};
+           //            console.log(values);
+           //
+           ////                    $(".vote.hidden.idprod" + id).fadeOut(200, function(){
+           ////                            $(".show_text_vote" + id).fadeIn(1000).delay(2000).fadeOut(2000, function() {
+           ////                                $(".vote.hidden.idprod" + id).fadeIn(500);
+           ////                                $(".show_text_vote" + id).css('visibility','hidden');
+           ////                            });
+           ////                        });
+           //
+           //            $.getJSON('/default/votes-ajax/set-vote', values,
+           //            function(response){
+           //
+           //                if(response.mark==0)return;
+           //                global_var = response.mark;
+           //                obj =jQuery(".vote_"+ id + "_" +response.mark+"_"+response.type+"_");
+           //
+           //                jQuery(obj).hide();
+           //
+           //                var ee = "";
+           //                for (var i = 0; i < response.mark; i++)
+           //                    {
+           //                        ee += "<img src='http://mariupol.emdoma.com.ua/images/star_1.png'/>";
+           //                    }
+           //                for (var i = i; i < 5; i++)
+           //                    {
+           //                        ee += "<img src='http://mariupol.emdoma.com.ua/images/star_0.png'/>";
+           //                    }
+           //
+           //                ee += "<div class='clear'></div><div style=' margin-top: 0px; color: red;'>Ваш голос учтен</div>";
+           //
+           //                jQuery(obj).parent('.row3').html(ee);
+           //
+           //                //
+           ////                jQuery(obj).parent().html("<div style='color: red; padding-top: 6px;'>Ваш голос учтен</div>");
+           //
+           //            }
+           //        );
+           //            //jQuery(".vote.hidden").
+           //        });
+           //        //Воторой джейсон
+           */
+      });
+    </script>
+    <script type="text/javascript">
+      function setDirectionOnPage(val) {
+          params = {'count': val};
+          console.log(params);
+          $.getJSON('/default/currency-ajax/set-direction-on-page', params,
+                  function (response) {
+                      window.location.reload();
+                  });
+      }
+      //
+      function centuredHeight(elem, wrapper) {
+          marginTop = (wrapper.outerHeight() - elem.outerHeight()) / 2;
+          marginLeft = (wrapper.outerWidth() - elem.outerWidth()) / 2;
+          margin = {
+              'marginTop': marginTop,
+              'marginLeft': marginLeft
+          }
+          return margin;
+      }
+    </script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-38319833-1']);
+      _gaq.push(['_trackPageview']);
+      (function () {
+          var ga = document.createElement('script');
+          ga.type = 'text/javascript';
+          ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <script>
+      $(function () {
+          /***********************/
+          $('.dsq-widget-user').wrap('<span class="comment-user"></span>');
+          $('.dsq-widget-item').each(function () {
+              var saveLink = $(this).find('.dsq-widget-meta a:first-child');
+              $(this).find('.dsq-widget-meta').empty();
+              $(this).children('.dsq-widget-meta').append('<span>Написал новый отзыв о заведении: </span>').append(saveLink);
+              var comment_href = $(this).find('.dsq-widget-meta a').attr('href') + '#con_tab3';
+              $(this).find('.dsq-widget-meta a').attr('href', comment_href);
+              var comment = $(this).children('.comment-user');
+              $(this).children('.dsq-widget-meta').appendTo(comment);
+          });
+      })
+    </script>
+    <script>
+      $(function () {
+          $('html').click(function () {
+              $('[class~="cart-popup"]').slideUp(500);
+              $('.list').slideUp(500);
+              $('.select, .select-blocks .title a').removeClass('act');
+              $('[class~="dobav"]').slideUp(500);
+          })
+          $('cart-popup, .dobav, .adding-add, .add_btn, .cart-wrapper, .select, .list, .select-blocks, .btn, #submit').click(function (e) {
+              e.stopPropagation();
+          })
+      })
+    </script>
+    <script type="text/javascript">
+      $(function () {
+          cartHeight();
+          $('.prodScroll').jScrollPane();
+      })
+      function cartHeight() {
+          //        var countProd = $('.prodScroll .cart-popup-prod').length;
+          //        if (countProd < 5) {
+          //            var heights = 0;
+          //            var counters = 0;
+          //            for (var i = 0; i < 100; i++) {
+          //                if (jQuery('.box_' + (i + 1)).height() != null) {
+          //                    counters++;
+          //                    heights += jQuery('.box_' + (i + 1)).height() + 10; //определяем высоты всех элементов + 20 px паддинг который не считается
+          //                    if (counters > 3) {
+          //                        break
+          //                    }
+          //                }
+          //            }
+          //            $('.prodScroll').css('height', heights);
+          //        } else {
+          //            var heights = 0;
+          //            var counters = 0;
+          //            for (var i = 0; i < 100; i++) {
+          //                if (jQuery('.box_' + (i + 1)).height() != null) {
+          //                    counters++;
+          //                    heights += jQuery('.box_' + (i + 1)).height() + 10; //определяем высоты всех элементов + 20 px паддинг который не считается
+          //                }
+          //                if (counters > 3) {
+          //                    break
+          //                }
+          //            }
+          $('.prodScroll').css('height', '325');
+          //        }
+      }
+    </script>
+    <script>
+      $(function () {
+          var timePopupExist;
+          $('.st3-button-plus, .adding-add').on('click', function () {
+              clearInterval(timePopupExist);
+              $('.addToCartPopup').fadeIn();
+              timePopupExist = setTimeout(function () {
+                  $('.addToCartPopup').fadeOut();
+              }, 1000)
+          })
+      })
+      //<div class='addToCartPopup'>
+      //    <img src='' alt=''/>
+      //    <div class='inner'>
+      //        Добавлено в корзину
+      //    </div>
+      //</div>
+    </script>
+    <script>
+      $(function () {
+          // по клику на кнопку товар "перемещается"(буквально) в корзину
+          //        $("[class*='addToCart']").on("click",function(){
+          //            var _this = $(this),
+          //                $img = _this.parents('tr').find('.PhotoTitle'),
+          //                imgId = $img.attr('id'),
+          //                //Клон изображения, его будем перемещать
+          //                $imgClone = $img.clone(true),
+          //                imgPos,
+          //                cartPos;
+          //
+          //
+          //
+          //var pos = imgId.getClientRects();
+          //            console.log(imgId);
+          /*
+           imgPos = $img.getBoundingClientRect();
+           console.log(imgPos.top, imgPos.left);
+           $imgClone.css({
+           'position'  :'absolute',
+           'top'       : imgPos.top,
+           'left'      : imgPos.left,
+           'opacity'   : 0.5
+           })
+           $imgClone.insertAfter($img);
+           cartPos = $('.cart-wrapper').getBoundingClientRect();
+           console.log(cartPos.top, cartPos.left);
+           $imgClone.animate(function(){
+           $imgClone.position(cartPos.top, cartPos.left);
+           })
+           */
+          //        })
+      })
+      function showRect(elem) {
+          var r = elem.getBoundingClientRect()
+          alert("Top/Left: " + r.top + " / " + r.left)
+          alert("Right/Bottom: " + r.right + " / " + r.bottom)
+      }
+      $(function () {
+          //        $('.bg_white').on('click', '.toggle-product-prices', function (e) {
+          //                        e.stopPropagation();
+          //
+          //            var idProd = $(this).data('id');
+          //            $('.st3-menu-info').removeClass('moreBuy_top');
+          //            $('.menu_info_top_' + idProd).first().addClass('moreBuy_top');
+          //            $('.toggle-product-prices').show();
+          //            $('.moreBuy').hide();
+          //            $(this).hide();
+          //            $('.moreBuy_' + idProd).toggle();
+          //        });
+          $('.bg_white').on('click', '.moreBuy, .st3-menu-info, .toggle-product-prices', function (e) {
+              e.stopPropagation();
+              if ($(e.target).is('.toggle-product-prices')) {
+                  var idProd = $(this).data('id');
+                  $('.st3-menu-info').removeClass('moreBuy_top');
+                  $('.menu_info_top_' + idProd).first().addClass('moreBuy_top');
+                  $('.toggle-product-prices').show();
+                  $('.moreBuy').hide();
+                  $(this).hide();
+                  $('.moreBuy_' + idProd).toggle();
+              }
+          });
+          $('.show_cat').on('click', function (e) {
+              $('.moreBuy').hide();
+              $('.st3-menu-info').removeClass('moreBuy_top');
+              $('.toggle-product-prices').show();
+          });
+          $('.cart-payment-type').on('change', function () {
+              $('.cart-payment-type-notify').remove();
+              if ($(this).val() === 'card') {
+                  $(this).parent().after('<div class="cart-payment-type-notify""><span>Обслуживаем только карты Приватбанка. Взимается комиссия от всей суммы 5% (платежной системой). Мы приветствуем оплату наличными, по-возможности.</span></div>');
+              }
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="page">
+      <div class="cover">
+        <div id="authCabinet" class="cabinet__autorize-wrap">
+          <div class="wrapper"><a href="#" rel="noffolow" class="cabinet__autorize-close">Свернуть<span class="arr"></span></a>
+            <div class="cabinet__autorize-ttl">Настройки</div>
+            <div class="form-wrap">
+              <div id="selectorAuth" class="selector">
+                <div class="select-blocks">
+                  <div class="title"><a href="javascript: void(0)" onclick="$('#cityAuth').slideToggle('normal');                        $(this).toggleClass('act');                        return false;"><span>Мариуполь</span><span class="arr"></span></a></div>
+                  <div id="cityAuth" style="display: none;" class="list">
+                    <noindex>
+                      <form class="city-all"><img src="http://mariupol.emdoma.com.ua/img/popupArr-gray.png" alt="">
+                        <!-- Если город задан выводить Все--><a rel="nofollow" href="http://mariupol.emdoma.com.ua" id="cityAuth[]" name="city[]" value="88" onclick="setCity(88);">Мариуполь</a><a rel="nofollow" href="http://kp.emdoma.com.ua" id="cityAuth[]" name="city[]" value="98" onclick="setCity(98);">Каменец-Подольский</a><a rel="nofollow" href="http://krivoy-rog.emdoma.com.ua" id="cityAuth[]" name="city[]" value="101" onclick="setCity(101);">Кривой Рог</a><a rel="nofollow" href="http://chernivtsi.emdoma.com.ua" id="cityAuth[]" name="city[]" value="100" onclick="setCity(100);">Черновцы</a>
+                      </form>
+                    </noindex>
+                  </div>
+                </div>
+                <div class="select-blocks">
+                  <div class="title"><a id="region_new" href="javascript: void(0)" onclick="$('#regionAuth').slideToggle('normal');                        $(this).toggleClass('act');                        return false;"><span id="set_region">Центральный (ст. Жовтневый)</span><span class="arr"></span></a></div>
+                  <div id="regionAuth" style="display: none;" class="list">
+                    <form class="region-all"><img src="http://mariupol.emdoma.com.ua/img/popupArr-gray.png" alt=""><a href="javascript: void(0)" id="regionAuth[]" name="region[]" value="121" onclick="setRegion({'region_id':121, 'region_title': 'Центральный (ст. Жовтневый)'});">Центральный (ст. Жовтневый)</a><a href="javascript: void(0)" id="regionAuth[]" name="region[]" value="122" onclick="setRegion({'region_id':122, 'region_title': '17, 20, 23 мкр Центрального'});">17, 20, 23 мкр Центрального</a><a href="javascript: void(0)" id="regionAuth[]" name="region[]" value="123" onclick="setRegion({'region_id':123, 'region_title': 'Приморский'});">Приморский</a><a href="javascript: void(0)" id="regionAuth[]" name="region[]" value="126" onclick="setRegion({'region_id':126, 'region_title': 'Черемушки, поселок Моряков'});">Черемушки, поселок Моряков</a><a href="javascript: void(0)" id="regionAuth[]" name="region[]" value="127" onclick="setRegion({'region_id':127, 'region_title': 'Кальмиусский (ближний) (ст. Ильичевский)'});">Кальмиусский (ближний) (ст. Ильичевский)</a><a href="javascript: void(0)" id="regionAuth[]" name="region[]" value="163" onclick="setRegion({'region_id':163, 'region_title': 'Левобережный, дальний Кальмиусский'});">Левобережный, дальний Кальмиусский</a></form>
+                  </div>
+                </div>
+              </div>
+              <form id="regForm" action="#" method="POST" data-form="reg-form" class="reg-form">
+                <div class="form-group">
+                  <input type="text" name="name" placeholder="Имя" class="form-control">
+                </div>
+                <div class="form-group">
+                  <input type="email" name="email" placeholder="E-mail" class="form-control">
+                </div>
+                <div class="form-group form-group--wide">
+                  <input type="text" name="address" placeholder="Адрес" class="form-control">
+                </div>
+                <button type="submit" name="subscribe" class="form-btn">Сохранить</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div id="authHistory" class="cabinet__autorize-wrap">
+          <div class="wrapper"><a href="#" rel="noffolow" class="cabinet__autorize-close">Свернуть<span class="arr"></span></a>
+            <div class="cabinet__autorize-ttl">История заказов</div>
+            <table class="menu-tb">
+              <tr>
+                <td>Наименование</td>
+                <td>Количество</td>
+                <td>Цена за штуку</td>
+                <td>Общая цена</td>
+              </tr>
+              <tr>
+                <th>Итальянская пицца</th>
+              </tr>
+              <tr class="menu-tb__item">
+                <td>Мама Мия 45см</td>
+                <td>1 шт</td>
+                <td>170 грн</td>
+                <td>140 грн</td>
+              </tr>
+              <tr>
+                <th>Шаурма</th>
+              </tr>
+              <tr class="menu-tb__item">
+                <td>Роял с сыром</td>
+                <td>2 шт</td>
+                <td>45 грн</td>
+                <td>90 грн</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>Цена:</td>
+                <td>260 грн</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>Доставка:</td>
+                <td>35 грн</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>Итого:</td>
+                <td>295 грн</td>
+              </tr>
+            </table>
+            <table class="info-tb">
+              <tr>
+                <th>Дата заказа:</th>
+                <td>25,06,2016</td>
+              </tr>
+              <tr>
+                <th>Город:</th>
+                <td>Мариуполь</td>
+              </tr>
+              <tr>
+                <th>Район:</th>
+                <td>Левобережный</td>
+              </tr>
+              <tr>
+                <th>Заведение:</th>
+                <td>Мама Мия</td>
+              </tr>
+              <tr>
+                <th>Имя:</th>
+                <td>Сергей</td>
+              </tr>
+              <tr>
+                <th>Телефон:</th>
+                <td>097 258 65 21</td>
+              </tr>
+              <tr>
+                <th>Адрес:</th>
+                <td>пр-т. Нахимова, 35, 132</td>
+              </tr>
+              <tr>
+                <th>Способ оплаты:</th>
+                <td>Наличные</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="wrapper top-ill">
+          <div class="top-line">
+            <div class="wrapper">
+              <div class="top-line__tel">Сделать заказ<a href="tel:380974737566" rel="nofoloow">+38 (097) 47-37-566<span class="arr"></span></a></div>
+              <!--.text
+              a(href='#' rel='nofollow') Вход
+              a(href='#' rel='nofollow') Регистрация
+              -->
+              <!--    span.xfm_4020734440-->
+              <!--        span.xfmc1 Мы занимаемся доставкой из пиццерий, ресторанов, фастфудов и суши-баров. Выбирайте заведение и делайте заказ онлайн или по телефону: 097-47-37-586, 068-381-22-45, (0629) 49-37-64-->
+              <div class="cart-wrapper"><a href="javascript:void(0)" style="height: 56px;" class="button-cart"><span class="cart-count">Заказов нет</span></a>
+                <div style="" class="cart-popup">
+                  <div style="overflow: hidden; padding: 0px; height: 325px; width: 300px;" class="prodScroll">
+                    <div style="width: 300px; height: 325px;" class="jspContainer">
+                      <div style="padding: 0px; top: 0px; width: 300px;" class="jspPane">
+                        <div class="vid-header-cart">Салаты</div>
+                        <div class="cart-popup-prod del_7294_prices7977 box_1"><a href="javascript:void(0);" onclick="$('.del_7294_prices7977').remove(); $.McCart.removeProduct({'key':'7294_prices_7977', 'id':'7294'}, true);" class="top-close"></a><span style="color: black" class="title">Рандеву - 250 г</span>
+                          <p class="price">114 грн.</p>
+                          <div class="formbtns">
+                            <input type="text" value="5" class="noOfProd_7294_prices7977 inp product-count product-countid_7294_prices7977"><a href="javascript:void(0);" onclick="$.McCart.plusProduct({'key':'7294_prices_7977', 'id':'7294'});" class="up pop"></a><a href="javascript:void(0);" onclick="$.McCart.minusProduct({'key':'7294_prices_7977', 'id':'7294'});" class="down pop"></a>
+                          </div>
+                          <!-- /.formbtns-->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="font-size: 15px;" class="allSum"><span>Доставка</span><span><span style="padding-left: 0; text-align: right;" class="delivery">45 грн.</span></span></div>
+                  <div class="allSum"><span>Итого</span><span><span style="padding-left: 0; text-align: right;" class="cart-summ">615 грн</span></span></div><a href="http://mariupol.emdoma.com.ua/cart" class="button-buy">Оформить заказ</a>
+                </div>
+              </div>
+              <div class="top-line__cabinet"><span> Вы вошли как</span>
+                <div id="selectorCabinet" class="selector">
+                  <div class="select-blocks">
+                    <div class="title"><a href="javascript: void(0)" onclick="$('#cabinetSettings').slideToggle('normal'); $(this).toggleClass('act');                               return false;"><span>Сергей Иванович</span></a></div>
+                    <div id="cabinetSettings" style="display: none;" class="list">
+                      <noindex>
+                        <form class="city-all"><img src="http://mariupol.emdoma.com.ua/img/popupArr-gray.png" alt="">
+                          <!-- Если город задан выводить Все--><a rel="nofollow" href="http://mariupol.emdoma.com.ua" id="cabinetSettings[]" name="city[]" value="88" onclick="setCity(88);">Настройки</a><a rel="nofollow" href="#" class="payments-toggle">История заказов</a><a rel="nofollow" href="http://krivoy-rog.emdoma.com.ua" id="cabinetSettings[]" name="city[]" value="101" onclick="setCity(101);">Выйти</a>
+                        </form>
+                      </noindex>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="addToCartPopup"><img src="http://mariupol.emdoma.com.ua/img/popupArr-yellow.png" alt="">
+                <div class="inner">Добавлено в корзину</div>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper top-ill">
+            <div class="header"><a href="http://mariupol.emdoma.com.ua/" class="logo"><img title="Emdoma - доставка из пиццерий, ресторанов, фастфудов и суши-баров" src="http://mariupol.emdoma.com.ua/img/logo.png"></a>
+              <ul class="menu">
+                <noindex>
+                  <li><a rel="nofollow" href="http://mariupol.emdoma.com.ua/catalog">Заведения</a><span>52</span></li>
+                  <li><a rel="nofollow" href="http://mariupol.emdoma.com.ua/delivery">Доставка</a></li>
+                  <li><a rel="nofollow" href="http://mariupol.emdoma.com.ua/comments">Отзывы</a><span></span></li>
+                </noindex>
+              </ul>
+              <div class="social"><a href="http://www.facebook.com/emdoma"><img style="border-radius: 50px;" width="40" height="40" src="http://mariupol.emdoma.com.ua/upload/banners_articles/images/s_fb-ico1385724816.png"></a><a href="http://vk.com/pizza1"><img style="border-radius: 50px;" width="40" height="40" src="http://mariupol.emdoma.com.ua/upload/banners_articles/images/s_unnamed1389263545.png"></a></div>
+              <!-- Выбор городов городов-->
+              <!-- Выбор городов городов-->
+              <!-- Выбор городов городов-->
+              <div id="selector" class="selector">
+                <div class="select-blocks">
+                  <div class="title"><a href="javascript: void(0)" onclick="$('#city').slideToggle('normal');                                  $(this).toggleClass('act');                                  return false;"><span>Мариуполь</span><span class="arr"></span></a></div>
+                  <div id="city" class="list">
+                    <noindex>
+                      <!-- <img src="http://mariupol.emdoma.com.ua/img/popupArr-gray.png" alt=""/>-->
+                      <form class="city-all"><img src="http://mariupol.emdoma.com.ua/img/popupArr-gray.png" alt="">
+                        <!-- Если город задан выводить Все--><a rel="nofollow" href="http://mariupol.emdoma.com.ua" id="city[]" name="city[]" value="88" onclick="setCity(88);">Мариуполь</a><a rel="nofollow" href="http://kp.emdoma.com.ua" id="city[]" name="city[]" value="98" onclick="setCity(98);">Каменец-Подольский</a><a rel="nofollow" href="http://krivoy-rog.emdoma.com.ua" id="city[]" name="city[]" value="101" onclick="setCity(101);">Кривой Рог</a><a rel="nofollow" href="http://chernivtsi.emdoma.com.ua" id="city[]" name="city[]" value="100" onclick="setCity(100);">Черновцы</a>
+                      </form>
+                    </noindex>
+                  </div>
+                </div>
+                <div class="select-blocks">
+                  <div class="title"><a id="region_new" href="javascript: void(0)" onclick="$('#region').slideToggle('normal');                                  $(this).toggleClass('act');                                  return false;"><span id="set_region">Центральный (ст. Жовтневый)</span><span class="arr"></span></a></div>
+                  <div id="region" class="list">
+                    <form class="region-all"><img src="http://mariupol.emdoma.com.ua/img/popupArr-gray.png" alt=""><a href="javascript: void(0)" id="region[]" name="region[]" value="121" onclick="setRegion({'region_id':121, 'region_title': 'Центральный (ст. Жовтневый)'});">Центральный (ст. Жовтневый)</a><a href="javascript: void(0)" id="region[]" name="region[]" value="122" onclick="setRegion({'region_id':122, 'region_title': '17, 20, 23 мкр Центрального'});">17, 20, 23 мкр Центрального</a><a href="javascript: void(0)" id="region[]" name="region[]" value="123" onclick="setRegion({'region_id':123, 'region_title': 'Приморский'});">Приморский</a><a href="javascript: void(0)" id="region[]" name="region[]" value="126" onclick="setRegion({'region_id':126, 'region_title': 'Черемушки, поселок Моряков'});">Черемушки, поселок Моряков</a><a href="javascript: void(0)" id="region[]" name="region[]" value="127" onclick="setRegion({'region_id':127, 'region_title': 'Кальмиусский (ближний) (ст. Ильичевский)'});">Кальмиусский (ближний) (ст. Ильичевский)</a><a href="javascript: void(0)" id="region[]" name="region[]" value="163" onclick="setRegion({'region_id':163, 'region_title': 'Левобережный, дальний Кальмиусский'});">Левобережный, дальний Кальмиусский</a></form>
+                  </div>
+                </div>
+              </div>
+              <!-- Выбор городов городов-->
+              <!-- Выбор городов городов-->
+              <!-- Выбор городов городов-->
+              <!-- Выбор городов городов-->
+              <div class="select-language">
+                <div class="select-blocks">
+                  <div class="title"><a id="language_new" href="javascript: void(0)" onclick="$('#language').slideToggle('normal');                                  $(this).toggleClass('act');                                  return false;"><span id="set_language">RU</span><span class="arr"></span></a></div>
+                  <div id="language" style="border-radius: 10px; left: -29px;" class="list">
+                    <form class="language-all"><img style="" src="http://mariupol.emdoma.com.ua/img/popupArr-gray.png" alt=""><a value="ru" href="javascript:void(0)">Русский</a><a value="ua" href="http://mariupol.emdoma.com.ua/ua/cart">Українська</a></form>
+                  </div>
+                </div>
+              </div>
+              <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>-->
+              <script type="text/javascript">
+                $(function () {
+                    $(window).scroll(function () {
+                        if ($(this).scrollTop() != 0) {
+                            $('#stl_left').fadeIn();
+                        } else {
+                            $('#stl_left').fadeOut();
+                        }
+                    });
+                    $('#stl_left').click(function () {
+                        $('body,html').animate({scrollTop: 0}, 800);
+                    });
+                });
+              </script>
+              <div id="stl_left" style="display: none;" class="fixed stl_active">
+                <div id="stl_bg">
+                  <nobr id="stl_text">Наверх</nobr>
+                </div>
+              </div>
+              <!-- <div id="ToTop" >^ Наверх ^</div>-->
+            </div>
+            <style>
+              .cart_table td {
+                  height: 35px;
+              }
+              
+              #soglashenie_text-element {
+                  height: 100px !important;
+                  width: 400px !important;
+              }
+              
+              #soglashenie_text-label {
+                  display: none;
+              }
+              
+              #user_soglashenie-element .errors {
+                  display: block;
+                  float: right;
+                  padding-left: 0;
+                  padding-top: 3px;
+                  width: 200px;
+              }
+            </style>
+            <h1 id="h1">Оформление заказа</h1>
+            <div style="margin-bottom: 35px;" class="selector">
+              <div style="float: left;"><b>1.</b></div>
+              <div class="select-blocks">
+                <div class="title"><a id="cart-select" href="javascript: void(0)" onclick="$('#region-cart').slideToggle('normal');                                $(this).toggleClass('act');                                return false;"><span id="set_region2">Район доставки: Центральный (ст. Жовтневый)</span><span class="arr"></span></a></div>
+                <div id="region-cart" class="list">
+                  <form class="region-all"><a href="javascript: void(0)" id="region[]" name="region[]" value="121" onclick="setRegion({'region_id':121, 'region_title': 'Центральный (ст. Жовтневый)'});">Центральный (ст. Жовтневый)</a><a href="javascript: void(0)" id="region[]" name="region[]" value="122" onclick="setRegion({'region_id':122, 'region_title': '17, 20, 23 мкр Центрального'});">17, 20, 23 мкр Центрального</a><a href="javascript: void(0)" id="region[]" name="region[]" value="123" onclick="setRegion({'region_id':123, 'region_title': 'Приморский'});">Приморский</a><a href="javascript: void(0)" id="region[]" name="region[]" value="126" onclick="setRegion({'region_id':126, 'region_title': 'Черемушки, поселок Моряков'});">Черемушки, поселок Моряков</a><a href="javascript: void(0)" id="region[]" name="region[]" value="127" onclick="setRegion({'region_id':127, 'region_title': 'Кальмиусский (ближний) (ст. Ильичевский)'});">Кальмиусский (ближний) (ст. Ильичевский)</a><a href="javascript: void(0)" id="region[]" name="region[]" value="163" onclick="setRegion({'region_id':163, 'region_title': 'Левобережный, дальний Кальмиусский'});">Левобережный, дальний Кальмиусский</a></form>
+                </div>
+              </div><br>
+            </div>
+            <div style="clear:both;"></div>
+            <div style=" font-size: 15px; "><b>2.</b> Введите свои данные или <a href="#" rel="nofollow">Войдите</a></div>
+            <div class="cart-form-wrap">
+              <div class="post_form cart_form">
+                <form enctype="application/x-www-form-urlencoded" method="post" action="#h1">
+                  <dl class="zend_form">
+                    <dt id="cart-label"> </dt>
+                    <dd id="cart-element">
+                      <fieldset id="fieldset-cart">
+                        <dl>
+                          <dt id="user_fio-label">
+                            <label for="user_fio" class="required">Имя:</label>
+                          </dt>
+                          <dd id="user_fio-element">
+                            <input id="user_fio" type="text" name="user_fio" value="" size="40">
+                          </dd>
+                          <dt id="user_phone-label">
+                            <label for="user_phone" class="required">Телефон:</label>
+                          </dt>
+                          <dd id="user_phone-element">
+                            <input id="user_phone" type="text" name="user_phone" value="" size="40">
+                          </dd>
+                          <dt id="user_address-label">
+                            <label for="user_address" class="required">Адрес доставки:</label>
+                          </dt>
+                          <dd id="user_address-element">
+                            <textarea id="user_address" name="user_address" cols="40" rows="4"></textarea>
+                          </dd>
+                          <dt id="user_message-label">
+                            <label for="user_message" class="optional">Комментарий:</label>
+                          </dt>
+                          <dd id="user_message-element">
+                            <textarea id="user_message" name="user_message" cols="40" rows="4"></textarea>
+                          </dd>
+                          <dt id="payment_type-label">
+                            <label for="payment_type" class="optional">Способ оплаты:</label>
+                          </dt>
+                          <dd id="payment_type-element">
+                            <select id="payment_type" name="payment_type" class="cart-payment-type">
+                              <option value="cash" label="наличными" selected="selected">наличными</option>
+                              <option value="card" label="картой курьеру">картой курьеру</option>
+                            </select>
+                          </dd>
+                          <dt id="product_type-label">
+                            <label for="product_type" class="optional">Тип заказа</label>
+                          </dt>
+                          <dd id="product_type-element">
+                            <select id="product_type" name="payment_type" class="cart-payment-type">
+                              <option value="cash" label="доставка курьером" selected="selected">доставка курьером</option>
+                              <option value="card" label="службой такси">службой такси</option>
+                            </select>
+                          </dd>
+                          <dd id="user_soglashenie-element" class="input-check">
+                            <input type="hidden" name="user_soglashenie" value="0">
+                            <input id="user_soglashenie" type="checkbox" name="user_soglashenie" value="1" checked="checked">
+                          </dd>
+                          <dt id="user_soglashenie-label" class="label-check">
+                            <label for="user_soglashenie" class="optional">Cогласен с Пользовательским соглашением:</label>
+                          </dt>
+                          <dt id="soglashenie_text-label"> </dt>
+                          <dt id="soglashenie_text-element">
+                            <textarea id="soglashenie_text" name="soglashenie_text" cols="40" rows="8" style="width: 380px; height: 100px;" readonly="readonly">Прежде чем оформить заказ на нашем сайте, пожалуйста, ознакомьтесь с настоящим Соглашением. Если Вы не согласитесь с ним, тогда не сможете воспользоваться нашими услугами. Настоящее Соглашение регламентирует отношения между "Единой службой доставки emdoma.com.ua" (далее - Сайт) и физическим лицом (далее  Пользователь), воспользовавшимся услугами, указанными на сайте. Пользовательское Соглашение вступает в силу с момента выражения Пользователем согласия с его условиями путем регистрации, заказа на сайте, или звонком в службу доставки с заказом. Сайт это информационная система заказов, которая предлагает Пользователям возможность заказать продукты и товары определенных производителей с доставкой. Сайт не является производителем или продавцом товаров, представленных на сайте. Пользователь соглашается с тем, что все услуги предоставляются как есть и что администрация Сайта не несет ответственности и не гарантирует, что услуги службы будут соответствовать требованиям Пользователя; качество какого-либо продукта, услуги, актуальность информации и пр., полученного с использованием услуг Сайта, будут соответствовать ожиданиям Пользователя, т.к. весь процесс, от приготовления продукта до его реализации не зависит от Сайта. Пользователь, совершая заказ по сайту или по телефону, обязуется получить и оплатить заказ в оговоренном месте и в оговоренное время, согласно чеку от от поставщика, и гарантирует достоверность информации о заявке, месте и времени получения заказа. В случае изменения оговоренных места или времени, Пользователь соглашается оплатить дополнительные затраты. Сайт имеет право не принять заказ без указания причин. Заказы у лиц, находящихся в нетрезвом, неадекватном состоянии, у несовершеннолетних детей, без взрослых рядом, не принимаются. В случае возникновения претензий к поставленным товарам или услугам Пользователь обязуется предъявлять претензии непосредственно к производителю данной продукции. Сайт не несет ответственности за качество товаров, предоставляемых поставщиками. Все содержание Сайта охраняется авторским правом в соответствии с законодательством Украины об авторском праве и смежных правах. Пользователь не имеет права вносить изменения, публиковать, передавать третьим лицам, создавать производные продукты или иным образом использовать, частично или полностью, содержание Сайта. Логотипы, торговые марки принадлежат их владельцам, приведенные на сайте образцы только информируют вас о возможности заказать посредническую услугу доставки продукции данных торговых марок. Все возможные споры разрешаются путем переговоров, в случае полного разногласия - согласно нормам действующего украинского законодательства, при этом:1. Сайт не принимает участия в возможных спорах (в т.ч. и судебных) между поставщиками (ресторанами и другими партнерами) и Пользователями.2. Сайт не несет ответственности за соблюдение/несоблюдения поставщиками и другими службами своих обязательств перед Пользователем, а также за достоверность информации, предоставленной такими службами. Сайт является информационным связующим звеном между поставщиком и пользователем, информация о которых размещена на сайте http://emdoma.com.ua/. Совершая заказ в нашей службе по умолчанию означает, что Вы согласны с условиями данного Соглашения.</textarea>
+                          </dt>
+                          <input id="submit" type="submit" name="submit" value="Заказать" class="save_but">
+                        </dl>
+                      </fieldset>
+                    </dd>
+                  </dl>
+                </form>
+              </div>
+              <div class="cart_table">
+                <table class="cart">
+                  <tr>
+                    <td colspan="5" class="vid-cart cart_table--border"><b>Ваш заказ:</b></td>
+                  </tr>
+                  <tr>
+                    <td colspan="5"><b>Итальянская пицца:</b></td>
+                  </tr>
+                  <tr>
+                    <td class="img">Роял - 30 см</td>
+                    <td></td>
+                    <td width="65">
+                      <div class="formbtns">
+                        <input type="text" value="5" class="product-count noOfProd_7294_prices_7977 product-countid_7294_prices_7977"><a href="javascript:void(0);" onclick=" $.McCart.plusProduct({'key':'7294_prices_7977', 'id':'7294'});" class="up"></a><a href="javascript:void(0);" onclick="$ .McCart.minusProduct({'key':'7294_prices_7977', 'id':'7294'});" class="down"></a>
+                      </div>
+                    </td>
+                    <td width="70" class="price">75<span>грн  </span></td>
+                    <td width="30"><a href="javascript:void(0);" onclick="$. McCart.removeProduct({'key':'7294_prices_7977', 'id':'7294'}, true);" class="basket_mini_close"></a></td>
+                  </tr>
+                </table><span style="display: inline-block; margin-top: 10px; width: 240px"> Доставка составляет</span><span>45 грн.</span>
+                <div class="total_cart_summ"><span>Итого:</span><span class="cart-summ">615 грн</span></div>
+              </div>
+              <style>
+                .save_but {
+                    display: block;
+                }
+              </style>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="wrapper">
+        <div class="footer-blocks">
+          <div class="block">
+            <div class="logo-line"><a href="/"><img src="http://mariupol.emdoma.com.ua/img/footer-logo.png" alt=""></a><span>Единая служба доставки еды в Мариуполе<br>097-47-37-586, 068-381-22-45, (0629) 49-37-64</span></div>
+            <div class="text-notes">Доставка еды из ресторанов, пиццерий, фастфудов и суши-баров в Мариуполе. Заказать пиццу, суши, фастфуд на дом в Мариуполе теперь можно на нашем сайте - выбирайте заведение, откуда желаете заказать, смотрите меню, формируйте заказ, и звоните: 49-37-64, 097-47-37-586. Также можно сделать заказ "онлайн" с помощью кнокок "заказать" - и вам перезвонит наш оператор.</div>
+          </div>
+          <div class="block">
+            <div class="logo-line">
+              <ul>
+                <noindex>
+                  <li><a rel="nofollow" href="http://mariupol.emdoma.com.ua/news">Новости</a></li>
+                  <li><a rel="nofollow" href="http://mariupol.emdoma.com.ua/articles">Акции</a></li>
+                  <li><a rel="nofollow" href="http://mariupol.emdoma.com.ua/partners">Сотрудничество</a></li>
+                  <li><a rel="nofollow" href="http://mariupol.emdoma.com.ua/franchising">Франчайзинг</a></li>
+                  <li><a rel="nofollow" href="http://mariupol.emdoma.com.ua/about">О нас</a></li>
+                  <li><a rel="nofollow" href="http://mariupol.emdoma.com.ua/contacts">Контакты</a></li>
+                </noindex>
+              </ul>
+            </div>
+            <div class="text-notes">Хотите попробовать что-то новое? Наш ассортимент разнообразен, и каждый гурман найдет что-то по вкусу. Вы можете заказать доставка пиццы в Мариуполе на нашем сайте. Вам нужна пицца на дом Мариуполь, салаты, закуски, десерты и напитки? Мы осуществляем доставка пиццы Мариуполь и доставку суши Мариуполь. Хотите шашлык или другие изысканные блюда – позвоните и закажите. Также Вы можете заказать у нас доставку продуктов на дом в Мариуполе и доставка пиццы в Мариуполе. Звоните, будем рады работать для Вас!</div>
+          </div>
+        </div>
+        <footer>
+          <section style="text-align: left; margin-top: 15px; border: 2px solid #DBDBDB;      border-radius: 10px;      padding: 10px;">
+            <div>
+              <noindex><a rel="nofollow" href="http://mariupol.emdoma.com.ua/information">Пользовательское соглашение</a>            Запрещено копирование материалов с сайта. Нарушение авторских прав преследуется по закону.</noindex>
+            </div>
+          </section>
+          <!-- Не обслуживаем район-->
+          <!-- Не обслуживаем район-->
+          <!-- Не обслуживаем район-->
+          <!-- Не обслуживаем район-->
+          <div id="service" style="position:fixed; left: 0; bottom: 0; height: 210px; width: 100%; background: #ffb900; z-index: 1001; display: none;">
+            <div style="width: 940px; margin: 0 auto; position: relative; padding-top: 45px;"><a onclick="$('#service').slideToggle('slow');          $.session.set('showservice', '1');" href="javascript:void(0)" style="position: absolute; right: 0; top: 15px; color: #fff; text-decoration: none; font-size: 14px;"><img src="http://mariupol.emdoma.com.ua/img/cross.png"> Скрыть</a>
+              <div style="color: #fff; font-size: 19px; padding-bottom: 25px;" class="popup-info">Мы пока не обслуживаем Центральный (ст. Жовтневый). Вы можете оставить свои контактные данные (телефон, почту) и мы сообщим, когда начнем работать в этом районе</div>
+              <div id="selector2" class="selector">
+                <div class="select-blocks">
+                  <input id="service_name" name="name" type="text" placeholder="Имя">
+                </div>
+                <div style="min-width: 260px;" class="select-blocks">
+                  <input id="service_contacts" name="contacts" type="text" placeholder="Контактные данные" style="min-width: 260px;">
+                </div>
+              </div><a id="service-btn" href="#" style="float:left; background: linear-gradient(#fba700, #e59800);" class="save_but service">Отправить</a>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <!--script(src="./js/jquery/plugins/animations/animations.js")-->
+    <!--script(src="./js/jquery/plugins/validation/jquery.validate.min.js")-->
+    <!--script(src="./js/jquery/plugins/form/jquery.form.js")-->
+    <!--script(src="./js/jquery/plugins/select2/select2.full.js")-->
+    <!--script(src="./js/jquery/plugins/slick/slick.min.js")-->
+    <!--script(src="./js/jquery/plugins/rater/rater.min.js")-->
+    <!--script(src="./js/plugins/aos/aos.js")-->
+    <!--script(src="./js/jquery/plugins/textarea-autoresize/autosize.js")-->
+    
+    
+    <script>
+      $(function () {
+          $(".button-cart").click(function () {
+              $(".cart-popup").slideToggle(500);
+              cartHeight();
+              $('.prodScroll').jScrollPane();
+          });
+          $('.top-line a.button-cart').height($('.top-line').height());
+      });
+      
+    </script>
+    <script type="text/javascript">
+      $(function () {
+          $(window).scroll(function () {
+              if ($(this).scrollTop() != 0) {
+                  $('#stl_left').fadeIn();
+              } else {
+                  $('#stl_left').fadeOut();
+              }
+          });
+          $('#stl_left').click(function () {
+              $('body,html').animate({scrollTop: 0}, 800);
+          });
+      });
+      
+    </script>
+    <script type="text/javascript">
+      $(function () {
+          //        console.log('');
+          //        $('#service').slideToggle('slow');
+          //        console.log('');
+          $('#service-btn').click(function () {
+              if ($('#service_name').val() != "") {
+                  $('#service_name').css('border', "1px solid #e4e4e4");
+              } else {
+                  $('#service_name').css('border', "1px solid red");
+                  return false;
+              }
+              if ($('#service_contacts').val() != "") {
+                  $('#service_contacts').css('border', "1px solid #e4e4e4");
+              } else {
+                  $('#service_contacts').css('border', "1px solid red");
+                  return false;
+              }
+              $.getJSON("/cart/booking-call",
+                      {"name": $('#service_name').val(), "service": $('#service_contacts').val(), "region": '121'},
+                      function (response) {
+                          $('#service_contacts').val('');
+                          $('#service_name').val('');
+                          //                    $('.popupWrap').fadeOut(2500);
+                          //                    $('.contactThanks').fadeIn();
+                          //                    $('#contact-fio').val('');
+                          //                    $('#contact-email').val('');
+                          //                    $('#contact-text').val('');
+                          //                    $('#contact-phone').val('');
+                          //                    $('.contactThanks').fadeOut(2000);
+                          $("#selector2").hide();
+                          $("#service-btn").hide();
+                          $('#service .popup-info').text("Cпасибо, мы свяжемся с Вами");
+                          $.session.set('showservice', '1');
+                          setTimeout(function () {
+                              $('#service').slideToggle('slow');
+                          }, 1000);
+                          return false;
+                      });
+              return false;
+          });
+      });
+      
+      
+    </script>
+    <script>
+      $(window).ready(function () {
+          $('.tabs-nav a:first-child').addClass('act');
+          $('[id^=con_tab]:first-child').addClass('act');
+          $('[id^=con_tab]').fadeOut();
+          $('#con_' + $('[id^=tab].act').attr('id')).fadeIn();
+          $('[id^=tab]').click(function () {
+              var tab_id = $(this).attr('id');
+              tabClick(tab_id);
+          });
+      });
+      function tabClick(tab_id) {
+          if (tab_id != $('[id^=tab].act').attr('id')) {
+              $('[id^=tab], [id^=con_tab]').removeClass('act');
+              $('[id^=con_tab]').fadeOut();
+              $('#' + tab_id).addClass('act');
+              $('#con_' + tab_id).addClass('act');
+              $('#con_' + tab_id).fadeIn();
+          }
+      }
+      
+      
+    </script>
+    <script>
+      $('#authToggle').on('click', function () {
+          $('#authCabinet').slideDown(500);
+      });
+      $('.cabinet__autorize-close').on('click', function () {
+          $(this).closest('.cabinet__autorize-wrap').slideUp(500);
+      });
+      $('.payments-toggle').on('click', function (e) {
+          $(this).closest('.list').slideUp(500);
+          $('#authHistory').slideDown(500);
+          return false;
+      });
+    </script>
+  </body>
+</html>

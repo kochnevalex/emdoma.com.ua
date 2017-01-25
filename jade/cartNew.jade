@@ -1,0 +1,231 @@
+- var pageTitle = "Корзина - EmDoma - служба доставки еды";
+
+doctype html
+html(lang='ru')
+    include components/head/head
+
+    body
+        .page
+            .cover
+                include components/header/headerAutorize
+
+                .wrapper.top-ill
+                    include components/header/topLineAuth
+
+                    .wrapper.top-ill
+                        .header
+                            a.logo(href='http://mariupol.emdoma.com.ua/')
+                                img(title='Emdoma - доставка из пиццерий, ресторанов, фастфудов и суши-баров', src='http://mariupol.emdoma.com.ua/img/logo.png')
+                            ul.menu
+                                noindex
+                                    li
+                                        a(rel='nofollow', href='http://mariupol.emdoma.com.ua/catalog') Заведения
+                                        span 52
+                                    li
+                                        a(rel='nofollow', href='http://mariupol.emdoma.com.ua/delivery') Доставка
+                                    li
+                                        a(rel='nofollow', href='http://mariupol.emdoma.com.ua/comments') Отзывы
+                                        span
+                            .social
+                                a(href='http://www.facebook.com/emdoma')
+                                    img(style='border-radius: 50px;', width='40', height='40', src='http://mariupol.emdoma.com.ua/upload/banners_articles/images/s_fb-ico1385724816.png')
+                                a(href='http://vk.com/pizza1')
+                                    img(style='border-radius: 50px;', width='40', height='40', src='http://mariupol.emdoma.com.ua/upload/banners_articles/images/s_unnamed1389263545.png')
+                            // Выбор городов городов
+                            // Выбор городов городов
+                            // Выбор городов городов
+                            #selector.selector
+                                .select-blocks
+                                    .title
+                                        a(href='javascript: void(0)', onclick="$('#city').slideToggle('normal');\
+                                  $(this).toggleClass('act');\
+                                  return false;")
+                                            span
+                                                | Мариуполь
+                                            span.arr
+                                    #city.list
+                                        noindex
+                                            // <img src="http://mariupol.emdoma.com.ua/img/popupArr-gray.png" alt=""/>
+                                            form.city-all
+                                                img(src='http://mariupol.emdoma.com.ua/img/popupArr-gray.png', alt='')
+                                                // Если город задан выводить Все
+                                                a(rel='nofollow', href='http://mariupol.emdoma.com.ua', id='city[]', name='city[]', value='88', onclick='setCity(88);') Мариуполь
+                                                a(rel='nofollow', href='http://kp.emdoma.com.ua', id='city[]', name='city[]', value='98', onclick='setCity(98);') Каменец-Подольский
+                                                a(rel='nofollow', href='http://krivoy-rog.emdoma.com.ua', id='city[]', name='city[]', value='101', onclick='setCity(101);') Кривой Рог
+                                                a(rel='nofollow', href='http://chernivtsi.emdoma.com.ua', id='city[]', name='city[]', value='100', onclick='setCity(100);') Черновцы
+                                .select-blocks
+                                    .title
+                                        a#region_new(href='javascript: void(0)', onclick="$('#region').slideToggle('normal');\
+                                  $(this).toggleClass('act');\
+                                  return false;")
+                                            span#set_region
+                                                | Центральный (ст. Жовтневый)
+                                            span.arr
+                                    #region.list
+                                        form.region-all
+                                            img(src='http://mariupol.emdoma.com.ua/img/popupArr-gray.png', alt='')
+                                            a(href='javascript: void(0)', id='region[]', name='region[]', value='121', onclick="setRegion({'region_id':121, 'region_title': 'Центральный (ст. Жовтневый)'});") Центральный (ст. Жовтневый)
+                                            a(href='javascript: void(0)', id='region[]', name='region[]', value='122', onclick="setRegion({'region_id':122, 'region_title': '17, 20, 23 мкр Центрального'});") 17, 20, 23 мкр Центрального
+                                            a(href='javascript: void(0)', id='region[]', name='region[]', value='123', onclick="setRegion({'region_id':123, 'region_title': 'Приморский'});") Приморский
+                                            a(href='javascript: void(0)', id='region[]', name='region[]', value='126', onclick="setRegion({'region_id':126, 'region_title': 'Черемушки, поселок Моряков'});") Черемушки, поселок Моряков
+                                            a(href='javascript: void(0)', id='region[]', name='region[]', value='127', onclick="setRegion({'region_id':127, 'region_title': 'Кальмиусский (ближний) (ст. Ильичевский)'});") Кальмиусский (ближний) (ст. Ильичевский)
+                                            a(href='javascript: void(0)', id='region[]', name='region[]', value='163', onclick="setRegion({'region_id':163, 'region_title': 'Левобережный, дальний Кальмиусский'});") Левобережный, дальний Кальмиусский
+                            // Выбор городов городов
+                            // Выбор городов городов
+                            // Выбор городов городов
+                            // Выбор городов городов
+                            .select-language
+                                .select-blocks
+                                    .title
+                                        a#language_new(href='javascript: void(0)', onclick="$('#language').slideToggle('normal');\
+                                  $(this).toggleClass('act');\
+                                  return false;")
+                                            span#set_language RU
+                                            span.arr
+                                    #language.list(style='border-radius: 10px; left: -29px;')
+                                        form.language-all
+                                            img(style='', src='http://mariupol.emdoma.com.ua/img/popupArr-gray.png', alt='')
+                                            a(value='ru', href='javascript:void(0)') Русский
+                                            a(value='ua', href='http://mariupol.emdoma.com.ua/ua/cart') Українська
+                            // <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+                            script(type='text/javascript').
+                                $(function () {
+                                    $(window).scroll(function () {
+                                        if ($(this).scrollTop() != 0) {
+                                            $('#stl_left').fadeIn();
+                                        } else {
+                                            $('#stl_left').fadeOut();
+                                        }
+                                    });
+                                    $('#stl_left').click(function () {
+                                        $('body,html').animate({scrollTop: 0}, 800);
+                                    });
+                                });
+                            #stl_left.fixed.stl_active(style='display: none;')
+                                #stl_bg
+                                    nobr#stl_text Наверх
+                            // <div id="ToTop" >^ Наверх ^</div>
+                        style.
+                            .cart_table td {
+                                height: 35px;
+                            }
+
+                            #soglashenie_text-element {
+                                height: 100px !important;
+                                width: 400px !important;
+                            }
+
+                            #soglashenie_text-label {
+                                display: none;
+                            }
+
+                            #user_soglashenie-element .errors {
+                                display: block;
+                                float: right;
+                                padding-left: 0;
+                                padding-top: 3px;
+                                width: 200px;
+                            }
+                        h1#h1 Оформление заказа
+                        .selector(style='margin-bottom: 35px;')
+                            div(style='float: left;')
+                                b 1.
+                            .select-blocks
+                                .title
+                                    a#cart-select(href='javascript: void(0)', onclick="$('#region-cart').slideToggle('normal');\
+                                $(this).toggleClass('act');\
+                                return false;")
+                                        span#set_region2
+                                            | Район доставки: Центральный (ст. Жовтневый)
+                                        span.arr
+                                #region-cart.list
+                                    form.region-all
+                                        a(href='javascript: void(0)', id='region[]', name='region[]', value='121', onclick="setRegion({'region_id':121, 'region_title': 'Центральный (ст. Жовтневый)'});") Центральный (ст. Жовтневый)
+                                        a(href='javascript: void(0)', id='region[]', name='region[]', value='122', onclick="setRegion({'region_id':122, 'region_title': '17, 20, 23 мкр Центрального'});") 17, 20, 23 мкр Центрального
+                                        a(href='javascript: void(0)', id='region[]', name='region[]', value='123', onclick="setRegion({'region_id':123, 'region_title': 'Приморский'});") Приморский
+                                        a(href='javascript: void(0)', id='region[]', name='region[]', value='126', onclick="setRegion({'region_id':126, 'region_title': 'Черемушки, поселок Моряков'});") Черемушки, поселок Моряков
+                                        a(href='javascript: void(0)', id='region[]', name='region[]', value='127', onclick="setRegion({'region_id':127, 'region_title': 'Кальмиусский (ближний) (ст. Ильичевский)'});") Кальмиусский (ближний) (ст. Ильичевский)
+                                        a(href='javascript: void(0)', id='region[]', name='region[]', value='163', onclick="setRegion({'region_id':163, 'region_title': 'Левобережный, дальний Кальмиусский'});") Левобережный, дальний Кальмиусский
+                            br
+                        div(style='clear:both;')
+                        div(style=' font-size: 15px; ')
+                            b 2.
+                            |  Введите свои данные или #[a(href='#' rel='nofollow') Войдите]
+                        .cart-form-wrap
+                            .post_form.cart_form
+                                form(enctype='application/x-www-form-urlencoded', method='post', action='#h1')
+                                    dl.zend_form
+                                        dt#cart-label  
+                                        dd#cart-element
+                                            fieldset#fieldset-cart
+                                                dl
+                                                    dt#user_fio-label
+                                                        label.required(for='user_fio') Имя:
+                                                    dd#user_fio-element
+                                                        input#user_fio(type='text', name='user_fio', value='', size='40')
+                                                    dt#user_phone-label
+                                                        label.required(for='user_phone') Телефон:
+                                                    dd#user_phone-element
+                                                        input#user_phone(type='text', name='user_phone', value='', size='40')
+                                                    dt#user_address-label
+                                                        label.required(for='user_address') Адрес доставки:
+                                                    dd#user_address-element
+                                                        textarea#user_address(name='user_address', cols='40', rows='4')
+                                                    dt#user_message-label
+                                                        label.optional(for='user_message') Комментарий:
+                                                    dd#user_message-element
+                                                        textarea#user_message(name='user_message', cols='40', rows='4')
+                                                    dt#payment_type-label
+                                                        label.optional(for='payment_type') Способ оплаты:
+                                                    dd#payment_type-element
+                                                        select#payment_type.cart-payment-type(name='payment_type')
+                                                            option(value='cash', label='наличными', selected='selected') наличными
+                                                            option(value='card', label='картой курьеру') картой курьеру
+                                                    dt#product_type-label
+                                                        label.optional(for='product_type') Тип заказа
+                                                    dd#product_type-element
+                                                        select#product_type.cart-payment-type(name='payment_type')
+                                                            option(value='cash', label='доставка курьером', selected='selected') доставка курьером
+                                                            option(value='card', label='службой такси') службой такси
+                                                    dd.input-check#user_soglashenie-element
+                                                        input(type='hidden', name='user_soglashenie', value='0')
+                                                        input#user_soglashenie(type='checkbox', name='user_soglashenie', value='1', checked='checked')
+
+                                                    dt.label-check#user_soglashenie-label
+                                                        label.optional(for='user_soglashenie') Cогласен с Пользовательским соглашением:
+
+                                                    dt#soglashenie_text-label  
+                                                    dt#soglashenie_text-element
+                                                        textarea#soglashenie_text(name='soglashenie_text', cols='40', rows='8', style='width: 380px; height: 100px;', readonly='readonly') Прежде чем оформить заказ на нашем сайте, пожалуйста, ознакомьтесь с настоящим Соглашением. Если Вы не согласитесь с ним, тогда не сможете воспользоваться нашими услугами. Настоящее Соглашение регламентирует отношения между "Единой службой доставки emdoma.com.ua" (далее - Сайт) и физическим лицом (далее  Пользователь), воспользовавшимся услугами, указанными на сайте. Пользовательское Соглашение вступает в силу с момента выражения Пользователем согласия с его условиями путем регистрации, заказа на сайте, или звонком в службу доставки с заказом. Сайт это информационная система заказов, которая предлагает Пользователям возможность заказать продукты и товары определенных производителей с доставкой. Сайт не является производителем или продавцом товаров, представленных на сайте. Пользователь соглашается с тем, что все услуги предоставляются как есть и что администрация Сайта не несет ответственности и не гарантирует, что услуги службы будут соответствовать требованиям Пользователя; качество какого-либо продукта, услуги, актуальность информации и пр., полученного с использованием услуг Сайта, будут соответствовать ожиданиям Пользователя, т.к. весь процесс, от приготовления продукта до его реализации не зависит от Сайта. Пользователь, совершая заказ по сайту или по телефону, обязуется получить и оплатить заказ в оговоренном месте и в оговоренное время, согласно чеку от от поставщика, и гарантирует достоверность информации о заявке, месте и времени получения заказа. В случае изменения оговоренных места или времени, Пользователь соглашается оплатить дополнительные затраты. Сайт имеет право не принять заказ без указания причин. Заказы у лиц, находящихся в нетрезвом, неадекватном состоянии, у несовершеннолетних детей, без взрослых рядом, не принимаются. В случае возникновения претензий к поставленным товарам или услугам Пользователь обязуется предъявлять претензии непосредственно к производителю данной продукции. Сайт не несет ответственности за качество товаров, предоставляемых поставщиками. Все содержание Сайта охраняется авторским правом в соответствии с законодательством Украины об авторском праве и смежных правах. Пользователь не имеет права вносить изменения, публиковать, передавать третьим лицам, создавать производные продукты или иным образом использовать, частично или полностью, содержание Сайта. Логотипы, торговые марки принадлежат их владельцам, приведенные на сайте образцы только информируют вас о возможности заказать посредническую услугу доставки продукции данных торговых марок. Все возможные споры разрешаются путем переговоров, в случае полного разногласия - согласно нормам действующего украинского законодательства, при этом:1. Сайт не принимает участия в возможных спорах (в т.ч. и судебных) между поставщиками (ресторанами и другими партнерами) и Пользователями.2. Сайт не несет ответственности за соблюдение/несоблюдения поставщиками и другими службами своих обязательств перед Пользователем, а также за достоверность информации, предоставленной такими службами. Сайт является информационным связующим звеном между поставщиком и пользователем, информация о которых размещена на сайте http://emdoma.com.ua/. Совершая заказ в нашей службе по умолчанию означает, что Вы согласны с условиями данного Соглашения.
+                                                    input#submit.save_but(type='submit', name='submit', value='Заказать')
+                            .cart_table
+                                table.cart
+                                    tr
+                                        td.vid-cart.cart_table--border( colspan='5')
+                                            b Ваш заказ:
+                                    tr
+                                        td(colspan='5')
+                                            b Итальянская пицца:
+                                    tr
+                                        td.img Роял - 30 см
+                                        td
+                                        td(width='65')
+                                            .formbtns
+                                                input.product-count.noOfProd_7294_prices_7977.product-countid_7294_prices_7977(type='text', value='5')
+                                                a.up(href='javascript:void(0);', onclick=" $.McCart.plusProduct({'key':'7294_prices_7977', 'id':'7294'});")
+                                                a.down(href='javascript:void(0);', onclick="$ .McCart.minusProduct({'key':'7294_prices_7977', 'id':'7294'});")
+                                        td.price(width='70') 75
+                                            span грн  
+                                        td(width='30')
+                                            a.basket_mini_close(href='javascript:void(0);', onclick="$. McCart.removeProduct({'key':'7294_prices_7977', 'id':'7294'}, true);")
+                                span(style='display: inline-block; margin-top: 10px; width: 240px')  Доставка составляет
+                                span 45 грн.
+                                .total_cart_summ
+                                    span Итого:
+                                    span.cart-summ 615 грн
+                            style.
+                                .save_but {
+                                    display: block;
+                                }
+        include components/footer/footer
+        include components/scripts/scripts
