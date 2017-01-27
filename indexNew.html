@@ -30,6 +30,8 @@
     <script type="text/javascript" src="http://mariupol.emdoma.com.ua/js/jquery.jscrollpane.js"></script>
     <script type="text/javascript" src="http://mariupol.emdoma.com.ua/js/jquery.session.js"></script>
     <script type="text/javascript" src="http://mariupol.emdoma.com.ua/js/countdown/jquery.countdown.js"></script>
+    <!--************* new **************//-->
+    <link href="./css/lightgallery.css" media="screen, print" rel="stylesheet" type="text/css">
     <!-- Работа с корзиной begin -------------------------------------------------->
     <script type="text/javascript">
       $(function () {
@@ -641,10 +643,10 @@
               </div>
             </div>
           </div>
-          <div class="header"><a href="javascript:void(0)" class="logo"><img title="Emdoma - доставка из пиццерий, ресторанов, фастфудов и суши-баров" src="http://mariupol.emdoma.com.ua/img/logo.png"></a>
+          <div class="header"><a href="http://mariupol.emdoma.com.ua/" class="logo"><img title="Emdoma - доставка из пиццерий, ресторанов, фастфудов и суши-баров" src="http://mariupol.emdoma.com.ua/img/logo.png"></a>
             <ul class="menu">
               <noindex>
-                <li><a rel="nofollow" href="http://mariupol.emdoma.com.ua/catalog">Заведения</a><span>52</span></li>
+                <li><a rel="nofollow" href="http://mariupol.emdoma.com.ua/catalog">Заведения</a><span>53</span></li>
                 <li><a rel="nofollow" href="http://mariupol.emdoma.com.ua/delivery">Доставка</a></li>
                 <li><a rel="nofollow" href="http://mariupol.emdoma.com.ua/comments">Отзывы</a><span></span></li>
               </noindex>
@@ -655,9 +657,10 @@
             <!-- Выбор городов городов-->
             <div id="selector" class="selector">
               <div class="select-blocks">
-                <div class="title"><a href="javascript: void(0)" onclick="$('#city').slideToggle('normal');        $(this).toggleClass('act');        return false;"><span>Мариуполь</span><span class="arr"></span></a></div>
-                <div id="city" style="display: none;" class="list">
+                <div class="title"><a href="javascript: void(0)" onclick="$('#city').slideToggle('normal');                         $(this).toggleClass('act');                         return false;"><span>Мариуполь</span><span class="arr"></span></a></div>
+                <div id="city" class="list">
                   <noindex>
+                    <!-- <img src="http://mariupol.emdoma.com.ua/img/popupArr-gray.png" alt=""/>-->
                     <form class="city-all"><img src="http://mariupol.emdoma.com.ua/img/popupArr-gray.png" alt="">
                       <!-- Если город задан выводить Все--><a rel="nofollow" href="http://mariupol.emdoma.com.ua" id="city[]" name="city[]" value="88" onclick="setCity(88);">Мариуполь</a><a rel="nofollow" href="http://kp.emdoma.com.ua" id="city[]" name="city[]" value="98" onclick="setCity(98);">Каменец-Подольский</a><a rel="nofollow" href="http://krivoy-rog.emdoma.com.ua" id="city[]" name="city[]" value="101" onclick="setCity(101);">Кривой Рог</a><a rel="nofollow" href="http://chernivtsi.emdoma.com.ua" id="city[]" name="city[]" value="100" onclick="setCity(100);">Черновцы</a>
                     </form>
@@ -665,8 +668,8 @@
                 </div>
               </div>
               <div class="select-blocks">
-                <div class="title"><a id="region_new" href="javascript: void(0)" onclick="$('#region').slideToggle('normal');        $(this).toggleClass('act');        return false;"><span id="set_region">Центральный (ст. Жовтневый)</span><span class="arr"></span></a></div>
-                <div id="region" style="display: none;" class="list">
+                <div class="title"><a id="region_new" href="javascript: void(0)" onclick="$('#region').slideToggle('normal');                         $(this).toggleClass('act');                         return false;"><span id="set_region">Выберите район</span><span class="arr"></span></a></div>
+                <div id="region" class="list">
                   <form class="region-all"><img src="http://mariupol.emdoma.com.ua/img/popupArr-gray.png" alt=""><a href="javascript: void(0)" id="region[]" name="region[]" value="121" onclick="setRegion({'region_id':121, 'region_title': 'Центральный (ст. Жовтневый)'});">Центральный (ст. Жовтневый)</a><a href="javascript: void(0)" id="region[]" name="region[]" value="122" onclick="setRegion({'region_id':122, 'region_title': '17, 20, 23 мкр Центрального'});">17, 20, 23 мкр Центрального</a><a href="javascript: void(0)" id="region[]" name="region[]" value="123" onclick="setRegion({'region_id':123, 'region_title': 'Приморский'});">Приморский</a><a href="javascript: void(0)" id="region[]" name="region[]" value="126" onclick="setRegion({'region_id':126, 'region_title': 'Черемушки, поселок Моряков'});">Черемушки, поселок Моряков</a><a href="javascript: void(0)" id="region[]" name="region[]" value="127" onclick="setRegion({'region_id':127, 'region_title': 'Кальмиусский (ближний) (ст. Ильичевский)'});">Кальмиусский (ближний) (ст. Ильичевский)</a><a href="javascript: void(0)" id="region[]" name="region[]" value="163" onclick="setRegion({'region_id':163, 'region_title': 'Левобережный, дальний Кальмиусский'});">Левобережный, дальний Кальмиусский</a></form>
                 </div>
               </div>
@@ -677,17 +680,114 @@
             <!-- Выбор городов городов-->
             <div class="select-language">
               <div class="select-blocks">
-                <div class="title"><a id="language_new" href="javascript: void(0)" onclick="$('#language').slideToggle('normal');        $(this).toggleClass('act');        return false;"><span id="set_language">RU</span><span class="arr"></span></a></div>
-                <div id="language" style="border-radius: 10px; left: -29px; display: none;" class="list">
-                  <form class="language-all"><img style="" src="http://mariupol.emdoma.com.ua/img/popupArr-gray.png" alt=""><a value="ru" href="javascript:void(0)">Русский</a><a value="ua" href="http://mariupol.emdoma.com.ua/ua/">Українська</a></form>
+                <div class="title"><a id="language_new" href="javascript: void(0)" onclick="$('#language').slideToggle('normal');                         $(this).toggleClass('act');                         return false;"><span id="set_language">RU</span><span class="arr"></span></a></div>
+                <div id="language" style="border-radius: 10px; left: -29px;" class="list">
+                  <form class="language-all"><img style="" src="http://mariupol.emdoma.com.ua/img/popupArr-gray.png" alt=""><a value="ru" href="javascript:void(0)">Русский</a><a value="ua" href="http://mariupol.emdoma.com.ua/ua/catalog">Українська</a></form>
                 </div>
               </div>
             </div>
+            <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>-->
+            <script type="text/javascript">
+              $(function () {
+                $(window).scroll(function () {
+                  if ($(this).scrollTop() != 0) {
+                    $('#stl_left').fadeIn();
+                  } else {
+                    $('#stl_left').fadeOut();
+                  }
+                });
+                $('#stl_left').click(function () {
+                  $('body,html').animate({scrollTop: 0}, 800);
+                });
+              });
+            </script>
             <div id="stl_left" style="display: none;" class="fixed stl_active">
               <div id="stl_bg">
                 <nobr id="stl_text">Наверх</nobr>
               </div>
             </div>
+            <!-- <div id="ToTop" >^ Наверх ^</div>-->
+            <script type="text/javascript" src="http://mariupol.emdoma.com.ua/mc_project/admin_content/js/highslide/highslide.js"></script>
+            <link rel="stylesheet" href="http://mariupol.emdoma.com.ua/mc_project/admin_content/js/highslide/highslide.css" type="text/css" media="screen, projection">
+            <style type="text/css">.highslide img {cursor: url(/js/highslide/graphics/zoomin.cur), pointer !important;}.highslide-viewport-size {position: fixed; width: 100%; height: 100%; left: 0; top: 0}</style>
+            <script type="text/javascript">
+              hs.graphicsDir = 'http://marlin.com.ua/js/highslide_new/graphics/';
+              hs.align = 'center';
+              hs.transitions = ['expand', 'crossfade'];
+              hs.outlineType = 'rounded-white';
+              hs.fadeInOut = true;
+              hs.dimmingOpacity = 0.75;
+              // Add the controlbar
+              if (hs.addSlideshow)
+                hs.addSlideshow({
+                  //slideshowGroup: 'group1',
+                  interval: 5000,
+                  repeat: false,
+                  useControls: true,
+                  fixedControls: 'fit',
+                  overlayOptions: {
+                    opacity: .6,
+                    position: 'bottom center',
+                    hideOnMouseOut: true
+                  }
+                });
+            </script>
+            <!-- mmmmmmmmmmmmmmmmmmmmmmmaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaapppppppppppppppppppsssssssssss*/-->
+            <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+            <script type="text/javascript">
+              function initialize() {
+                var map;
+                var markers = [];
+                //    var myLatlng = new google.maps.LatLng(50.429518,30.53833);
+                var myLatlng = new google.maps.LatLng(
+                        47.097733137854185,37.53934442996979        );
+                var myOptions = {
+                  zoom: 16,
+                  center: myLatlng,
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+                }
+                map = new google.maps.Map(document.getElementById("map"), myOptions);
+                google.maps.event.addListener(map, 'click', function(event) {
+                  addMarker(event.latLng);
+                });
+                var coord_obj = new google.maps.LatLng(47.097733137854185,37.53934442996979);
+                var marker = new google.maps.Marker({
+                  position: coord_obj,
+                  map: map
+                });
+              }
+              // Add a marker to the map and push to the array.
+              function open_map() {
+                initialize();
+              }
+            </script>
+            <!-- Корзина overlay-->
+            <div id="popup_basket" style="display: none;" class="block_overlay">
+              <div class="popup_basket overlay">
+                <!-- <div class="basket_top"></div>-->
+                <div class="basket_bg">
+                  <div class="basket_body">
+                    <h3>Корзина заказа</h3>
+                    <div class="max">
+                      <table cellpadding="0" cellspacing="0" border="0" class="cart-pop t_basket">
+                        <tr>
+                          <form action="" enctype="application/x-www-form-urlencoded">
+                            <td><span class="price tright midi">Итого:</span></td>
+                            <td colspan="2"><span style="margin-right: 10px; float: right;" class="price tright"><strong class="cart-summ"></strong> грн.</span></td>
+                          </form>
+                        </tr>
+                      </table>
+                    </div>
+                    <td colspan="2"><a style="float: rigth;" href="http://mariupol.emdoma.com.ua/cart" class="button-buy">Оформить</a></td>
+                  </div>
+                  <!-- .max-->
+                </div>
+                <!-- /.basket_body-->
+              </div>
+              <!-- /.basket_bg-->
+              <!-- <div class="basket_down"></div>--><a onclick="$('#popup_basket').hide();" href="javascript: void(0);" class="close"></a>
+            </div>
+            <!-- /.popup_basket-->
           </div>
           <ul class="main-menu">
             <li style=""><a href="http://mariupol.emdoma.com.ua/catalog?sections[]=63"><span class="img"><img src="http://mariupol.emdoma.com.ua/upload/catalog_sections/images/s_menu-11381483156.png"></span><span class="text">Пиццерии</span></a></li>
@@ -879,17 +979,8 @@
         </footer>
       </div>
     </div>
-    <script src="./js/jquery-3.1.1.min.js"></script>
-    <!--script(src="./js/jquery/plugins/animations/animations.js")-->
-    <!--script(src="./js/jquery/plugins/validation/jquery.validate.min.js")-->
-    <!--script(src="./js/jquery/plugins/form/jquery.form.js")-->
-    <!--script(src="./js/jquery/plugins/select2/select2.full.js")-->
-    <!--script(src="./js/jquery/plugins/slick/slick.min.js")-->
-    <!--script(src="./js/jquery/plugins/rater/rater.min.js")-->
-    <!--script(src="./js/plugins/aos/aos.js")-->
-    <!--script(src="./js/jquery/plugins/textarea-autoresize/autosize.js")-->
-    
-    
+    <!--script(src="./js/jquery-3.1.1.min.js")-->
+    <script type="text/javascript" src="./js/lightgallery.js"></script>
     <script>
       $(function () {
           $(".button-cart").click(function () {
@@ -995,6 +1086,11 @@
           $(this).closest('.list').slideUp(500);
           $('#authHistory').slideDown(500);
           return false;
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+          $("#gallery").lightGallery();
       });
     </script>
   </body>

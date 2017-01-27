@@ -656,288 +656,605 @@
               </div>
             </div>
           </div>
-          <div class="header"><a href="http://mariupol.emdoma.com.ua/" class="logo"><img title="Emdoma - доставка из пиццерий, ресторанов, фастфудов и суши-баров" src="http://mariupol.emdoma.com.ua/img/logo.png"></a>
-            <ul class="menu">
-              <noindex>
-                <li><a rel="nofollow" href="http://mariupol.emdoma.com.ua/catalog">Заведения</a><span>53</span></li>
-                <li><a rel="nofollow" href="http://mariupol.emdoma.com.ua/delivery">Доставка</a></li>
-                <li><a rel="nofollow" href="http://mariupol.emdoma.com.ua/comments">Отзывы</a><span></span></li>
-              </noindex>
-            </ul>
-            <div class="social"><a href="http://www.facebook.com/emdoma"><img style="border-radius: 50px;" width="40" height="40" src="http://mariupol.emdoma.com.ua/upload/banners_articles/images/s_fb-ico1385724816.png"></a><a href="http://vk.com/pizza1"><img style="border-radius: 50px;" width="40" height="40" src="http://mariupol.emdoma.com.ua/upload/banners_articles/images/s_unnamed1389263545.png"></a></div>
-            <!-- Выбор городов городов-->
-            <!-- Выбор городов городов-->
-            <!-- Выбор городов городов-->
-            <div id="selector" class="selector">
-              <div class="select-blocks">
-                <div class="title"><a href="javascript: void(0)" onclick="$('#city').slideToggle('normal');                         $(this).toggleClass('act');                         return false;"><span>Мариуполь</span><span class="arr"></span></a></div>
-                <div id="city" class="list">
-                  <noindex>
-                    <!-- <img src="http://mariupol.emdoma.com.ua/img/popupArr-gray.png" alt=""/>-->
-                    <form class="city-all"><img src="http://mariupol.emdoma.com.ua/img/popupArr-gray.png" alt="">
-                      <!-- Если город задан выводить Все--><a rel="nofollow" href="http://mariupol.emdoma.com.ua" id="city[]" name="city[]" value="88" onclick="setCity(88);">Мариуполь</a><a rel="nofollow" href="http://kp.emdoma.com.ua" id="city[]" name="city[]" value="98" onclick="setCity(98);">Каменец-Подольский</a><a rel="nofollow" href="http://krivoy-rog.emdoma.com.ua" id="city[]" name="city[]" value="101" onclick="setCity(101);">Кривой Рог</a><a rel="nofollow" href="http://chernivtsi.emdoma.com.ua" id="city[]" name="city[]" value="100" onclick="setCity(100);">Черновцы</a>
-                    </form>
-                  </noindex>
-                </div>
-              </div>
-              <div class="select-blocks">
-                <div class="title"><a id="region_new" href="javascript: void(0)" onclick="$('#region').slideToggle('normal');                         $(this).toggleClass('act');                         return false;"><span id="set_region">Выберите район</span><span class="arr"></span></a></div>
-                <div id="region" class="list">
-                  <form class="region-all"><img src="http://mariupol.emdoma.com.ua/img/popupArr-gray.png" alt=""><a href="javascript: void(0)" id="region[]" name="region[]" value="121" onclick="setRegion({'region_id':121, 'region_title': 'Центральный (ст. Жовтневый)'});">Центральный (ст. Жовтневый)</a><a href="javascript: void(0)" id="region[]" name="region[]" value="122" onclick="setRegion({'region_id':122, 'region_title': '17, 20, 23 мкр Центрального'});">17, 20, 23 мкр Центрального</a><a href="javascript: void(0)" id="region[]" name="region[]" value="123" onclick="setRegion({'region_id':123, 'region_title': 'Приморский'});">Приморский</a><a href="javascript: void(0)" id="region[]" name="region[]" value="126" onclick="setRegion({'region_id':126, 'region_title': 'Черемушки, поселок Моряков'});">Черемушки, поселок Моряков</a><a href="javascript: void(0)" id="region[]" name="region[]" value="127" onclick="setRegion({'region_id':127, 'region_title': 'Кальмиусский (ближний) (ст. Ильичевский)'});">Кальмиусский (ближний) (ст. Ильичевский)</a><a href="javascript: void(0)" id="region[]" name="region[]" value="163" onclick="setRegion({'region_id':163, 'region_title': 'Левобережный, дальний Кальмиусский'});">Левобережный, дальний Кальмиусский</a></form>
-                </div>
-              </div>
-            </div>
-            <!-- Выбор городов городов-->
-            <!-- Выбор городов городов-->
-            <!-- Выбор городов городов-->
-            <!-- Выбор городов городов-->
-            <div class="select-language">
-              <div class="select-blocks">
-                <div class="title"><a id="language_new" href="javascript: void(0)" onclick="$('#language').slideToggle('normal');                         $(this).toggleClass('act');                         return false;"><span id="set_language">RU</span><span class="arr"></span></a></div>
-                <div id="language" style="border-radius: 10px; left: -29px;" class="list">
-                  <form class="language-all"><img style="" src="http://mariupol.emdoma.com.ua/img/popupArr-gray.png" alt=""><a value="ru" href="javascript:void(0)">Русский</a><a value="ua" href="http://mariupol.emdoma.com.ua/ua/catalog">Українська</a></form>
-                </div>
-              </div>
-            </div>
-            <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>-->
-            <script type="text/javascript">
-              $(function () {
-                $(window).scroll(function () {
-                  if ($(this).scrollTop() != 0) {
-                    $('#stl_left').fadeIn();
-                  } else {
-                    $('#stl_left').fadeOut();
-                  }
-                });
-                $('#stl_left').click(function () {
-                  $('body,html').animate({scrollTop: 0}, 800);
-                });
-              });
-            </script>
-            <div id="stl_left" style="display: none;" class="fixed stl_active">
-              <div id="stl_bg">
-                <nobr id="stl_text">Наверх</nobr>
-              </div>
-            </div>
-            <!-- <div id="ToTop" >^ Наверх ^</div>-->
-            <script type="text/javascript" src="http://mariupol.emdoma.com.ua/mc_project/admin_content/js/highslide/highslide.js"></script>
-            <link rel="stylesheet" href="http://mariupol.emdoma.com.ua/mc_project/admin_content/js/highslide/highslide.css" type="text/css" media="screen, projection">
-            <style type="text/css">.highslide img {cursor: url(/js/highslide/graphics/zoomin.cur), pointer !important;}.highslide-viewport-size {position: fixed; width: 100%; height: 100%; left: 0; top: 0}</style>
-            <script type="text/javascript">
-              hs.graphicsDir = 'http://marlin.com.ua/js/highslide_new/graphics/';
-              hs.align = 'center';
-              hs.transitions = ['expand', 'crossfade'];
-              hs.outlineType = 'rounded-white';
-              hs.fadeInOut = true;
-              hs.dimmingOpacity = 0.75;
-              // Add the controlbar
-              if (hs.addSlideshow)
-                hs.addSlideshow({
-                  //slideshowGroup: 'group1',
-                  interval: 5000,
-                  repeat: false,
-                  useControls: true,
-                  fixedControls: 'fit',
-                  overlayOptions: {
-                    opacity: .6,
-                    position: 'bottom center',
-                    hideOnMouseOut: true
-                  }
-                });
-            </script>
-            <!-- mmmmmmmmmmmmmmmmmmmmmmmaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaapppppppppppppppppppsssssssssss*/-->
-            <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-            <script type="text/javascript">
-              function initialize() {
-                var map;
-                var markers = [];
-                //    var myLatlng = new google.maps.LatLng(50.429518,30.53833);
-                var myLatlng = new google.maps.LatLng(
-                        47.097733137854185,37.53934442996979        );
-                var myOptions = {
-                  zoom: 16,
-                  center: myLatlng,
-                  mapTypeId: google.maps.MapTypeId.ROADMAP
-                }
-                map = new google.maps.Map(document.getElementById("map"), myOptions);
-                google.maps.event.addListener(map, 'click', function(event) {
-                  addMarker(event.latLng);
-                });
-                var coord_obj = new google.maps.LatLng(47.097733137854185,37.53934442996979);
-                var marker = new google.maps.Marker({
-                  position: coord_obj,
-                  map: map
-                });
-              }
-              // Add a marker to the map and push to the array.
-              function open_map() {
-                initialize();
-              }
-            </script>
-            <!-- Корзина overlay-->
-            <div id="popup_basket" style="display: none;" class="block_overlay">
-              <div class="popup_basket overlay">
-                <!-- <div class="basket_top"></div>-->
-                <div class="basket_bg">
-                  <div class="basket_body">
-                    <h3>Корзина заказа</h3>
-                    <div class="max">
-                      <table cellpadding="0" cellspacing="0" border="0" class="cart-pop t_basket">
-                        <tr>
-                          <form action="" enctype="application/x-www-form-urlencoded">
-                            <td><span class="price tright midi">Итого:</span></td>
-                            <td colspan="2"><span style="margin-right: 10px; float: right;" class="price tright"><strong class="cart-summ"></strong> грн.</span></td>
-                          </form>
-                        </tr>
-                      </table>
-                    </div>
-                    <td colspan="2"><a style="float: rigth;" href="http://mariupol.emdoma.com.ua/cart" class="button-buy">Оформить</a></td>
+          <div class="wrapper top-ill">
+            <div class="header"><a href="http://mariupol.emdoma.com.ua/" class="logo"><img title="Emdoma - доставка из пиццерий, ресторанов, фастфудов и суши-баров" src="http://mariupol.emdoma.com.ua/img/logo.png"></a>
+              <ul class="menu">
+                <noindex>
+                  <li><a rel="nofollow" href="http://mariupol.emdoma.com.ua/catalog">Заведения</a><span>53</span></li>
+                  <li><a rel="nofollow" href="http://mariupol.emdoma.com.ua/delivery">Доставка</a></li>
+                  <li><a rel="nofollow" href="http://mariupol.emdoma.com.ua/comments">Отзывы</a><span></span></li>
+                </noindex>
+              </ul>
+              <div class="social"><a href="http://www.facebook.com/emdoma"><img style="border-radius: 50px;" width="40" height="40" src="http://mariupol.emdoma.com.ua/upload/banners_articles/images/s_fb-ico1385724816.png"></a><a href="http://vk.com/pizza1"><img style="border-radius: 50px;" width="40" height="40" src="http://mariupol.emdoma.com.ua/upload/banners_articles/images/s_unnamed1389263545.png"></a></div>
+              <!-- Выбор городов городов-->
+              <!-- Выбор городов городов-->
+              <!-- Выбор городов городов-->
+              <div id="selector" class="selector">
+                <div class="select-blocks">
+                  <div class="title"><a href="javascript: void(0)" onclick="$('#city').slideToggle('normal');                         $(this).toggleClass('act');                         return false;"><span>Мариуполь</span><span class="arr"></span></a></div>
+                  <div id="city" class="list">
+                    <noindex>
+                      <!-- <img src="http://mariupol.emdoma.com.ua/img/popupArr-gray.png" alt=""/>-->
+                      <form class="city-all"><img src="http://mariupol.emdoma.com.ua/img/popupArr-gray.png" alt="">
+                        <!-- Если город задан выводить Все--><a rel="nofollow" href="http://mariupol.emdoma.com.ua" id="city[]" name="city[]" value="88" onclick="setCity(88);">Мариуполь</a><a rel="nofollow" href="http://kp.emdoma.com.ua" id="city[]" name="city[]" value="98" onclick="setCity(98);">Каменец-Подольский</a><a rel="nofollow" href="http://krivoy-rog.emdoma.com.ua" id="city[]" name="city[]" value="101" onclick="setCity(101);">Кривой Рог</a><a rel="nofollow" href="http://chernivtsi.emdoma.com.ua" id="city[]" name="city[]" value="100" onclick="setCity(100);">Черновцы</a>
+                      </form>
+                    </noindex>
                   </div>
-                  <!-- .max-->
                 </div>
-                <!-- /.basket_body-->
+                <div class="select-blocks">
+                  <div class="title"><a id="region_new" href="javascript: void(0)" onclick="$('#region').slideToggle('normal');                         $(this).toggleClass('act');                         return false;"><span id="set_region">Выберите район</span><span class="arr"></span></a></div>
+                  <div id="region" class="list">
+                    <form class="region-all"><img src="http://mariupol.emdoma.com.ua/img/popupArr-gray.png" alt=""><a href="javascript: void(0)" id="region[]" name="region[]" value="121" onclick="setRegion({'region_id':121, 'region_title': 'Центральный (ст. Жовтневый)'});">Центральный (ст. Жовтневый)</a><a href="javascript: void(0)" id="region[]" name="region[]" value="122" onclick="setRegion({'region_id':122, 'region_title': '17, 20, 23 мкр Центрального'});">17, 20, 23 мкр Центрального</a><a href="javascript: void(0)" id="region[]" name="region[]" value="123" onclick="setRegion({'region_id':123, 'region_title': 'Приморский'});">Приморский</a><a href="javascript: void(0)" id="region[]" name="region[]" value="126" onclick="setRegion({'region_id':126, 'region_title': 'Черемушки, поселок Моряков'});">Черемушки, поселок Моряков</a><a href="javascript: void(0)" id="region[]" name="region[]" value="127" onclick="setRegion({'region_id':127, 'region_title': 'Кальмиусский (ближний) (ст. Ильичевский)'});">Кальмиусский (ближний) (ст. Ильичевский)</a><a href="javascript: void(0)" id="region[]" name="region[]" value="163" onclick="setRegion({'region_id':163, 'region_title': 'Левобережный, дальний Кальмиусский'});">Левобережный, дальний Кальмиусский</a></form>
+                  </div>
+                </div>
               </div>
-              <!-- /.basket_bg-->
-              <!-- <div class="basket_down"></div>--><a onclick="$('#popup_basket').hide();" href="javascript: void(0);" class="close"></a>
+              <!-- Выбор городов городов-->
+              <!-- Выбор городов городов-->
+              <!-- Выбор городов городов-->
+              <!-- Выбор городов городов-->
+              <div class="select-language">
+                <div class="select-blocks">
+                  <div class="title"><a id="language_new" href="javascript: void(0)" onclick="$('#language').slideToggle('normal');                         $(this).toggleClass('act');                         return false;"><span id="set_language">RU</span><span class="arr"></span></a></div>
+                  <div id="language" style="border-radius: 10px; left: -29px;" class="list">
+                    <form class="language-all"><img style="" src="http://mariupol.emdoma.com.ua/img/popupArr-gray.png" alt=""><a value="ru" href="javascript:void(0)">Русский</a><a value="ua" href="http://mariupol.emdoma.com.ua/ua/catalog">Українська</a></form>
+                  </div>
+                </div>
+              </div>
+              <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>-->
+              <script type="text/javascript">
+                $(function () {
+                  $(window).scroll(function () {
+                    if ($(this).scrollTop() != 0) {
+                      $('#stl_left').fadeIn();
+                    } else {
+                      $('#stl_left').fadeOut();
+                    }
+                  });
+                  $('#stl_left').click(function () {
+                    $('body,html').animate({scrollTop: 0}, 800);
+                  });
+                });
+              </script>
+              <div id="stl_left" style="display: none;" class="fixed stl_active">
+                <div id="stl_bg">
+                  <nobr id="stl_text">Наверх</nobr>
+                </div>
+              </div>
+              <!-- <div id="ToTop" >^ Наверх ^</div>-->
+              <script type="text/javascript" src="http://mariupol.emdoma.com.ua/mc_project/admin_content/js/highslide/highslide.js"></script>
+              <link rel="stylesheet" href="http://mariupol.emdoma.com.ua/mc_project/admin_content/js/highslide/highslide.css" type="text/css" media="screen, projection">
+              <style type="text/css">.highslide img {cursor: url(/js/highslide/graphics/zoomin.cur), pointer !important;}.highslide-viewport-size {position: fixed; width: 100%; height: 100%; left: 0; top: 0}</style>
+              <script type="text/javascript">
+                hs.graphicsDir = 'http://marlin.com.ua/js/highslide_new/graphics/';
+                hs.align = 'center';
+                hs.transitions = ['expand', 'crossfade'];
+                hs.outlineType = 'rounded-white';
+                hs.fadeInOut = true;
+                hs.dimmingOpacity = 0.75;
+                // Add the controlbar
+                if (hs.addSlideshow)
+                  hs.addSlideshow({
+                    //slideshowGroup: 'group1',
+                    interval: 5000,
+                    repeat: false,
+                    useControls: true,
+                    fixedControls: 'fit',
+                    overlayOptions: {
+                      opacity: .6,
+                      position: 'bottom center',
+                      hideOnMouseOut: true
+                    }
+                  });
+              </script>
+              <!-- mmmmmmmmmmmmmmmmmmmmmmmaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaapppppppppppppppppppsssssssssss*/-->
+              <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+              <script type="text/javascript">
+                function initialize() {
+                  var map;
+                  var markers = [];
+                  //    var myLatlng = new google.maps.LatLng(50.429518,30.53833);
+                  var myLatlng = new google.maps.LatLng(
+                          47.097733137854185,37.53934442996979        );
+                  var myOptions = {
+                    zoom: 16,
+                    center: myLatlng,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                  }
+                  map = new google.maps.Map(document.getElementById("map"), myOptions);
+                  google.maps.event.addListener(map, 'click', function(event) {
+                    addMarker(event.latLng);
+                  });
+                  var coord_obj = new google.maps.LatLng(47.097733137854185,37.53934442996979);
+                  var marker = new google.maps.Marker({
+                    position: coord_obj,
+                    map: map
+                  });
+                }
+                // Add a marker to the map and push to the array.
+                function open_map() {
+                  initialize();
+                }
+              </script>
+              <!-- Корзина overlay-->
+              <div id="popup_basket" style="display: none;" class="block_overlay">
+                <div class="popup_basket overlay">
+                  <!-- <div class="basket_top"></div>-->
+                  <div class="basket_bg">
+                    <div class="basket_body">
+                      <h3>Корзина заказа</h3>
+                      <div class="max">
+                        <table cellpadding="0" cellspacing="0" border="0" class="cart-pop t_basket">
+                          <tr>
+                            <form action="" enctype="application/x-www-form-urlencoded">
+                              <td><span class="price tright midi">Итого:</span></td>
+                              <td colspan="2"><span style="margin-right: 10px; float: right;" class="price tright"><strong class="cart-summ"></strong> грн.</span></td>
+                            </form>
+                          </tr>
+                        </table>
+                      </div>
+                      <td colspan="2"><a style="float: rigth;" href="http://mariupol.emdoma.com.ua/cart" class="button-buy">Оформить</a></td>
+                    </div>
+                    <!-- .max-->
+                  </div>
+                  <!-- /.basket_body-->
+                </div>
+                <!-- /.basket_bg-->
+                <!-- <div class="basket_down"></div>--><a onclick="$('#popup_basket').hide();" href="javascript: void(0);" class="close"></a>
+              </div>
+              <!-- /.popup_basket-->
             </div>
-            <!-- /.popup_basket-->
-          </div>
-          <ul class="main-menu">
-            <li style=""><a href="http://mariupol.emdoma.com.ua/catalog?sections[]=63"><span class="img"><img src="http://mariupol.emdoma.com.ua/upload/catalog_sections/images/s_menu-11381483156.png"></span><span class="text">Пиццерии</span></a></li>
-            <li style=""><a href="http://mariupol.emdoma.com.ua/catalog?sections[]=62"><span class="img"><img src="http://mariupol.emdoma.com.ua/upload/catalog_sections/images/s_menu-41381483115.png"></span><span class="text">Рестораны</span></a></li>
-            <li style=""><a href="http://mariupol.emdoma.com.ua/catalog?sections[]=73"><span class="img"><img src="http://mariupol.emdoma.com.ua/upload/catalog_sections/images/s_menu-31381483181.png"></span><span class="text">Фастфуды</span></a></li>
-            <li style=""><a href="http://mariupol.emdoma.com.ua/catalog?sections[]=74"><span class="img"><img src="http://mariupol.emdoma.com.ua/upload/catalog_sections/images/s_menu-21381483207.png"></span><span class="text">Суши-бары</span></a></li>
-            <li style=""><a href="http://mariupol.emdoma.com.ua/catalog?sections[]=75"><span class="img"><img src="http://mariupol.emdoma.com.ua/upload/catalog_sections/images/s_menu-51381487396.png"></span><span class="text">Кафе</span></a></li>
-            <div style="clear: both;"></div>
-            <li style="margin-left: 0px;"><a href="http://mariupol.emdoma.com.ua/catalog?sections[]=76"><span class="img"><img src="http://mariupol.emdoma.com.ua/upload/catalog_sections/images/s_ekonom1413887619.png"></span><span class="text">Эконом</span></a></li>
-            <li style=""><a href="http://mariupol.emdoma.com.ua/catalog?sections[]=80"><span class="img"><img src="http://mariupol.emdoma.com.ua/upload/catalog_sections/images/s_81413887248.png"></span><span class="text">Шашлыки</span></a></li>
-            <li style=""><a href="http://mariupol.emdoma.com.ua/catalog?sections[]=81"><span class="img"><img src="http://mariupol.emdoma.com.ua/upload/catalog_sections/images/s_cheburek1413887267.png"></span><span class="text">Чебуреки</span></a></li>
-            <li style=""><a href="http://mariupol.emdoma.com.ua/dostavka-productov"><span class="img"><img src="http://mariupol.emdoma.com.ua/images/product.png"></span><span class="text">Доставка продуктов</span></a></li>
-            <li style="display:none;"><a href="http://mariupol.emdoma.com.ua/dostavka-cvetov"><span class="img"><img src="http://mariupol.emdoma.com.ua/images/cvet.png"></span><span class="text">Доставка цветов</span></a></li>
-            <li style=""><a href="http://mariupol.emdoma.com.ua/catalog" class="act"><span class="img"><img src="http://mariupol.emdoma.com.ua/img/menu-6.png"></span><span class="text">Все заведения</span></a></li>
-          </ul>
-          <div class="form-wrap">
-            <div class="form-ttl">Поиск по заведениям и блюдам</div>
-            <form id="searchForm" action="#" method="POST" data-form="search-form" class="searchForm">
-              <div class="form-group">
-                <input type="text" name="earch" class="form-control">
+            <!-- /.block_overlay-->
+            <!-- end Корзина overlay-->
+            <div style="cursor: default;" class="catalog-inner big show_cat catalog-inner--light">
+              <div class="img"><a id="logotype_ins" title="Royal"><img style="max-width: 250px; min-width: 200px;" src="images/royal.png" alt=""></a>
+                <div class="work-time"><img src="http://mariupol.emdoma.com.ua/img/clock-ico.png"><span>10:00 - 22:00</span></div>
               </div>
-              <button type="submit" name="commit" class="form-btn">ОК</button>
-            </form><em>Например, вареники</em>
-          </div>
-          <div id="">
-            <div class="big-title">
-              <div class="title">Популярные заведения</div>
-              <div class="sub-menu tabs-nav">
-                <!--
-                <a><img src="http://mariupol.emdoma.com.ua/img/icon005_black.png" /></a>
-                <a><img src="http://mariupol.emdoma.com.ua/img/icon005_wellow.png" /></a>
-                <a><img src="http://mariupol.emdoma.com.ua/img/icon001_black.png" /></a>
-                <a><img src="http://mariupol.emdoma.com.ua/img/icon001_wellow.png" /></a>
-                <a><img src="http://mariupol.emdoma.com.ua/img/icon002_black.png" /></a>
-                <a><img src="http://mariupol.emdoma.com.ua/img/icon002_wellow.png" /></a>
-                <a><img src="http://mariupol.emdoma.com.ua/img/icon003_black.png" /></a>
-                <a><img src="http://mariupol.emdoma.com.ua/img/icon003_wellow.png" /></a>
-                <a><img src="http://mariupol.emdoma.com.ua/img/icon004_black.png" /></a>
-                <a><img src="http://mariupol.emdoma.com.ua/img/icon004_wellow.png" /></a>
-                --><a id="tab3" title="Пицерии" href="javascript:void(0)" class="tab3 act"></a><a id="tab1" title="Рестораны" href="javascript:void(0)" class="tab1"></a><a id="tab4" title="Фаст-фуды" href="javascript:void(0)" class="tab4"></a><a id="tab2" title="Суши-бары" href="javascript:void(0)" class="tab2"></a>
-                <!-- <a class="tab5" id="tab5" href="javascript:void(0)"></a>-->
+              <div class="data">
+                <div class="big-title show_cat">
+                  <div class="title">Royal</div>
+                </div>
+                <ul class="breadcrumbs">
+                  <li>Кухня:</li>
+                  <li>европейская/</li>
+                  <li>итальянская/</li>
+                  <li>американская</li>
+                </ul>
+                <table cellpadding="0" cellspacing="0" border="0">
+                  <tr>
+                    <th>Стоимость доставки</th>
+                    <th>Время доставки</th>
+                    <th>Минимальный заказ</th>
+                    <th>Рейтинг</th>
+                  </tr>
+                  <tr>
+                    <td>35 грн</td>
+                    <td>15 мин</td>
+                    <td>0 грн</td>
+                    <td class="liked"><a href="#" rel="nofollow" class="unlike">15</a><a href="#" rel="nofollow" class="like">125</a></td>
+                  </tr>
+                </table>
+                <div style=" display: inline-block; margin-bottom: 5px; margin-top: 8px " class="note">Сезонные новинки в меню</div>
+                <ul class="tabs">
+                  <li>
+                    <div id="tab1" class="tabs-btn">Меню</div>
+                  </li>
+                  <li>
+                    <div id="tab2" onclick="open_map();" class="tabs-btn">О заведении</div>
+                  </li>
+                  <li>
+                    <div id="tab3" class="tabs-btn">Отзывы (5)</div>
+                  </li>
+                  <li>
+                    <div id="tab4" class="tabs-btn">Заказать столик</div>
+                  </li>
+                </ul><span id="disqus"></span>
+                <script type="text/javascript" language="javascript">
+                  if (window.location.hash == '#con_tab1') {
+                      $('#tab1').addClass('act');
+                  } else if (window.location.hash != '') {
+                      $('#tab3').addClass('act');
+                  } else {
+                      $('#tab1').addClass('act');
+                  }
+                </script>
+              </div>
+              <div class="gallery">
+                <div id="gallery"><a href="images/gallery1.jpg"><img src="images/gallery1.jpg" alt=""></a><a href="images/gallery2.jpg"><img src="images/gallery2.jpg" alt=""></a><a href="images/gallery3.jpg"><img src="images/gallery3.jpg" alt=""></a><a href="images/gallery4.jpg"><img src="images/gallery4.jpg" alt=""></a></div>
               </div>
             </div>
-            <div class="tabs-wrap">
-              <table id="con_tab1" cellpadding="0" cellspacing="0" width="100%" class="dot-table act">
-                <tbody>
-                  <tr>
-                    <td><a title="Старый Маяк" href="http://mariupol.emdoma.com.ua/mayak"><img style="max-height: 100px; max-width: 100px;" src="http://mariupol.emdoma.com.ua/upload/catalog_categories/images/s_bez_imeni3_1386248500911387665237.png"></a></td>
-                    <td><a title="Старый Маяк" href="http://mariupol.emdoma.com.ua/mayak">Старый Маяк</a></td>
-                    <td>Ресторан</td>
-                    <td>Европейская кухня</td>
-                    <td>Отзывов:<a href="http://mariupol.emdoma.com.ua/mayak#disqus_thread">1</a></td>
-                  </tr>
-                  <tr>
-                    <td><a title="Пикник" href="http://mariupol.emdoma.com.ua/piknik"><img style="max-height: 100px; max-width: 100px;" src="http://mariupol.emdoma.com.ua/upload/catalog_categories/images/s_logo_136860158231387493286.png"></a></td>
-                    <td><a title="Пикник" href="http://mariupol.emdoma.com.ua/piknik">Пикник</a></td>
-                    <td>Ресторан</td>
-                    <td>Европейская кухня</td>
-                    <td>Отзывов:<a href="http://mariupol.emdoma.com.ua/piknik#disqus_thread">11</a></td>
-                  </tr>
-                  <tr>
-                    <td><a title="Мафия" href="http://mariupol.emdoma.com.ua/mafia"><img style="max-height: 100px; max-width: 100px;" src="http://mariupol.emdoma.com.ua/upload/catalog_categories/images/s_mafia1453996562.jpg"></a></td>
-                    <td><a title="Мафия" href="http://mariupol.emdoma.com.ua/mafia">Мафия</a></td>
-                    <td>Ресторан</td>
-                    <td>Европейская кухня</td>
-                    <td>Отзывов:<a href="http://mariupol.emdoma.com.ua/mafia#disqus_thread">3</a></td>
-                  </tr>
-                  <tr>
-                    <td><a title="BBQ City" href="http://mariupol.emdoma.com.ua/bbq-city"><img style="max-height: 100px; max-width: 100px;" src="http://mariupol.emdoma.com.ua/upload/catalog_categories/images/s_542621423135253.jpg"></a></td>
-                    <td><a title="BBQ City" href="http://mariupol.emdoma.com.ua/bbq-city">BBQ City</a></td>
-                    <td>Ресторан</td>
-                    <td>Европейская кухня</td>
-                    <td>Отзывов:<a href="http://mariupol.emdoma.com.ua/bbq-city#disqus_thread">14</a></td>
-                  </tr>
-                </tbody>
-              </table>
-              <table id="con_tab2" cellpadding="0" cellspacing="0" width="100%" class="dot-table">
-                <tbody>
-                  <tr>
-                    <td><a title="Okinawa" href="http://mariupol.emdoma.com.ua/okinawa"><img style="max-height: 100px; max-width: 100px;" src="http://mariupol.emdoma.com.ua/upload/catalog_categories/images/s_45431359640064.jpg"></a></td>
-                    <td><a title="Okinawa" href="http://mariupol.emdoma.com.ua/okinawa">Okinawa</a></td>
-                    <td>Суши-бар</td>
-                    <td>Японская кухня</td>
-                    <td>Отзывов:<a href="http://mariupol.emdoma.com.ua/okinawa#disqus_thread">          13</a></td>
-                  </tr>
-                </tbody>
-              </table>
-              <table id="con_tab3" cellpadding="0" cellspacing="0" width="100%" style="display: table;" class="dot-table">
-                <tbody>
-                  <tr>
-                    <td><a title="Mamma Mia" href="http://mariupol.emdoma.com.ua/mamma-mia"><img style="max-height: 100px; max-width: 100px;" src="http://mariupol.emdoma.com.ua/upload/catalog_categories/images/s__miia1359381679.jpg"></a></td>
-                    <td><a title="Mamma Mia" href="http://mariupol.emdoma.com.ua/mamma-mia">Mamma Mia</a></td>
-                    <td>Пиццерия</td>
-                    <td>Европейская кухня</td>
-                    <td>Отзывов:<a href="http://mariupol.emdoma.com.ua/mamma-mia#thread">         14</a></td>
-                  </tr>
-                  <tr>
-                    <td><a title="Royal" href="http://mariupol.emdoma.com.ua/royal"><img style="max-height: 100px; max-width: 100px;" src="http://mariupol.emdoma.com.ua/upload/catalog_categories/images/s_1359446874.jpg"></a></td>
-                    <td><a title="Royal" href="http://mariupol.emdoma.com.ua/royal">Royal</a></td>
-                    <td>Пиццерия</td>
-                    <td>Европейская кухня</td>
-                    <td>Отзывов:<a href="http://mariupol.emdoma.com.ua/royal#thread">         22</a></td>
-                  </tr>
-                  <tr>
-                    <td><a title="New York Street Pizza" href="http://mariupol.emdoma.com.ua/nysp"><img style="max-height: 100px; max-width: 100px;" src="http://mariupol.emdoma.com.ua/upload/catalog_categories/images/s_171221391425930.jpg"></a></td>
-                    <td><a title="New York Street Pizza" href="http://mariupol.emdoma.com.ua/nysp">New York Street Pizza</a></td>
-                    <td>Пиццерия</td>
-                    <td>Европейская кухня</td>
-                    <td>Отзывов:<a href="http://mariupol.emdoma.com.ua/nysp#thread">         23</a></td>
-                  </tr>
-                </tbody>
-              </table>
-              <table id="con_tab4" cellpadding="0" cellspacing="0" width="100%" class="dot-table">
-                <tbody>
-                  <tr>
-                    <td><a title="AlpaChina" href="http://mariupol.emdoma.com.ua/china"><img style="max-height: 100px; max-width: 100px;" src="http://mariupol.emdoma.com.ua/upload/catalog_categories/images/s__alschi1364995142.gif"></a></td>
-                    <td><a title="AlpaChina" href="http://mariupol.emdoma.com.ua/china">AlpaChina</a></td>
-                    <td>Фастфуд</td>
-                    <td>Китайская кухня</td>
-                    <td>Отзывов:<a href="http://mariupol.emdoma.com.ua/china#thread">         1</a></td>
-                  </tr>
-                  <tr>
-                    <td><a title="Крила" href="http://mariupol.emdoma.com.ua/krila"><img style="max-height: 100px; max-width: 100px;" src="http://mariupol.emdoma.com.ua/upload/catalog_categories/images/s_222221462199458.jpg"></a></td>
-                    <td><a title="Крила" href="http://mariupol.emdoma.com.ua/krila">Крила</a></td>
-                    <td>Фастфуд</td>
-                    <td>Американская кухня</td>
-                    <td>Отзывов:<a href="http://mariupol.emdoma.com.ua/krila#thread">         8</a></td>
-                  </tr>
-                  <tr>
-                    <td><a title="Акватория Burger City" href="http://mariupol.emdoma.com.ua/burger-city"><img style="max-height: 100px; max-width: 100px;" src="http://mariupol.emdoma.com.ua/upload/catalog_categories/images/s_8341434711477.jpg"></a></td>
-                    <td><a title="Акватория Burger City" href="http://mariupol.emdoma.com.ua/burger-city">Акватория Burger City</a></td>
-                    <td>Фастфуд</td>
-                    <td>Европейская кухня</td>
-                    <td>Отзывов:<a href="http://mariupol.emdoma.com.ua/burger-city#thread">         32</a></td>
-                  </tr>
-                </tbody>
-              </table>
+          </div>
+          <div class="show_cat grey-block--light">
+            <div class="wrapper">
+              <div id="con_tab1" class="menu-block act con_tab"></div>
+              <div id="con_tab2" class="menu-block con_tab"></div>
+              <div id="con_tab3" class="menu-block con_tab">
+                <div class="comments recall-wrap">
+                  <div class="comments_filter">
+                    <ul>
+                      <li><b>Сортировка:</b></li>
+                      <li><a href="#" rel="nofollow">Последние</a></li>
+                      <li><a href="#" rel="nofollow" class="active">Полезные</a></li>
+                      <li><a href="#" rel="nofollow">Положительные (<span>22</span>)</a></li>
+                      <li><a href="#" rel="nofollow">Негативные (<span>2</span>)</a></li>
+                    </ul>
+                  </div>
+                  <style>
+                    .comments #fieldset-hidden_group {
+                        border: none;
+                    }
+                    
+                    .comments #hidden_group-label, .comments #group_0-label {
+                        display: none;
+                    }
+                    
+                    .comments dd {
+                        margin-left: 0;
+                    }
+                    
+                    .comments form #group_0-element {
+                        margin: 0;
+                    }
+                    
+                    .comments {
+                        margin: 5px 10px;
+                    }
+                    
+                    .comments #user_fio-label {
+                        display: none;
+                    }
+                    
+                    .comments #captcha-input {
+                        margin-top: -40px;
+                        width: 120px;
+                        background: none repeat scroll 0 0 #f4f4f4;
+                    }
+                    
+                    .comments .captcha img {
+                        border-radius: 5px;
+                        height: 48px;
+                    }
+                    
+                    .comments .captcha {
+                        margin: 10px 10px 0 0;
+                        float: left;
+                    }
+                    
+                    .comments form input[type="text"] {
+                        background: none repeat scroll 0 0 #f4f4f4;
+                        padding: 0 30px 0 10px;
+                    }
+                    
+                    .comments form {
+                        width: 920px;
+                        margin-bottom: 30px;
+                    }
+                    
+                    .comments #fieldset-group_0 {
+                        /*        border: 1px solid #c0c0c0;
+                        border-radius: 5px;
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);*/
+                        background: none repeat scroll 0 0 #ebebeb;
+                        border: medium none;
+                        padding: 15px 50px;
+                    }
+                    
+                    .comments #fieldset-group_0 dl {
+                        /*margin-top: 40px;*/
+                    }
+                    
+                    .commentItem {
+                        background: url("http://mariupol.emdoma.com.ua/img/dot.gif") repeat-x scroll left bottom rgba(0, 0, 0, 0);
+                        /*border-bottom: 1px solid #ebebeb;*/
+                        /*border-radius: 10px;*/
+                        /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);*/
+                        margin: 15px 0;
+                        padding: 15px;
+                    }
+                    
+                    .commentItem:hover {
+                        /*border-bottom: 1px solid #f79d00;*/
+                        /*box-shadow: 0 0 10px #f79d00;*/
+                    }
+                    
+                    .commentItem h2 {
+                        margin: 0 0 20px 0;
+                    }
+                    
+                    .commentItem h2 span {
+                        font-size: 16px;
+                    }
+                    
+                    .comments .otvet {
+                        cursor: pointer;
+                    }
+                    
+                    .comments ul {
+                        padding-left: 15px;
+                    }
+                    
+                    .comments ul div form {
+                        width: auto;
+                    }
+                    
+                    .admin b {
+                        color: #F79D00;
+                    }
+                    
+                    .name-comment {
+                        float: left;
+                        /*margin-right: 30px;*/
+                        width: 230px;
+                        color: #323232;
+                    }
+                    
+                    .name-comment p {
+                        line-height: 1.3em;
+                    }
+                    
+                    .name-comment p {
+                        padding: 0 0 20px 30px;
+                        /*background: url("http://mariupol.emdoma.com.ua/img/user-ico.png") no-repeat scroll left top rgba(0, 0, 0, 0);*/
+                    }
+                    
+                    .text-comment {
+                        margin: 0 0 0 250px;
+                    }
+                    
+                    .comments form input[type="text"], .comments form textarea {
+                        color: black;
+                    }
+                  </style>
+                  <div class="commentWrap">
+                    <article style="" class="commentItem commentItem--light">
+                      <div class="name-comment"><span class="user-like"></span><b>Валентина Терешкова</b>
+                        <time datetime="2016-12-02T08:23:11+02:00">12.02.2016</time>
+                      </div>
+                      <div class="text-comment">Шикарная и обворожительная Елена! Спасибо Вам за компанию, с удовольствием будем посещать Вас, место красивое, вкусное, уютное! В следующий раз к Вам с подарками, ожидайте, будем уже в следующем годок! Спасибо за тёплый приём!</div><a onclick="$('.otvet_12261').fadeIn();" class="otvet">Ответить</a>
+                      <form id="rating" action="#" method="POST" class="rating">
+                        <button name="plus">+</button>
+                        <input type="text" name="rating-input" value="0" readonly>
+                        <button name="minus">-</button>
+                      </form>
+                    </article>
+                    <div style="display:none;" class="otvet_12261">
+                      <form enctype="application/x-www-form-urlencoded" controller_name="catalog" item_id="215" par_id="12261" method="post" action="http://mariupol.emdoma.com.ua/comments/add">
+                        <dl class="zend_form">
+                          <dt id="hidden_group-label"> </dt>
+                          <dd id="hidden_group-element">
+                            <fieldset id="fieldset-hidden_group">
+                              <dl>
+                                <input id="user_id" type="hidden" name="user_id" value="" class="us_id">
+                                <input id="par_id" type="hidden" name="par_id" value="12261" class="us_id">
+                                <input id="controller_name" type="hidden" name="controller_name" value="catalog" class="contr_name">
+                                <input id="item_id" type="hidden" name="item_id" value="215" class="item_id">
+                              </dl>
+                            </fieldset>
+                          </dd>
+                          <dt id="group_0-label"> </dt>
+                          <dd id="group_0-element">
+                            <fieldset id="fieldset-group_0">
+                              <dl>
+                                <dt id="user_fio-label"> </dt>
+                                <dd id="user_fio-element">
+                                  <input id="user_fio" type="text" name="user_fio" value="" style="width: 774px;" placeholder="Имя" class="com_fio">
+                                </dd>
+                                <dt id="txt-label"> </dt>
+                                <dd id="txt-element">
+                                  <textarea id="txt" name="txt" style="height: 150px; width: 794px;" placeholder="Сообщение" rows="24" cols="80" class="com_txt"></textarea>
+                                </dd>
+                                <div class="captcha">
+                                  <div>Введите код:</div><img width="100" height="50" alt="" src="http://mariupol.emdoma.com.ua/upload/tmp/captcha/49e96ca3274764d7dfc5d134e2647000.png">
+                                  <input id="captcha-id" type="hidden" name="captcha[id]" value="49e96ca3274764d7dfc5d134e2647000" class="required">
+                                  <input id="captcha-input" type="text" name="captcha[input]" value="" class="required">
+                                </div>
+                                <div style="margin-top: 36px;">
+                                  <input id="submit" type="submit" name="submit" value="Отправить" class="save_but">
+                                </div>
+                              </dl>
+                            </fieldset>
+                          </dd>
+                        </dl>
+                      </form>
+                    </div>
+                    <article style="" class="commentItem commentItem--light commentAdmin">
+                      <div class="name-comment"><span class="admin"></span><b>Валентина Терешкова</b>
+                        <time datetime="2016-12-02T08:23:11+02:00">12.02.2016</time>
+                      </div>
+                      <div class="text-comment">Очень жаль, что вы написали такой плохой отзыв о нас. В наших рецептах никогда не присутствовали мидии. Пожалуйста позвоните нам и мы принесем вам свои извинения. Просим вам дать еще один шанс, мы стараемся исправлять свои ошибки</div><a onclick="$('.otvet_12261').fadeIn();" class="otvet">Ответить</a>
+                      <form id="rating" action="#" method="POST" class="rating">
+                        <button name="plus">+</button>
+                        <input type="text" name="rating-input" value="0" readonly>
+                        <button name="minus">-</button>
+                      </form>
+                    </article>
+                    <article style="" class="commentItem commentItem--light">
+                      <div class="name-comment"><span class="user-like"></span><b>Валентина Терешкова</b>
+                        <time datetime="2016-12-02T08:23:11+02:00">12.02.2016</time>
+                      </div>
+                      <div class="text-comment">Шикарная и обворожительная Елена! Спасибо Вам за компанию, с удовольствием будем посещать Вас, место красивое, вкусное, уютное! В следующий раз к Вам с подарками, ожидайте, будем уже в следующем годок! Спасибо за тёплый приём!</div><a onclick="$('.otvet_12261').fadeIn();" class="otvet">Ответить</a>
+                      <form id="rating" action="#" method="POST" class="rating">
+                        <button name="plus">+</button>
+                        <input type="text" name="rating-input" value="0" readonly>
+                        <button name="minus">-</button>
+                      </form>
+                    </article>
+                    <div style="display:none;" class="otvet_12261">
+                      <form enctype="application/x-www-form-urlencoded" controller_name="catalog" item_id="215" par_id="12261" method="post" action="http://mariupol.emdoma.com.ua/comments/add">
+                        <dl class="zend_form">
+                          <dt id="hidden_group-label"> </dt>
+                          <dd id="hidden_group-element">
+                            <fieldset id="fieldset-hidden_group">
+                              <dl>
+                                <input id="user_id" type="hidden" name="user_id" value="" class="us_id">
+                                <input id="par_id" type="hidden" name="par_id" value="12261" class="us_id">
+                                <input id="controller_name" type="hidden" name="controller_name" value="catalog" class="contr_name">
+                                <input id="item_id" type="hidden" name="item_id" value="215" class="item_id">
+                              </dl>
+                            </fieldset>
+                          </dd>
+                          <dt id="group_0-label"> </dt>
+                          <dd id="group_0-element">
+                            <fieldset id="fieldset-group_0">
+                              <dl>
+                                <dt id="user_fio-label"> </dt>
+                                <dd id="user_fio-element">
+                                  <input id="user_fio" type="text" name="user_fio" value="" style="width: 774px;" placeholder="Имя" class="com_fio">
+                                </dd>
+                                <dt id="txt-label"> </dt>
+                                <dd id="txt-element">
+                                  <textarea id="txt" name="txt" style="height: 150px; width: 794px;" placeholder="Сообщение" rows="24" cols="80" class="com_txt"></textarea>
+                                </dd>
+                                <div class="captcha">
+                                  <div>Введите код:</div><img width="100" height="50" alt="" src="http://mariupol.emdoma.com.ua/upload/tmp/captcha/49e96ca3274764d7dfc5d134e2647000.png">
+                                  <input id="captcha-id" type="hidden" name="captcha[id]" value="49e96ca3274764d7dfc5d134e2647000" class="required">
+                                  <input id="captcha-input" type="text" name="captcha[input]" value="" class="required">
+                                </div>
+                                <div style="margin-top: 36px;">
+                                  <input id="submit" type="submit" name="submit" value="Отправить" class="save_but">
+                                </div>
+                              </dl>
+                            </fieldset>
+                          </dd>
+                        </dl>
+                      </form>
+                    </div>
+                    <article style="" class="commentItem commentItem--light">
+                      <div class="name-comment"><span class="user-like"></span><b>Валентина Терешкова</b>
+                        <time datetime="2016-12-02T08:23:11+02:00">12.02.2016</time>
+                      </div>
+                      <div class="text-comment">Шикарная и обворожительная Елена! Спасибо Вам за компанию, с удовольствием будем посещать Вас, место красивое, вкусное, уютное! В следующий раз к Вам с подарками, ожидайте, будем уже в следующем годок! Спасибо за тёплый приём!</div><a onclick="$('.otvet_12261').fadeIn();" class="otvet">Ответить</a>
+                      <form id="rating" action="#" method="POST" class="rating">
+                        <button name="plus">+</button>
+                        <input type="text" name="rating-input" value="0" readonly>
+                        <button name="minus">-</button>
+                      </form>
+                    </article>
+                    <div style="display:none;" class="otvet_12261">
+                      <form enctype="application/x-www-form-urlencoded" controller_name="catalog" item_id="215" par_id="12261" method="post" action="http://mariupol.emdoma.com.ua/comments/add">
+                        <dl class="zend_form">
+                          <dt id="hidden_group-label"> </dt>
+                          <dd id="hidden_group-element">
+                            <fieldset id="fieldset-hidden_group">
+                              <dl>
+                                <input id="user_id" type="hidden" name="user_id" value="" class="us_id">
+                                <input id="par_id" type="hidden" name="par_id" value="12261" class="us_id">
+                                <input id="controller_name" type="hidden" name="controller_name" value="catalog" class="contr_name">
+                                <input id="item_id" type="hidden" name="item_id" value="215" class="item_id">
+                              </dl>
+                            </fieldset>
+                          </dd>
+                          <dt id="group_0-label"> </dt>
+                          <dd id="group_0-element">
+                            <fieldset id="fieldset-group_0">
+                              <dl>
+                                <dt id="user_fio-label"> </dt>
+                                <dd id="user_fio-element">
+                                  <input id="user_fio" type="text" name="user_fio" value="" style="width: 774px;" placeholder="Имя" class="com_fio">
+                                </dd>
+                                <dt id="txt-label"> </dt>
+                                <dd id="txt-element">
+                                  <textarea id="txt" name="txt" style="height: 150px; width: 794px;" placeholder="Сообщение" rows="24" cols="80" class="com_txt"></textarea>
+                                </dd>
+                                <div class="captcha">
+                                  <div>Введите код:</div><img width="100" height="50" alt="" src="http://mariupol.emdoma.com.ua/upload/tmp/captcha/49e96ca3274764d7dfc5d134e2647000.png">
+                                  <input id="captcha-id" type="hidden" name="captcha[id]" value="49e96ca3274764d7dfc5d134e2647000" class="required">
+                                  <input id="captcha-input" type="text" name="captcha[input]" value="" class="required">
+                                </div>
+                                <div style="margin-top: 36px;">
+                                  <input id="submit" type="submit" name="submit" value="Отправить" class="save_but">
+                                </div>
+                              </dl>
+                            </fieldset>
+                          </dd>
+                        </dl>
+                      </form>
+                    </div>
+                  </div>
+                  <h2>Ваше мнение важно и интересно другим - пожалуйста, оставьте отзыв</h2>
+                  <form enctype="application/x-www-form-urlencoded" controller_name="catalog" item_id="215" method="post" action="http://mariupol.emdoma.com.ua/comments/add">
+                    <dl class="zend_form">
+                      <dt id="hidden_group-label"> </dt>
+                      <dd id="hidden_group-element">
+                        <fieldset id="fieldset-hidden_group">
+                          <dl>
+                            <input id="user_id" type="hidden" name="user_id" value="" class="us_id">
+                            <input id="par_id" type="hidden" name="par_id" value="" class="us_id">
+                            <input id="controller_name" type="hidden" name="controller_name" value="catalog" class="contr_name">
+                            <input id="item_id" type="hidden" name="item_id" value="215" class="item_id">
+                          </dl>
+                        </fieldset>
+                      </dd>
+                      <dt id="group_0-label"> </dt>
+                      <dd id="group_0-element">
+                        <fieldset id="fieldset-group_0">
+                          <dl>
+                            <dt id="user_fio-label"> </dt>
+                            <dd id="user_fio-element">
+                              <input id="user_fio" type="text" name="user_fio" value="" placeholder="Имя" class="com_fio">
+                            </dd>
+                            <dd id="user_mark-element">
+                              <input id="mark-like" type="radio" name="mark" class="radio">
+                              <label for="mark-like" class="like">Положительно</label>
+                              <input id="mark-unlike" type="radio" name="mark">
+                              <label for="mark-unlike" class="unlike">Отрицательно</label>
+                              <input id="none-mark" type="radio" name="mark" checked>
+                              <label for="none-mark" class="none-like">Без оценки</label>
+                            </dd>
+                            <dt id="txt-label"> </dt>
+                            <dd id="txt-element">
+                              <textarea id="txt" name="txt" style="height: 150px;" placeholder="Сообщение" rows="24" cols="80" class="com_txt"></textarea>
+                            </dd>
+                            <div class="captcha"><img width="100" height="50" alt="" src="images/capcha.jpg">
+                              <input id="captcha-id" type="hidden" name="captcha[id]" value="550b74ba8a14a50a04d5c0669375337a" class="required">
+                              <input id="captcha-input" type="text" name="captcha[input]" value="" class="required">
+                              <input id="submit" type="submit" name="submit" value="Отправить" class="save_but">
+                            </div>
+                          </dl>
+                        </fieldset>
+                      </dd>
+                    </dl>
+                  </form>
+                </div>
+              </div>
+              <div id="con_tab4" class="menu-block con_tab"></div>
+              <script>
+                $(document).ready(function () {
+                    $('[id^=con_tab]').fadeOut();
+                    $('#con_' + $('.tabs li div.act').attr('id')).fadeIn();
+                    $('.tabs li div').click(function () {
+                        var tab_id = $(this).attr('id');
+                        console.log(tab_id);
+                        tabClick(tab_id);
+                    });
+                })
+                function tabClick(tab_id) {
+                    if (tab_id != $('.tabs li div.act').attr('id')) {
+                        $('.tabs li div, [id^=con_tab]').removeClass('act');
+                        $('[id^=con_tab]').fadeOut();
+                        $('#' + tab_id).addClass('act');
+                        $('#con_' + tab_id).addClass('act');
+                        $('#con_' + tab_id).fadeIn();
+                    }
+                }
+              </script>
+              <script type="text/javascript" src="http://mariupol.emdoma.com.ua/js/jquery.lazyload.js"></script>
+              <script>$(".lazy").lazyload();</script>
+              <div id="working_catalog" style="position:fixed; left: 0; bottom: 0; height: 210px; width: 100%; background: #ffb900; z-index: 1000; display: none;">
+                <div style="width: 940px; margin: 0 auto; position: relative; padding-top: 45px;"><a onclick="$('#working_catalog').slideToggle('slow');                            $.session.set('show-working-catalog', '1');" href="javascript:void(0)" style="position: absolute; right: 0; top: 15px; color: #fff; text-decoration: none; font-size: 14px;"><img src="http://mariupol.emdoma.com.ua/img/cross.png"> Скрыть</a>
+                  <div style="color: #fff; font-size: 24px; padding-bottom: 25px;" class="popup-info">До завершения времени работы "Royal Burger" осталось  мин.<br>Пожалуйста, поторопитесь сделать заказ, либо выберете другое заведение
+                    <div class="ok_close"><a onclick="$('#working_catalog').slideToggle('slow');                                $.session.set('show-working-catalog', '1');" href="javascript:void(0);" class="button-close-ok">ОК</a></div>
+                  </div>
+                  <!-- <div style="text-align:center"><a href="http://mariupol.emdoma.v.lan/cart" class="button-close-ok">Ок</a></div>-->
+                  <!-- <div style="color: #fff; font-size: 24px; float: left;"> До закрытия осталось немного </div>-->
+                </div>
+              </div>
+              <div id="not_delivery" style="position:fixed; left: 0; bottom: 0; height: 210px; width: 100%; background: #ffb900; z-index: 1000; display: none;">
+                <div style="width: 940px; margin: 0 auto; position: relative; padding-top: 45px;"><a onclick="$('#not_delivery').slideToggle('slow');                            //                $.session.set('show-not-delivery', '1');                            " href="javascript:void(0)" style="position: absolute; right: 0; top: 15px; color: #fff; text-decoration: none; font-size: 14px;"><img src="http://mariupol.emdoma.com.ua/img/cross.png"> Скрыть</a>
+                  <div style="color: #fff; font-size: 24px; padding-bottom: 25px;" class="popup-info">"Royal Burger"  пока не осуществляет доставку в Ваш район.
+                    <div class="ok_close"><a onclick="$('#not_delivery').slideToggle('slow');                                //                $.session.set('show-not-delivery', '1');                                " href="javascript:void(0);" class="button-close-ok">ОК</a></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

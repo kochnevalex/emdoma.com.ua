@@ -1,0 +1,431 @@
+- var pageTitle = "Корзина - EmDoma - служба доставки еды";
+
+doctype html
+html(lang='ru')
+    include components/head/head
+
+    body
+        .page
+            .cover
+                include components/header/headerAutorize
+                .wrapper.top-ill
+                    include components/header/topLineAuth
+
+                    .wrapper.top-ill
+                        include components/header/header
+                        // /.block_overlay
+                        // end Корзина overlay
+                        .catalog-inner.big.show_cat.catalog-inner--light(style='cursor: default;')
+
+                            .img
+                                a#logotype_ins(title='Royal')
+                                    img(style='max-width: 250px; min-width: 200px;', src='images/royal.png', alt='')
+                                .work-time
+                                    img(src="http://mariupol.emdoma.com.ua/img/clock-ico.png")
+                                    span 10:00 - 22:00
+                            .data
+                                .big-title.show_cat
+                                    .title Royal
+                                ul.breadcrumbs
+                                    li Кухня:
+                                    li европейская/
+                                    li итальянская/
+                                    li американская
+                                table(cellpadding='0', cellspacing='0', border='0')
+                                    tr
+                                        th Стоимость доставки
+                                        th Время доставки
+                                        th Минимальный заказ
+                                        th Рейтинг
+                                    tr
+                                        td 35 грн
+                                        td 15 мин
+                                        td 0 грн
+                                        td.liked
+                                            a.unlike(href='#' rel='nofollow') 15
+                                            a.like(href='#' rel='nofollow') 125
+                                .note(style=' display: inline-block; margin-bottom: 5px; margin-top: 8px ') Сезонные новинки в меню
+
+                                ul.tabs
+                                    li
+                                        #tab1.tabs-btn Меню
+                                    li
+                                        #tab2.tabs-btn(onclick='open_map();') О заведении
+                                    li
+                                        #tab3.tabs-btn Отзывы (5)
+                                    li
+                                        #tab4.tabs-btn Заказать столик
+                                span#disqus
+                                script(type='text/javascript', language='javascript').
+                                    if (window.location.hash == '#con_tab1') {
+                                        $('#tab1').addClass('act');
+                                    } else if (window.location.hash != '') {
+                                        $('#tab3').addClass('act');
+                                    } else {
+                                        $('#tab1').addClass('act');
+                                    }
+                            .gallery
+                                #gallery
+                                    a(href="images/gallery1.jpg")
+                                        img(src="images/gallery1.jpg"  alt='' )
+                                    a(href="images/gallery2.jpg")
+                                        img(src="images/gallery2.jpg"  alt=''  )
+                                    a(href="images/gallery3.jpg")
+                                        img(src="images/gallery3.jpg"  alt=''  )
+                                    a(href="images/gallery4.jpg")
+                                        img(src="images/gallery4.jpg"  alt='' )
+
+                    .show_cat.grey-block--light
+                        .wrapper
+                            #con_tab1.menu-block.act.con_tab
+                            #con_tab2.menu-block.con_tab
+                            #con_tab3.menu-block.con_tab
+                                .comments.recall-wrap
+                                    .comments_filter
+                                        ul
+                                            li: b Сортировка:
+                                            li: a(href='#' rel='nofollow') Последние
+                                            li: a.active(href='#' rel='nofollow') Полезные
+                                            li: a(href='#' rel='nofollow') Положительные (#[span 22])
+                                            li: a(href='#' rel='nofollow') Негативные (#[span 2])
+
+                                    style.
+                                        .comments #fieldset-hidden_group {
+                                            border: none;
+                                        }
+
+                                        .comments #hidden_group-label, .comments #group_0-label {
+                                            display: none;
+                                        }
+
+                                        .comments dd {
+                                            margin-left: 0;
+                                        }
+
+                                        .comments form #group_0-element {
+                                            margin: 0;
+                                        }
+
+                                        .comments {
+                                            margin: 5px 10px;
+                                        }
+
+                                        .comments #user_fio-label {
+                                            display: none;
+                                        }
+
+                                        .comments #captcha-input {
+                                            margin-top: -40px;
+                                            width: 120px;
+                                            background: none repeat scroll 0 0 #f4f4f4;
+                                        }
+
+                                        .comments .captcha img {
+                                            border-radius: 5px;
+                                            height: 48px;
+                                        }
+
+                                        .comments .captcha {
+                                            margin: 10px 10px 0 0;
+                                            float: left;
+                                        }
+
+                                        .comments form input[type="text"] {
+                                            background: none repeat scroll 0 0 #f4f4f4;
+                                            padding: 0 30px 0 10px;
+                                        }
+
+                                        .comments form {
+                                            width: 920px;
+                                            margin-bottom: 30px;
+                                        }
+
+                                        .comments #fieldset-group_0 {
+                                            /*        border: 1px solid #c0c0c0;
+                                            border-radius: 5px;
+                                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);*/
+                                            background: none repeat scroll 0 0 #ebebeb;
+                                            border: medium none;
+                                            padding: 15px 50px;
+                                        }
+
+                                        .comments #fieldset-group_0 dl {
+                                            /*margin-top: 40px;*/
+                                        }
+
+                                        .commentItem {
+                                            background: url("http://mariupol.emdoma.com.ua/img/dot.gif") repeat-x scroll left bottom rgba(0, 0, 0, 0);
+                                            /*border-bottom: 1px solid #ebebeb;*/
+                                            /*border-radius: 10px;*/
+                                            /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);*/
+                                            margin: 15px 0;
+                                            padding: 15px;
+                                        }
+
+                                        .commentItem:hover {
+                                            /*border-bottom: 1px solid #f79d00;*/
+                                            /*box-shadow: 0 0 10px #f79d00;*/
+                                        }
+
+                                        .commentItem h2 {
+                                            margin: 0 0 20px 0;
+                                        }
+
+                                        .commentItem h2 span {
+                                            font-size: 16px;
+                                        }
+
+                                        .comments .otvet {
+                                            cursor: pointer;
+                                        }
+
+                                        .comments ul {
+                                            padding-left: 15px;
+                                        }
+
+                                        .comments ul div form {
+                                            width: auto;
+                                        }
+
+                                        .admin b {
+                                            color: #F79D00;
+                                        }
+
+                                        .name-comment {
+                                            float: left;
+                                            /*margin-right: 30px;*/
+                                            width: 230px;
+                                            color: #323232;
+                                        }
+
+                                        .name-comment p {
+                                            line-height: 1.3em;
+                                        }
+
+                                        .name-comment p {
+                                            padding: 0 0 20px 30px;
+                                            /*background: url("http://mariupol.emdoma.com.ua/img/user-ico.png") no-repeat scroll left top rgba(0, 0, 0, 0);*/
+                                        }
+
+                                        .text-comment {
+                                            margin: 0 0 0 250px;
+                                        }
+
+                                        .comments form input[type="text"], .comments form textarea {
+                                            color: black;
+                                        }
+                                    .commentWrap
+                                        article.commentItem.commentItem--light(style='')
+                                            .name-comment
+                                                span.user-like
+                                                b Валентина Терешкова
+                                                time(datetime="2016-12-02T08:23:11+02:00") 12.02.2016
+                                            .text-comment Шикарная и обворожительная Елена! Спасибо Вам за компанию, с удовольствием будем посещать Вас, место красивое, вкусное, уютное! В следующий раз к Вам с подарками, ожидайте, будем уже в следующем годок! Спасибо за тёплый приём!
+                                            a.otvet(onclick="$('.otvet_12261').fadeIn();") Ответить
+                                            form#rating.rating(action='#', method='POST')
+                                                button(name='plus') +
+                                                input(type='text' name='rating-input' value='0' readonly)
+                                                button(name='minus') -
+                                        .otvet_12261(style='display:none;')
+                                            form(enctype='application/x-www-form-urlencoded', controller_name='catalog', item_id='215', par_id='12261', method='post', action='http://mariupol.emdoma.com.ua/comments/add')
+                                                dl.zend_form
+                                                    dt#hidden_group-label  
+                                                    dd#hidden_group-element
+                                                        fieldset#fieldset-hidden_group
+                                                            dl
+                                                                input#user_id.us_id(type='hidden', name='user_id', value='')
+                                                                input#par_id.us_id(type='hidden', name='par_id', value='12261')
+                                                                input#controller_name.contr_name(type='hidden', name='controller_name', value='catalog')
+                                                                input#item_id.item_id(type='hidden', name='item_id', value='215')
+                                                    dt#group_0-label  
+                                                    dd#group_0-element
+                                                        fieldset#fieldset-group_0
+                                                            dl
+                                                                dt#user_fio-label  
+                                                                dd#user_fio-element
+                                                                    input#user_fio.com_fio(type='text', name='user_fio', value='', style='width: 774px;', placeholder='Имя')
+                                                                dt#txt-label  
+                                                                dd#txt-element
+                                                                    textarea#txt.com_txt(name='txt', style='height: 150px; width: 794px;', placeholder='Сообщение', rows='24', cols='80')
+                                                                .captcha
+                                                                    div Введите код:
+                                                                    img(width='100', height='50', alt='', src='http://mariupol.emdoma.com.ua/upload/tmp/captcha/49e96ca3274764d7dfc5d134e2647000.png')
+                                                                    input#captcha-id.required(type='hidden', name='captcha[id]', value='49e96ca3274764d7dfc5d134e2647000')
+                                                                    input#captcha-input.required(type='text', name='captcha[input]', value='')
+                                                                div(style='margin-top: 36px;')
+                                                                    input#submit.save_but(type='submit', name='submit', value='Отправить')
+                                        article.commentItem.commentItem--light.commentAdmin(style='')
+                                            .name-comment
+                                                span.admin
+                                                b Валентина Терешкова
+                                                time(datetime="2016-12-02T08:23:11+02:00") 12.02.2016
+                                            .text-comment Очень жаль, что вы написали такой плохой отзыв о нас. В наших рецептах никогда не присутствовали мидии. Пожалуйста позвоните нам и мы принесем вам свои извинения. Просим вам дать еще один шанс, мы стараемся исправлять свои ошибки
+                                            a.otvet(onclick="$('.otvet_12261').fadeIn();") Ответить
+                                            form#rating.rating(action='#', method='POST')
+                                                button(name='plus') +
+                                                input(type='text' name='rating-input' value='0' readonly)
+                                                button(name='minus') -
+                                        article.commentItem.commentItem--light(style='')
+                                            .name-comment
+                                                span.user-like
+                                                b Валентина Терешкова
+                                                time(datetime="2016-12-02T08:23:11+02:00") 12.02.2016
+                                            .text-comment Шикарная и обворожительная Елена! Спасибо Вам за компанию, с удовольствием будем посещать Вас, место красивое, вкусное, уютное! В следующий раз к Вам с подарками, ожидайте, будем уже в следующем годок! Спасибо за тёплый приём!
+                                            a.otvet(onclick="$('.otvet_12261').fadeIn();") Ответить
+                                            form#rating.rating(action='#', method='POST')
+                                                button(name='plus') +
+                                                input(type='text' name='rating-input' value='0' readonly)
+                                                button(name='minus') -
+                                        .otvet_12261(style='display:none;')
+                                            form(enctype='application/x-www-form-urlencoded', controller_name='catalog', item_id='215', par_id='12261', method='post', action='http://mariupol.emdoma.com.ua/comments/add')
+                                                dl.zend_form
+                                                    dt#hidden_group-label  
+                                                    dd#hidden_group-element
+                                                        fieldset#fieldset-hidden_group
+                                                            dl
+                                                                input#user_id.us_id(type='hidden', name='user_id', value='')
+                                                                input#par_id.us_id(type='hidden', name='par_id', value='12261')
+                                                                input#controller_name.contr_name(type='hidden', name='controller_name', value='catalog')
+                                                                input#item_id.item_id(type='hidden', name='item_id', value='215')
+                                                    dt#group_0-label  
+                                                    dd#group_0-element
+                                                        fieldset#fieldset-group_0
+                                                            dl
+                                                                dt#user_fio-label  
+                                                                dd#user_fio-element
+                                                                    input#user_fio.com_fio(type='text', name='user_fio', value='', style='width: 774px;', placeholder='Имя')
+                                                                dt#txt-label  
+                                                                dd#txt-element
+                                                                    textarea#txt.com_txt(name='txt', style='height: 150px; width: 794px;', placeholder='Сообщение', rows='24', cols='80')
+                                                                .captcha
+                                                                    div Введите код:
+                                                                    img(width='100', height='50', alt='', src='http://mariupol.emdoma.com.ua/upload/tmp/captcha/49e96ca3274764d7dfc5d134e2647000.png')
+                                                                    input#captcha-id.required(type='hidden', name='captcha[id]', value='49e96ca3274764d7dfc5d134e2647000')
+                                                                    input#captcha-input.required(type='text', name='captcha[input]', value='')
+                                                                div(style='margin-top: 36px;')
+                                                                    input#submit.save_but(type='submit', name='submit', value='Отправить')
+                                        article.commentItem.commentItem--light(style='')
+                                            .name-comment
+                                                span.user-like
+                                                b Валентина Терешкова
+                                                time(datetime="2016-12-02T08:23:11+02:00") 12.02.2016
+                                            .text-comment Шикарная и обворожительная Елена! Спасибо Вам за компанию, с удовольствием будем посещать Вас, место красивое, вкусное, уютное! В следующий раз к Вам с подарками, ожидайте, будем уже в следующем годок! Спасибо за тёплый приём!
+                                            a.otvet(onclick="$('.otvet_12261').fadeIn();") Ответить
+                                            form#rating.rating(action='#', method='POST')
+                                                button(name='plus') +
+                                                input(type='text' name='rating-input' value='0' readonly)
+                                                button(name='minus') -
+                                        .otvet_12261(style='display:none;')
+                                            form(enctype='application/x-www-form-urlencoded', controller_name='catalog', item_id='215', par_id='12261', method='post', action='http://mariupol.emdoma.com.ua/comments/add')
+                                                dl.zend_form
+                                                    dt#hidden_group-label  
+                                                    dd#hidden_group-element
+                                                        fieldset#fieldset-hidden_group
+                                                            dl
+                                                                input#user_id.us_id(type='hidden', name='user_id', value='')
+                                                                input#par_id.us_id(type='hidden', name='par_id', value='12261')
+                                                                input#controller_name.contr_name(type='hidden', name='controller_name', value='catalog')
+                                                                input#item_id.item_id(type='hidden', name='item_id', value='215')
+                                                    dt#group_0-label  
+                                                    dd#group_0-element
+                                                        fieldset#fieldset-group_0
+                                                            dl
+                                                                dt#user_fio-label  
+                                                                dd#user_fio-element
+                                                                    input#user_fio.com_fio(type='text', name='user_fio', value='', style='width: 774px;', placeholder='Имя')
+                                                                dt#txt-label  
+                                                                dd#txt-element
+                                                                    textarea#txt.com_txt(name='txt', style='height: 150px; width: 794px;', placeholder='Сообщение', rows='24', cols='80')
+                                                                .captcha
+                                                                    div Введите код:
+                                                                    img(width='100', height='50', alt='', src='http://mariupol.emdoma.com.ua/upload/tmp/captcha/49e96ca3274764d7dfc5d134e2647000.png')
+                                                                    input#captcha-id.required(type='hidden', name='captcha[id]', value='49e96ca3274764d7dfc5d134e2647000')
+                                                                    input#captcha-input.required(type='text', name='captcha[input]', value='')
+                                                                div(style='margin-top: 36px;')
+                                                                    input#submit.save_but(type='submit', name='submit', value='Отправить')
+                                    h2 Ваше мнение важно и интересно другим - пожалуйста, оставьте отзыв
+                                    form(enctype='application/x-www-form-urlencoded', controller_name='catalog', item_id='215', method='post', action='http://mariupol.emdoma.com.ua/comments/add')
+                                        dl.zend_form
+                                            dt#hidden_group-label  
+                                            dd#hidden_group-element
+                                                fieldset#fieldset-hidden_group
+                                                    dl
+                                                        input#user_id.us_id(type='hidden', name='user_id', value='')
+                                                        input#par_id.us_id(type='hidden', name='par_id', value='')
+                                                        input#controller_name.contr_name(type='hidden', name='controller_name', value='catalog')
+                                                        input#item_id.item_id(type='hidden', name='item_id', value='215')
+                                            dt#group_0-label  
+                                            dd#group_0-element
+                                                fieldset#fieldset-group_0
+                                                    dl
+                                                        dt#user_fio-label  
+                                                        dd#user_fio-element
+                                                            input#user_fio.com_fio(type='text', name='user_fio', value='', placeholder='Имя')
+                                                        dd#user_mark-element
+                                                            input#mark-like.radio(type='radio', name='mark')
+                                                            label.like( for='mark-like') Положительно
+                                                            input#mark-unlike(type='radio', name='mark')
+                                                            label.unlike( for='mark-unlike') Отрицательно
+                                                            input#none-mark(type='radio', name='mark', checked)
+                                                            label.none-like( for='none-mark') Без оценки
+                                                        dt#txt-label  
+                                                        dd#txt-element
+                                                            textarea#txt.com_txt(name='txt', style='height: 150px;', placeholder='Сообщение', rows='24', cols='80')
+                                                        .captcha
+                                                            img(width='100', height='50', alt='', src='images/capcha.jpg')
+                                                            input#captcha-id.required(type='hidden', name='captcha[id]', value='550b74ba8a14a50a04d5c0669375337a')
+                                                            input#captcha-input.required(type='text', name='captcha[input]', value='')
+                                                            input#submit.save_but(type='submit', name='submit', value='Отправить')
+                            #con_tab4.menu-block.con_tab
+                            script.
+                                $(document).ready(function () {
+                                    $('[id^=con_tab]').fadeOut();
+                                    $('#con_' + $('.tabs li div.act').attr('id')).fadeIn();
+                                    $('.tabs li div').click(function () {
+                                        var tab_id = $(this).attr('id');
+                                        console.log(tab_id);
+                                        tabClick(tab_id);
+                                    });
+                                })
+                                function tabClick(tab_id) {
+                                    if (tab_id != $('.tabs li div.act').attr('id')) {
+                                        $('.tabs li div, [id^=con_tab]').removeClass('act');
+                                        $('[id^=con_tab]').fadeOut();
+                                        $('#' + tab_id).addClass('act');
+                                        $('#con_' + tab_id).addClass('act');
+                                        $('#con_' + tab_id).fadeIn();
+                                    }
+                                }
+                            script(type='text/javascript', src='http://mariupol.emdoma.com.ua/js/jquery.lazyload.js')
+                            script.
+                                $(".lazy").lazyload();
+                            #working_catalog(style='position:fixed; left: 0; bottom: 0; height: 210px; width: 100%; background: #ffb900; z-index: 1000; display: none;')
+                                div(style='width: 940px; margin: 0 auto; position: relative; padding-top: 45px;')
+                                    a(onclick="$('#working_catalog').slideToggle('slow');\
+                            $.session.set('show-working-catalog', '1');", href='javascript:void(0)', style='position: absolute; right: 0; top: 15px; color: #fff; text-decoration: none; font-size: 14px;')
+                                        img(src='http://mariupol.emdoma.com.ua/img/cross.png')
+                                        |  Скрыть
+                                    .popup-info(style='color: #fff; font-size: 24px; padding-bottom: 25px;')
+                                        | До завершения времени работы "Royal Burger" осталось  мин.
+                                        br
+                                        | Пожалуйста, поторопитесь сделать заказ, либо выберете другое заведение
+                                        .ok_close
+                                            a.button-close-ok(onclick="$('#working_catalog').slideToggle('slow');\
+                                $.session.set('show-working-catalog', '1');", href='javascript:void(0);') ОК
+                                    // <div style="text-align:center"><a href="http://mariupol.emdoma.v.lan/cart" class="button-close-ok">Ок</a></div>
+                                    // <div style="color: #fff; font-size: 24px; float: left;"> До закрытия осталось немного </div>
+                            #not_delivery(style='position:fixed; left: 0; bottom: 0; height: 210px; width: 100%; background: #ffb900; z-index: 1000; display: none;')
+                                div(style='width: 940px; margin: 0 auto; position: relative; padding-top: 45px;')
+                                    a(onclick="$('#not_delivery').slideToggle('slow');\
+                            //                $.session.set('show-not-delivery', '1');\
+                            ", href='javascript:void(0)', style='position: absolute; right: 0; top: 15px; color: #fff; text-decoration: none; font-size: 14px;')
+                                        img(src='http://mariupol.emdoma.com.ua/img/cross.png')
+                                        |  Скрыть
+                                    .popup-info(style='color: #fff; font-size: 24px; padding-bottom: 25px;')
+                                        | "Royal Burger"  пока не осуществляет доставку в Ваш район.
+                                        .ok_close
+                                            a.button-close-ok(onclick="$('#not_delivery').slideToggle('slow');\
+                                //                $.session.set('show-not-delivery', '1');\
+                                ", href='javascript:void(0);') ОК
+        include components/footer/footer
+        include components/scripts/scripts

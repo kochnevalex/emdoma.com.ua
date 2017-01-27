@@ -1,11 +1,11 @@
 .header
-  a.logo(href='javascript:void(0)')
+  a.logo(href='http://mariupol.emdoma.com.ua/')
     img(title='Emdoma - доставка из пиццерий, ресторанов, фастфудов и суши-баров', src='http://mariupol.emdoma.com.ua/img/logo.png')
   ul.menu
     noindex
       li
         a(rel='nofollow', href='http://mariupol.emdoma.com.ua/catalog') Заведения
-        span 52
+        span 53
       li
         a(rel='nofollow', href='http://mariupol.emdoma.com.ua/delivery') Доставка
       li
@@ -23,13 +23,14 @@
     .select-blocks
       .title
         a(href='javascript: void(0)', onclick="$('#city').slideToggle('normal');\
-        $(this).toggleClass('act');\
-        return false;")
+                         $(this).toggleClass('act');\
+                         return false;")
           span
             | Мариуполь
           span.arr
-      #city.list(style='display: none;')
+      #city.list
         noindex
+          // <img src="http://mariupol.emdoma.com.ua/img/popupArr-gray.png" alt=""/>
           form.city-all
             img(src='http://mariupol.emdoma.com.ua/img/popupArr-gray.png', alt='')
             // Если город задан выводить Все
@@ -40,12 +41,12 @@
     .select-blocks
       .title
         a#region_new(href='javascript: void(0)', onclick="$('#region').slideToggle('normal');\
-        $(this).toggleClass('act');\
-        return false;")
+                         $(this).toggleClass('act');\
+                         return false;")
           span#set_region
-            | Центральный (ст. Жовтневый)
+            | Выберите район
           span.arr
-      #region.list(style='display: none;')
+      #region.list
         form.region-all
           img(src='http://mariupol.emdoma.com.ua/img/popupArr-gray.png', alt='')
           a(href='javascript: void(0)', id='region[]', name='region[]', value='121', onclick="setRegion({'region_id':121, 'region_title': 'Центральный (ст. Жовтневый)'});") Центральный (ст. Жовтневый)
@@ -62,16 +63,108 @@
     .select-blocks
       .title
         a#language_new(href='javascript: void(0)', onclick="$('#language').slideToggle('normal');\
-        $(this).toggleClass('act');\
-        return false;")
+                         $(this).toggleClass('act');\
+                         return false;")
           span#set_language RU
           span.arr
-      #language.list(style='border-radius: 10px; left: -29px; display: none;')
+      #language.list(style='border-radius: 10px; left: -29px;')
         form.language-all
           img(style='', src='http://mariupol.emdoma.com.ua/img/popupArr-gray.png', alt='')
           a(value='ru', href='javascript:void(0)') Русский
-          a(value='ua', href='http://mariupol.emdoma.com.ua/ua/') Українська
-
+          a(value='ua', href='http://mariupol.emdoma.com.ua/ua/catalog') Українська
+  // <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  script(type='text/javascript').
+    $(function () {
+      $(window).scroll(function () {
+        if ($(this).scrollTop() != 0) {
+          $('#stl_left').fadeIn();
+        } else {
+          $('#stl_left').fadeOut();
+        }
+      });
+      $('#stl_left').click(function () {
+        $('body,html').animate({scrollTop: 0}, 800);
+      });
+    });
   #stl_left.fixed.stl_active(style='display: none;')
     #stl_bg
       nobr#stl_text Наверх
+  // <div id="ToTop" >^ Наверх ^</div>
+  script(type='text/javascript', src='http://mariupol.emdoma.com.ua/mc_project/admin_content/js/highslide/highslide.js')
+  link(rel='stylesheet', href='http://mariupol.emdoma.com.ua/mc_project/admin_content/js/highslide/highslide.css', type='text/css', media='screen, projection')
+  style(type='text/css').
+    .highslide img {cursor: url(/js/highslide/graphics/zoomin.cur), pointer !important;}.highslide-viewport-size {position: fixed; width: 100%; height: 100%; left: 0; top: 0}
+  script(type='text/javascript').
+    hs.graphicsDir = 'http://marlin.com.ua/js/highslide_new/graphics/';
+    hs.align = 'center';
+    hs.transitions = ['expand', 'crossfade'];
+    hs.outlineType = 'rounded-white';
+    hs.fadeInOut = true;
+    hs.dimmingOpacity = 0.75;
+    // Add the controlbar
+    if (hs.addSlideshow)
+      hs.addSlideshow({
+        //slideshowGroup: 'group1',
+        interval: 5000,
+        repeat: false,
+        useControls: true,
+        fixedControls: 'fit',
+        overlayOptions: {
+          opacity: .6,
+          position: 'bottom center',
+          hideOnMouseOut: true
+        }
+      });
+  // mmmmmmmmmmmmmmmmmmmmmmmaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaapppppppppppppppppppsssssssssss*/
+  script(type='text/javascript', src='http://maps.googleapis.com/maps/api/js?sensor=false')
+  script(type='text/javascript').
+    function initialize() {
+      var map;
+      var markers = [];
+      //    var myLatlng = new google.maps.LatLng(50.429518,30.53833);
+      var myLatlng = new google.maps.LatLng(
+              47.097733137854185,37.53934442996979        );
+      var myOptions = {
+        zoom: 16,
+        center: myLatlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+      map = new google.maps.Map(document.getElementById("map"), myOptions);
+      google.maps.event.addListener(map, 'click', function(event) {
+        addMarker(event.latLng);
+      });
+      var coord_obj = new google.maps.LatLng(47.097733137854185,37.53934442996979);
+      var marker = new google.maps.Marker({
+        position: coord_obj,
+        map: map
+      });
+    }
+    // Add a marker to the map and push to the array.
+    function open_map() {
+      initialize();
+    }
+  // Корзина overlay
+  #popup_basket.block_overlay(style='display: none;')
+    .popup_basket.overlay
+      // <div class="basket_top"></div>
+      .basket_bg
+        .basket_body
+          h3 Корзина заказа
+          .max
+            table.cart-pop.t_basket(cellpadding='0', cellspacing='0', border='0')
+              tr
+                form(action='', enctype='application/x-www-form-urlencoded')
+                  td
+                    span.price.tright.midi Итого:
+                  td(colspan='2')
+                    span.price.tright(style='margin-right: 10px; float: right;')
+                      strong.cart-summ
+                      |  грн.
+          td(colspan='2')
+            a.button-buy(style='float: rigth;', href='http://mariupol.emdoma.com.ua/cart') Оформить
+        // .max
+      // /.basket_body
+    // /.basket_bg
+    // <div class="basket_down"></div>
+    a.close(onclick="$('#popup_basket').hide();", href='javascript: void(0);')
+  // /.popup_basket
