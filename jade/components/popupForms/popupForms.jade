@@ -83,10 +83,10 @@
                 .form-container
                     .form-ttl Восстановление пароля
                     p Введите e-mail, указанный при регистрации. Мы вышлем на него новый пароль для входа на сайт.
-                    form#citySelect.city-select(action='#', method='POST', data-form='city-select')
+                    form#recoveryForm.city-select.recovery-form(action='#', method='POST', data-form='city-select')
                         .form-group
                             select
                                 option Мариуполь
                                 option Киев
                                 option Одесса
-                        button.form-btn(type='submit', name='commit') ОК
+                        button.form-btn(type='submit', name='commit') Отправить
