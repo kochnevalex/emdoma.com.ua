@@ -155,28 +155,48 @@
 {
     display: inline-block;
 
-    width: calc(100% - 90px);
-    margin-right: 15px; 
-    margin-bottom: 5px;
+    width: calc(100% - 95px);
+    margin: 5px 15px 5px 0;
+
+    vertical-align: middle;
 }
 
 .form-wrap .form-group .form-control
 {
     line-height: 38px;
 
-    width: calc(100% - 40px); 
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
     height: 40px;
+    padding: 0 20px;
 
-    border: 1px solid #ededed;
+    border: 1px solid #dedede;
     border-radius: 0;
+    outline: none; 
     background: #fff;
     -webkit-box-shadow: none;
             box-shadow: none;
 }
 
+.form-group .form-control:focus
+{
+    border: 1px solid #ffb900;
+}
+
+.form-group select
+{
+    outline: none;
+}
+
 .form-wrap .form-group input[type='email']
 {
     padding: 0 20px;
+}
+
+.form-wrap form
+{
+    margin-top: 25px;
 }
 
 .form-btn
@@ -188,11 +208,17 @@
     padding: 0 20px;
 
     cursor: pointer;
+    vertical-align: middle; 
 
-    color: #fff; 
+    color: #fff;
     border: none;
     outline: none;
     background: #ffb900;
+}
+
+.form-btn:hover
+{
+    background-color: #e5a800;
 }
 
 body.active
@@ -228,10 +254,10 @@ body.active
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
-    -webkit-box-pack: end;
-    -webkit-justify-content: flex-end;
-    -ms-flex-pack: end;
-            justify-content: flex-end;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+            justify-content: flex-start;
     -webkit-align-content: center;
     -ms-flex-line-pack: center;
             align-content: center;
@@ -243,20 +269,21 @@ body.active
     margin-right: 50px;
 }
 
-.form-wrap .form-container .form-btn.form-btn--toll
-{
-    margin-top: 40px;
-}
-
 .form-wrap .form-container .form-btn
 {
     line-height: 40px;
 
     display: inline-block;
 
-    margin: 10px 0; 
+    margin: 10px 0;
 
+    vertical-align: middle; 
     text-decoration: none;
+}
+
+.form-wrap .form-container .form-btn--toll
+{
+    margin-top: 40px;
 }
 
 .form-wrap .city-select--wide .form-btn
@@ -281,11 +308,13 @@ body.active
     display: -ms-flexbox;
     display:         flex;
 
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box; 
     min-width: 400px;
-    min-height: 280px;
+    min-height: 360px;
     padding: 50px 45px;
 
-    text-align: center; 
+    text-align: center;
 
     background: #fff;
 
@@ -311,13 +340,19 @@ body.active
     font-family: robotoregular, Arial, Helvetica, sans-serif; 
     font-size: 30px;
 
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .popup .popup-block .form-wrap p
 {
-    padding-top: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px; 
     padding-bottom: 0;
+}
+
+.popup .popup-block .form-wrap p + form
+{
+    margin-top: 30px;
 }
 
 .popup .popup-block .form-wrap .close
@@ -336,8 +371,13 @@ body.active
     background: url('../images/close-form.png') center center;
 }
 
+.popup .popup-block .form-wrap .close:hover
+{
+    opacity: .7;
+}
+
 .popup .popup-block:last-child,
-.popup .popup-block:nth-child(2)
+.popup .popup-block:nth-child(2n)
 {
     margin-right: 0;
 }
@@ -375,8 +415,22 @@ body.active
 
 .form-wrap .city-select--wide .form-group
 {
-    width: 45%;
+    float: left; 
+
+    width: calc(50% - 10px);
     margin: 5px;
+}
+
+.form-wrap .city-select--wide .form-group.form-group--wide
+{
+    width: 100%;
+
+    text-align: left;
+}
+
+.form-wrap .city-select--wide .form-group.form-group--wide .form-control
+{
+    width: calc(50% - 10px);
 }
 
 .form-wrap .path-wrap
@@ -431,8 +485,10 @@ body.active
 .form-wrap .form-group select
 {
     width: 100%;
-    height: 38px;
+    height: 40px;
     padding: 0 20px;
+
+    border: 1px solid #dedede;
 }
 
 .top-line__tel
@@ -1083,12 +1139,12 @@ body.active
     padding-bottom: 10px;
 }
 
-table .liked
+.catalog-inner .data table .liked
 {
     padding-left: 0;
 }
 
-table .liked .like
+.catalog-inner .data table .liked .like
 {
     font-size: 11px;
     line-height: 24px;
@@ -1105,7 +1161,7 @@ table .liked .like
     background: url('../images/like.png') no-repeat top left;
 }
 
-table .liked .unlike
+.catalog-inner table .liked .unlike
 {
     font-size: 11px;
     line-height: 24px;
@@ -1130,6 +1186,12 @@ table .liked .unlike
 .catalog-inner.catalog-light .data .note
 {
     padding: 20px 0 0 0;
+}
+
+.right-block.fixed
+{
+    position: fixed;
+    top: 100px;
 }
 
 .catalog-inner.big.show_cat.catalog-inner--light

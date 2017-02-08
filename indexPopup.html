@@ -837,7 +837,7 @@
                   <div class="close"></div>
                   <div class="form-container form-container--wide"><a href="#" rel="nofollow">Вернуться к выбору города</a>
                     <p>Нас пока нет в вашем городе. Оставьте свои контактные данные, мы сообщим, когда откроемся</p>
-                    <div class="city-select city-select--wide"><a href="#" class="form-btn form-btn--toll">Оповестить об открытии</a><a href="#" class="form-btn">Хочу открыть сам</a></div>
+                    <div class="city-select city-select--wide"><a href="#" class="form-btn">Оповестить об открытии</a><a href="#" class="form-btn">Хочу открыть сам</a></div>
                   </div>
                 </div>
               </div>
@@ -861,6 +861,58 @@
                       </div>
                       <button type="submit" name="commit" class="form-btn form-btn--toll">Оповестить об открытии</button>
                       <button type="submit" name="commit" class="form-btn">Хочу открыть сам</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="popup-block"><img src="img/form-logo.png" alt=""><span>Доставка еды из лучших заведений города</span>
+                <div class="form-wrap">
+                  <div class="close"></div>
+                  <div class="form-container">
+                    <div class="form-ttl">Регистрация</div>
+                    <form id="regForm" action="#" method="POST" data-form="city-select-form" class="city-select city-select--wide">
+                      <div class="form-group">
+                        <input type="text" name="form" placeholder="Имя" class="form-control">
+                      </div>
+                      <div class="form-group">
+                        <input type="text" name="form" placeholder="Телефон" class="form-control">
+                      </div>
+                      <div class="form-group">
+                        <input type="email" name="form" placeholder="E-mail" class="form-control">
+                      </div>
+                      <div class="form-group">
+                        <select>
+                          <option>Мариуполь</option>
+                          <option>Киев</option>
+                          <option>Одесса</option>
+                        </select>
+                      </div>
+                      <div class="form-group form-group--wide">
+                        <input type="password" name="form" placeholder="Пароль" class="form-control">
+                      </div>
+                      <div class="form-group form-group--wide">
+                        <input type="password" name="form" placeholder="Повторите пароль" class="form-control">
+                      </div>
+                      <button type="submit" name="commit" class="form-btn form-btn--toll">Зарегистрироваться</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="popup-block"><img src="img/form-logo.png" alt=""><span>Доставка еды из лучших заведений города</span>
+                <div class="form-wrap">
+                  <div class="close"></div>
+                  <div class="form-container">
+                    <div class="form-ttl">Восстановление пароля</div>
+                    <p>Введите e-mail, указанный при регистрации. Мы вышлем на него новый пароль для входа на сайт.</p>
+                    <form id="citySelect" action="#" method="POST" data-form="city-select" class="city-select">
+                      <div class="form-group">
+                        <select>
+                          <option>Мариуполь</option>
+                          <option>Киев</option>
+                          <option>Одесса</option>
+                        </select>
+                      </div>
+                      <button type="submit" name="commit" class="form-btn">ОК</button>
                     </form>
                   </div>
                 </div>
@@ -1027,11 +1079,36 @@
           $('#authHistory').slideDown(500);
           return false;
       });
+      
     </script>
     <script>
       $(document).ready(function () {
           $("#gallery").lightGallery();
       });
     </script>
+    <!--        var topp =  $('.right-block').offset().top,-->
+    <!--            height = $('.right-block').height();-->
+    <!---->
+    <!--        var bottom =  $('.footer').offset().top;-->
+    <!--        topp= topp + 56;-->
+    <!--        console.log(topp);-->
+    <!---->
+    <!--        $(window).bind('scroll', function () {-->
+    <!--            if ($(window).scrollTop() > topp) {-->
+    <!--                $('.right-block').addClass('fixed');-->
+    <!--            }-->
+    <!---->
+    <!--            if (($(window).scrollTop() + height) > bottom ) {-->
+    <!--                $('.right-block').removeClass('fixed');-->
+    <!--            }-->
+    <!--        });-->
+    
+    
+    
+    
+    
+    
+    
+    
   </body>
 </html>

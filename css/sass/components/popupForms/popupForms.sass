@@ -16,21 +16,22 @@ body.active
   margin: 100px auto
   display: flex
   flex-wrap: wrap
-  justify-content: flex-end
+  justify-content: flex-start
   align-content: center
 
 .popup .popup-block
   width: calc(50% - 50px)
   margin-right: 50px
 
-.form-wrap .form-container .form-btn.form-btn--toll
-  margin-top: 40px
-
 .form-wrap .form-container .form-btn
   display: inline-block
   line-height: 40px
   text-decoration: none
   margin: 10px 0
+  vertical-align: middle
+
+.form-wrap .form-container .form-btn--toll
+  margin-top: 40px
 
 .form-wrap .city-select--wide .form-btn
   width: 260px
@@ -48,19 +49,24 @@ body.active
   align-items: center
   justify-content: center
   padding: 50px 45px
-  min-height: 280px
+  min-height: 360px
   min-width: 400px
   background: #fff
   text-align: center
+  box-sizing: border-box
 
 .popup .popup-block .form-wrap .form-ttl
-  margin-bottom: 25px
+  margin-bottom: 30px
   font-size: 30px
   font-family: robotoregular, Arial, Helvetica, sans-serif
 
 .popup .popup-block .form-wrap p
-  padding-top: 30px
+  margin-top: 30px
   padding-bottom: 0
+  margin-bottom: 30px
+
+.popup .popup-block .form-wrap p + form
+  margin-top: 30px
 
 .popup .popup-block .form-wrap .close
   position: absolute
@@ -72,8 +78,11 @@ body.active
   cursor: pointer
   background: url('../images/close-form.png') center center
 
+.popup .popup-block .form-wrap .close:hover
+  opacity: .7
+
 .popup .popup-block:last-child,
-.popup .popup-block:nth-child(2)
+.popup .popup-block:nth-child(2n)
   margin-right: 0
 
 .popup .popup-block > span
@@ -95,8 +104,16 @@ body.active
   padding: 0
 
 .form-wrap .city-select--wide .form-group
-  width: 45%
+  width: calc(50% - 10px)
   margin: 5px
+  float: left
+
+.form-wrap .city-select--wide .form-group.form-group--wide
+  width: 100%
+  text-align: left
+
+.form-wrap .city-select--wide .form-group.form-group--wide .form-control
+  width: calc(50% - 10px)
 
 .form-wrap .path-wrap
   position: absolute
@@ -126,9 +143,10 @@ body.active
   vertical-align: top
 
 .form-wrap .form-group select
-  height: 38px
+  height: 40px
   width: 100%
   padding: 0 20px
+  border: 1px solid #dedede
 
 
 

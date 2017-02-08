@@ -15,21 +15,30 @@
 
 .form-wrap .form-group
   display: inline-block
-  margin-bottom: 5px
-  width: calc(100% - 90px)
-  margin-right: 15px
+  margin: 5px 15px 5px 0
+  width: calc(100% - 95px)
+  vertical-align: middle
 
 .form-wrap .form-group .form-control
   border-radius: 0
-  border: 1px solid #ededed
+  border: 1px solid #dedede
   box-shadow: none
   background: #FFFFFF
   line-height: 38px
   height: 40px
-  width: calc(100% - 40px)
+  padding: 0 20px
+  width: 100%
+  box-sizing: border-box
+  outline: none
+
+.form-group .form-control:focus
+  border: 1px solid #FFB900
+
+.form-group select
+  outline: none
 
 .form-wrap .form-group input[type="email"]
   padding: 0 20px
 
-
-
+.form-wrap form
+  margin-top: 25px

@@ -27,7 +27,7 @@
                     a(href='#' rel='nofollow') Вернуться к выбору города
                     p Нас пока нет в вашем городе. Оставьте свои контактные данные, мы сообщим, когда откроемся
                     .city-select.city-select--wide
-                        a(href='#').form-btn.form-btn--toll Оповестить об открытии
+                        a(href='#').form-btn Оповестить об открытии
                         a(href='#').form-btn Хочу открыть сам
 
         .popup-block
@@ -50,4 +50,43 @@
                         button.form-btn.form-btn--toll(type='submit', name='commit') Оповестить об открытии
                         button.form-btn(type='submit', name='commit') Хочу открыть сам
 
+        .popup-block
+            img(src='img/form-logo.png' alt='')
+            span Доставка еды из лучших заведений города
+            .form-wrap
+                .close
+                .form-container
+                    .form-ttl Регистрация
+                    form#regForm.city-select.city-select--wide(action='#', method='POST', data-form='city-select-form')
+                        .form-group
+                            input.form-control(type='text', name='form', placeholder='Имя')
+                        .form-group
+                            input.form-control(type='text', name='form', placeholder='Телефон')
+                        .form-group
+                            input.form-control(type='email', name='form', placeholder='E-mail')
+                        .form-group
+                            select
+                                option Мариуполь
+                                option Киев
+                                option Одесса
+                        .form-group.form-group--wide
+                            input.form-control(type='password', name='form', placeholder='Пароль')
+                        .form-group.form-group--wide
+                            input.form-control(type='password', name='form', placeholder='Повторите пароль')
 
+                        button.form-btn.form-btn--toll(type='submit', name='commit') Зарегистрироваться
+        .popup-block
+            img(src='img/form-logo.png' alt='')
+            span Доставка еды из лучших заведений города
+            .form-wrap
+                .close
+                .form-container
+                    .form-ttl Восстановление пароля
+                    p Введите e-mail, указанный при регистрации. Мы вышлем на него новый пароль для входа на сайт.
+                    form#citySelect.city-select(action='#', method='POST', data-form='city-select')
+                        .form-group
+                            select
+                                option Мариуполь
+                                option Киев
+                                option Одесса
+                        button.form-btn(type='submit', name='commit') ОК
