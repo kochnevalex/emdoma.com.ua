@@ -506,12 +506,14 @@ body.active
     font-size: 22px;
     line-height: 56px;
 
+    position: relative;
+
     float: left;
 
     text-transform: uppercase;
 }
 
-.top-line__tel a
+.top-line__tel .selector
 {
     font-size: 18px;
     line-height: 20px;
@@ -523,16 +525,86 @@ body.active
     margin-top: -5px;
     margin-left: 10px;
 
-    vertical-align: middle;
+    vertical-align: middle; 
     text-decoration: none;
+}
 
-    color: #fff; 
-    border-bottom: 1px dashed;
+.top-line__tel .selector .select-blocks .list
+{
+    position: absolute;
+    top: 100%;
+
+    margin-top: 2px;
+    padding: 0;
+
+    border: 10px solid rgba(237, 237, 237, .71);
+    background-color: transparent; 
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+
+.top-line__tel .selector .select-blocks .list .tel-all
+{
+    padding: 15px 20px;
+
+    background: #ffb900;
+}
+
+.top-line__tel .selector .select-blocks .list a span
+{
+    color: #fff;
+}
+
+.top-line__tel .selector .select-blocks .list a
+{
+    font-size: 14px;
+    line-height: 24px;
+
+    height: auto;
+
+    color: #fff;
+}
+
+.top-line__tel .selector .select-blocks .list a:hover
+{
+    opacity: .71;
+}
+
+.top-line__tel .selector .select-blocks .title a span
+{
+    display: inline-block;
+
+    color: #fff;
+    border-color: #fff;
+}
+
+.top-line__tel .selector .select-blocks .title a:hover span:first-child
+{
+    border-color: transparent;
+}
+
+.top-line__tel .selector .select-blocks a.act span.arr
+{
+    border-color: #fff;
 }
 
 .top-line__tel a:hover
 {
     border-color: transparent;
+}
+
+.top-line__tel-list
+{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+         -o-transform: translateX(-50%);
+            transform: translateX(-50%);
+
+    border: 10px solid rgba(237, 237, 237, .71);
 }
 
 .top-line__cabinet .selector .select-blocks
@@ -562,33 +634,6 @@ body.active
 .top-line__cabinet a
 {
     color: #fff;
-}
-
-.top-line__tel a span
-{
-    position: absolute;
-    top: 50%;
-    right: -20px;
-
-    display: inline-block;
-
-    width: 0; 
-    height: 0;
-    margin-left: 5px;
-
-    -webkit-transition: .5s ease;
-         -o-transition: .5s ease;
-            transition: .5s ease;
-    -webkit-transform: translate(-50%);
-        -ms-transform: translate(-50%);
-         -o-transform: translate(-50%);
-            transform: translate(-50%);
-    vertical-align: middle;
-
-    border-top: 6px solid #fff;
-    border-right: 5px solid transparent !important;
-    border-bottom: none;
-    border-left: 5px solid transparent !important;
 }
 
 .top-line__cabinet
