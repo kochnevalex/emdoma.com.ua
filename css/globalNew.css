@@ -774,6 +774,11 @@ body.active
     content: '';
 }
 
+.form-wrap .selector form
+{
+    margin: 0;
+}
+
 .form-wrap .selector .select-blocks .list
 {
     line-height: 22px;
