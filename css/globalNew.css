@@ -1873,11 +1873,23 @@ body.active
     font-size: 14px;
     line-height: 18px;
 
-    padding: 9px 0;
+    margin: 9px 0;
+    padding: 0;
 
     text-decoration: none; 
 
     color: #000;
+}
+
+.content .catalog_menu .catalog_menu-list li a.active
+{
+    border-bottom: 1px dashed;
+}
+
+.footer
+{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 /*# sourceMappingURL=globalNew.css.map */

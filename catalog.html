@@ -1165,9 +1165,7 @@
     </script>
     <script type="text/javascript">
       $(function () {
-          //        console.log('');
-          //        $('#service').slideToggle('slow');
-          //        console.log('');
+      
           $('#service-btn').click(function () {
               if ($('#service_name').val() != "") {
                   $('#service_name').css('border', "1px solid #e4e4e4");
@@ -1274,9 +1272,33 @@
           }
       });
       
+      $(window).on('scroll', function () {
+          var scrollItem = $('.catalog_wrapper.catalog_wrapper--light h3'),
+                  scrollBar = $('.catalog_menu-list li a');
+          scrollItem.each(function () {
+              var itemId = $(this).attr('id');
+              itemId = '#' + itemId;
+              if (($(window).scrollTop() + ($(window).height() / 3) ) > ( $(this).offset().top )) {
+                  console.log($(window).scrollTop());
+                  console.log($(this).offset().top - ($(window).height() / 3));
+                  scrollBar.each(function () {
+                      var innerAtr = $(this).attr('data-id');
+                      if (itemId == innerAtr) {
+                          $(this).addClass('active');
+                      }
+                      else {
+                          $(this).removeClass('active');
+                      }
+                  });
+      
+              }
+          });
+      });
+      
+      
       $('.catalog_menu-list li a').on('click', function () {
           var attrId = $(this).attr('data-id'),
-              goTo = $(attrId).offset().top - 56;
+                  goTo = $(attrId).offset().top - 56;
           $('html, body').animate({
               scrollTop: goTo
           }, 1000);
