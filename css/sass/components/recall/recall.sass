@@ -1,3 +1,6 @@
+.show_cat.grey-block--light .menu-block
+  padding-top: 40px
+
 .catalog-inner.big.show_cat.catalog-inner--light
   padding: 30px 20px 0 20px
   border: none
@@ -238,7 +241,7 @@
   position: relative
   padding: 20px 0 30px
   margin: 0
-  border-bottom: 1px solid  #d1d1d1
+  border-bottom: 1px solid #d1d1d1
   background: none
   overflow: hidden
   background: #fff
@@ -246,7 +249,7 @@
 .commentItem.commentItem--light .name-comment
   float: none
   width: 100%
-  
+
 .commentItem.commentItem--light .name-comment time
   padding-left: 5px
   font-size: 11px
@@ -300,6 +303,56 @@
 .commentItem.commentItem--light.commentAdmin
   padding-left: 90px
   margin-top: -1px
+
+.menu-block .content
+  position: relative
+
+.menu-block .content::after
+  display: table
+  content: ''
+  clear: both
+
+.catalog_wrapper.catalog_wrapper--light
+  width: 750px
+  float: right
+
+.catalog_wrapper.catalog_wrapper--light .lazy_text
+  min-width: 280px
+
+.content .catalog_menu
+  float: left
+  width: 190px
+  padding-left: 20px
+  box-sizing: border-box
+
+.content .catalog_menu.sticky
+  position: fixed
+  top: 56px
+  bottom: auto
+
+.content .catalog_menu.sticky-bottom
+  position: absolute
+  bottom: 0
+  top: auto
+
+.content .catalog_menu .catalog_menu-ttl
+  font-size: 24px
+  margin-bottom: 20px
+
+.content .catalog_menu .catalog_menu-list
+  margin: 0
+  list-style: none
+  padding: 0
+
+.content .catalog_menu .catalog_menu-list li
+  padding: 9px 0
+
+.content .catalog_menu .catalog_menu-list li a
+  font-size: 14px
+  line-height: 18px
+  padding: 9px 0
+  color: #000
+  text-decoration: none
 
 
 

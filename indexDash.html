@@ -610,13 +610,20 @@
         <div class="wrapper top-ill">
           <div class="top-line">
             <div class="wrapper">
-              <div class="top-line__tel">Сделать заказ<a href="tel:380974737566" rel="nofoloow">+38 (097) 47-37-566<span class="arr"></span></a></div>
-              <!--.text
-              a(href='#' rel='nofollow') Вход
-              a(href='#' rel='nofollow') Регистрация
-              -->
-              <!--    span.xfm_4020734440-->
-              <!--        span.xfmc1 Мы занимаемся доставкой из пиццерий, ресторанов, фастфудов и суши-баров. Выбирайте заведение и делайте заказ онлайн или по телефону: 097-47-37-586, 068-381-22-45, (0629) 49-37-64-->
+              <div class="top-line__tel">Сделать заказ
+                <div class="selector">
+                  <div class="select-blocks">
+                    <div class="title"><a href="javascript: void(0)" onclick="$('#tel').slideToggle('normal'); $(this).toggleClass('act'); return false;"><span>+38 (097) 47-37-566</span><span class="arr"></span></a></div>
+                    <div id="tel" class="list">
+                      <noindex>
+                        <form class="tel-all">
+                          <!-- Если город задан выводить Все--><a rel="nofollow" href="tel:+380974737566">+38 (097) 47-37-566</a><a rel="nofollow" href="tel:+380974737566">+38 (097) 47-37-566</a><a rel="nofollow" href="tel:+380974737566">+38 (097) 47-37-566</a><a rel="nofollow" href="tel:+380974737566">+38 (097) 47-37-566</a>
+                        </form>
+                      </noindex>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="cart-wrapper"><a href="javascript:void(0)" style="height: 56px;" class="button-cart"><span class="cart-count">Заказов нет</span></a>
                 <div style="" class="cart-popup">
                   <div style="overflow: hidden; padding: 0px; height: 325px; width: 300px;" class="prodScroll">
@@ -1106,30 +1113,39 @@
       $(document).ready(function () {
           $("#gallery").lightGallery();
       });
+      var stickyMenu = $('.catalog_menu'),
+              page = $('.page'),
+              stickyMenuTop = stickyMenu.offset().top,
+              headerHeight = $('.top-line').height(),
+              stickyMenuHeight = stickyMenu.height(),
+              pageTop = page.offset().top,
+              footerHeight = $('.footer').height();
+      
+      stickyMenuTop = stickyMenuTop - headerHeight;
+      $(window).on('scroll', function () {
+          if (($(window).scrollTop() > stickyMenuTop) && ((stickyMenu.offset().top + stickyMenuHeight ) < (pageTop + page.height() - footerHeight - headerHeight))) {
+              stickyMenu.addClass('sticky');
+              stickyMenu.removeClass('sticky-bottom');
+          }
+          if ((stickyMenu.offset().top + stickyMenuHeight ) > (pageTop + page.height() - footerHeight - headerHeight - 20)) {
+              stickyMenu.addClass('sticky-bottom');
+              stickyMenu.removeClass('sticky');
+      
+          }
+          if ($(window).scrollTop() < stickyMenuTop) {
+              stickyMenu.removeClass('sticky');
+              stickyMenu.removeClass('sticky-bottom');
+          }
+      });
+      
+      $('.catalog_menu-list li a').on('click', function () {
+          var attrId = $(this).attr('data-id'),
+              goTo = $(attrId).offset().top - 56;
+          $('html, body').animate({
+              scrollTop: goTo
+          }, 1000);
+          return false;
+      });
     </script>
-    <!--        var topp =  $('.right-block').offset().top,-->
-    <!--            height = $('.right-block').height();-->
-    <!---->
-    <!--        var bottom =  $('.footer').offset().top;-->
-    <!--        topp= topp + 56;-->
-    <!--        console.log(topp);-->
-    <!---->
-    <!--        $(window).bind('scroll', function () {-->
-    <!--            if ($(window).scrollTop() > topp) {-->
-    <!--                $('.right-block').addClass('fixed');-->
-    <!--            }-->
-    <!---->
-    <!--            if (($(window).scrollTop() + height) > bottom ) {-->
-    <!--                $('.right-block').removeClass('fixed');-->
-    <!--            }-->
-    <!--        });-->
-    
-    
-    
-    
-    
-    
-    
-    
   </body>
 </html>

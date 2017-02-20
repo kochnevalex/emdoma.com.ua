@@ -1092,30 +1092,39 @@
       $(document).ready(function () {
           $("#gallery").lightGallery();
       });
+      var stickyMenu = $('.catalog_menu'),
+              page = $('.page'),
+              stickyMenuTop = stickyMenu.offset().top,
+              headerHeight = $('.top-line').height(),
+              stickyMenuHeight = stickyMenu.height(),
+              pageTop = page.offset().top,
+              footerHeight = $('.footer').height();
+      
+      stickyMenuTop = stickyMenuTop - headerHeight;
+      $(window).on('scroll', function () {
+          if (($(window).scrollTop() > stickyMenuTop) && ((stickyMenu.offset().top + stickyMenuHeight ) < (pageTop + page.height() - footerHeight - headerHeight))) {
+              stickyMenu.addClass('sticky');
+              stickyMenu.removeClass('sticky-bottom');
+          }
+          if ((stickyMenu.offset().top + stickyMenuHeight ) > (pageTop + page.height() - footerHeight - headerHeight - 20)) {
+              stickyMenu.addClass('sticky-bottom');
+              stickyMenu.removeClass('sticky');
+      
+          }
+          if ($(window).scrollTop() < stickyMenuTop) {
+              stickyMenu.removeClass('sticky');
+              stickyMenu.removeClass('sticky-bottom');
+          }
+      });
+      
+      $('.catalog_menu-list li a').on('click', function () {
+          var attrId = $(this).attr('data-id'),
+              goTo = $(attrId).offset().top - 56;
+          $('html, body').animate({
+              scrollTop: goTo
+          }, 1000);
+          return false;
+      });
     </script>
-    <!--        var topp =  $('.right-block').offset().top,-->
-    <!--            height = $('.right-block').height();-->
-    <!---->
-    <!--        var bottom =  $('.footer').offset().top;-->
-    <!--        topp= topp + 56;-->
-    <!--        console.log(topp);-->
-    <!---->
-    <!--        $(window).bind('scroll', function () {-->
-    <!--            if ($(window).scrollTop() > topp) {-->
-    <!--                $('.right-block').addClass('fixed');-->
-    <!--            }-->
-    <!---->
-    <!--            if (($(window).scrollTop() + height) > bottom ) {-->
-    <!--                $('.right-block').removeClass('fixed');-->
-    <!--            }-->
-    <!--        });-->
-    
-    
-    
-    
-    
-    
-    
-    
   </body>
 </html>

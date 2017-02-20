@@ -1,15 +1,20 @@
 .top-line
     .wrapper
         .top-line__tel Сделать заказ
-            a(href='tel:380974737566' rel='nofoloow') +38 (097) 47-37-566
-                span.arr
-
-        //.text
-            a(href='#' rel='nofollow') Вход
-            a(href='#' rel='nofollow') Регистрация
-        //    span.xfm_4020734440
-        //        span.xfmc1 Мы занимаемся доставкой из пиццерий, ресторанов, фастфудов и суши-баров. Выбирайте заведение и делайте заказ онлайн или по телефону: 097-47-37-586, 068-381-22-45, (0629) 49-37-64
-
+            .selector
+                .select-blocks
+                    .title
+                        a(href='javascript: void(0)', onclick="$('#tel').slideToggle('normal'); $(this).toggleClass('act'); return false;")
+                            span +38 (097) 47-37-566
+                            span.arr
+                    #tel.list
+                        noindex
+                            form.tel-all
+                                // Если город задан выводить Все
+                                a(rel='nofollow', href='tel:+380974737566') +38 (097) 47-37-566
+                                a(rel='nofollow', href='tel:+380974737566') +38 (097) 47-37-566
+                                a(rel='nofollow', href='tel:+380974737566') +38 (097) 47-37-566
+                                a(rel='nofollow', href='tel:+380974737566') +38 (097) 47-37-566
         .cart-wrapper
             a.button-cart(href='javascript:void(0)', style='height: 56px;')
                 span.cart-count Заказов нет

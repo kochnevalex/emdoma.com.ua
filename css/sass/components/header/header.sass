@@ -1,6 +1,9 @@
 .top-line__tel
   position: relative
   float: left
+  max-width: 395px
+  height: 56px
+  text-overflow: ellipsis
   font-size: 22px
   line-height: 56px
   text-transform: uppercase
@@ -8,6 +11,7 @@
 .top-line__tel .selector
   position: relative
   display: inline-block
+
   margin-left: 10px
   font-size: 18px
   line-height: 20px
@@ -63,10 +67,10 @@
 
 .top-line__cabinet .selector .select-blocks
   float: none
+  padding: 0
 
 .top-line__cabinet .selector
   display: inline-block
-  height: 56px
 
 .top-line__cabinet .selector .title a:hover span
   border-bottom: none
@@ -79,11 +83,19 @@
 .top-line__cabinet a
   color: #fff
 
+.top-line__cabinet > span
+  padding-right: 4px
+
 .top-line__cabinet
+  display: flex
+  align-items: center
+  flex-wrap: wrap
   float: right
-  padding: 0 20px
+  height: 56px
+  padding: 0 20px 0 0
   font-size: 12px
-  line-height: 56px
+  line-height: 16px
+  width: 200px
 
 #selectorCabinet
   position: relative
@@ -93,7 +105,7 @@
 
 #cabinetSettings
   position: absolute
-  top: 100%
+  top: calc(100% + 18px)
   background: #ebebeb
   border: 5px solid #ffffff
   box-shadow: 0 0 20px -2px #B3B3B3
